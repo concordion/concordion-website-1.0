@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Concordion - FAQ</title>
+<link media="all" rel="stylesheet" type="text/css" href="css/default.css"/>
+<link media="print"  rel="stylesheet" type="text/css" href="css/print.css"/>
+<link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico" />
+<style>
+table {
+  border-collapse: collapse;
+  empty-cells: show;
+  margin: 8px 0px 8px 0px;
+}
+th, td {
+  border: 1px solid black;
+  padding: 3px;
+}
+td {
+  background-color: white;
+  vertical-align: top;
+}
+th {
+  background-color: #d5dae8;
+}
+th.vertical {
+  vertical-align: top;
+  text-align: left;
+}
+h3 {
+  padding-top: 20px;
+}
+.aside {
+  padding: 3px 10px 3px 10px;
+  font-size: 8pt;
+  border-left: 1px solid #444;
+  background-color: #f0f0f0;
+  color: #444;
+  line-height: 140%;
+}
+</style>
+</head>
+<body>
+
+<div class="page">
+
+<div class="header">
+
+    <a href="http://www.opensource.org/">
+    <img class="open-source-logo" src="image/opensource-110x95.png"
+        alt="Open source (Apache 2.0 license)" />
+    </a>
+
+    <a href="/">
+    <img src="image/front-page-banner.png"
+        alt="Concordion is a simple, but powerful, agile acceptance testing tool for Java." />
+    </a>
+
+</div><!-- header -->
+
+<div class="menuBar">
+
+<ul class="menu">
+  <li><a href="/">Home</a></li>
+  <li><a href="Tutorial.html">Tutorial</a></li>
+  <li><a href="Technique.html">Hints and Tips</a></li>
+  <li><a href="Extensions.html">Extensions API</a></li>
+  <li><a href="ExtensionsLibrary.html">Extensions Library</a></li>
+  <li><a href="Download.html">Download</a></li>
+  <li class="selectedTab"><a href="Questions.html">FAQ</a></li>
+</ul>
+
+</div><!-- menuBar  -->
+
+<div class="content">
+
+
+
+<h1>FAQ</h1>
+
+<ul>
+<li><a href="#whoDevelopedIt">Who developed Concordion?</a></li>
+<li><a href="#licensing">How is Concordion licensed?</a></li>
+<li><a href="#mailingList">Is there a mailing list?</a></li>
+<li><a href="#issueList">How do I report defects or submit enhancement requests?</a></li>
+<li><a href="#sourceCode">Where is the source code repository?</a></li>
+<li><a href="#articles">Are there any good articles on Concordion?</a></li>
+<li><a href="#presentingOutput">How do I fashion the test output into a presentable form?</a></li>
+<li><a href="#comparisonWithFit">How does Concordion differ from the Fit Framework and FitNesse?</a></li>
+<li><a href="#comparisonWithSelenium">How does Concordion differ from Selenium?</a></li>
+<li><a href="#scriptVsSpecify">What is the difference between scripting and specifying?</a></li>
+<li><a href="#groovyJRuby">Why not use Groovy, JRuby or some other scripting language in</a></li>
+<li><a href="#htmlClumsy">Isn't HTML a bit clumsy?</a></li>
+<li><a href="#whyNotWiki">Why not use a wiki or Word documents instead?</a></li>
+<li><a href="#toolSupport">Are there any tools to help me edit Concordion specifications?</a></li>
+<li><a href="#extension">Can I extend Concordion with my own commands?</a></li>
+<li><a href="#storyDrivenProcess">Can you outline a story-driven process with Concordion?</a></li>
+<li><a href="#untestable">What can't Concordion test?</a></li>
+<li><a href="#miniWaterfall">Is your recommended process like a series of mini waterfalls?</a></li>
+<li><a href="#ownDogFood">Does Concordion itself have active specifications?</a></li>
+</ul>
+
+
+
+<div class="memo" style="padding-top: 0px">
+
+<a name="whoDevelopedIt"> </a>
+<h3>Who developed Concordion?</h3>
+<p>
+Concordion was developed by <a class="externalLink" href="http://www.davidpeterson.co.uk">David&nbsp;Peterson</a>,
+an agile consultant based in London, UK. The idea was sparked by conversations with testers and developers, in particular
+<a class="externalLink" href="http://www.natpryce.com/">Nat&nbsp;Pryce</a> and
+<a class="externalLink" href="http://www.higherorderlogic.com/">Steve&nbsp;Freeman</a>,
+while working at Easynet (BSkyB) in 2006.
+</p>
+
+<p>
+You can contact David by e-mail at: <b>david@crowdsoft.com</b>, but please use the
+<a class="externalLink" href="http://tech.groups.yahoo.com/group/concordion/join">mailing&#160;list</a> for questions about Concordion itself.
+</p>
+
+
+<a name="licensing"> </a>
+<h3>How is Concordion licensed?</h3>
+<p>
+    Concordion is licensed under the Apache License, v2.0.
+    See <a href="Licence.html">here</a> for the license text.
+</p>
+
+<a name="mailingList"> </a>
+<h3>Is there a mailing list?</h3>
+<p>
+    Yes, on Yahoo Groups. <a class="externalLink" href="http://tech.groups.yahoo.com/group/concordion/join">Join here</a>
+</p>
+
+<a name="issueList"> </a>
+<h3>How do I report defects or submit enhancement requests?</h3>
+<p>
+    In Concordion's <a class="externalLink" href="http://code.google.com/p/concordion/issues/list"> Issues List</a>.
+</p>
+
+
+<a name="sourceCode"> </a>
+<h3>Where is the source code repository?</h3>
+<p>
+    It is hosted on Google Code: <a class="externalLink" href="http://code.google.com/p/concordion/">Project Page</a>,
+    <a class="externalLink" href="http://code.google.com/p/concordion/source/browse">Browse Source</a>. The current
+    development version (potentially unstable) can be exported as follows:
+</p>
+<pre>svn export http://concordion.googlecode.com/svn/trunk/concordion
+</pre>
+
+
+
+<h3 id="articles">Are there any good articles on Concordion?</h3>
+<ul>
+<li><a href="memo/MethodsAndTools-Concordion.pdf">
+    Concordion tutorial / review
+    </a>
+    <br />&#8212; Tomo Popovic, Methods and Tools, Summer 2012
+</li>
+<li><a href="http://maxheapsize.com/2009/10/13/concordion-vs-cucumber-and-java-based-acceptance-testing/">
+    Concordion vs. Cucumber and Java Based Acceptance Testing
+    </a>
+    <br />&#8212; Oliver Wehrens, October 2009
+</li>
+<li><a href="http://gojko.net/2008/08/25/concordion-agile-acceptance-testing-with-free-form-text/">
+    Concordion: Agile Acceptance Testing with free-form text
+    </a>
+    <br />&#8212; Gojko Adzic, August 2008
+</ul>
+
+
+<a name="presentingOutput"> </a>
+<h3>How do I fashion the test output into a presentable form?</h3>
+<p>
+By default, the output of Concordion goes to the temp directory, but
+you can change the location with the JVM variable "<code>concordion.output.dir</code>".
+</p>
+
+<p>
+If you run all your tests then you'll get a complete set of coloured
+output HTML files, which you can publish on a web-server or whatever.
+To allow navigation, use the
+<a href="http://www.concordion.org/dist/1.4.3/test-output/concordion/spec/concordion/results/breadcrumbs/Breadcrumbs.html">breadcrumbs</a>
+naming convention and add <code>&lt;a href="..."&gt;</code> links between related specs.
+</p>
+
+<p>
+See the <a target="specs" href="dist/1.4.3/test-output/concordion/spec/concordion/command/assertEquals/AssertEquals.html">Concordion specs</a> for an example.
+</p>
+
+<p>
+If you want to use custom CSS or JavaScript, or include images or other resources, in your Concordion output, you will need to write a <a href="Extensions.html#cssExample">simple extension</a>.
+</p>
+
+
+<a name="comparisonWithFit"> </a>
+<h3>How does Concordion differ from the Fit Framework and FitNesse?</h3>
+<p>
+The Fit Framework was the inspiration for Concordion. I used it for a
+couple of years before I decided to develop Concordion with the following
+aims:
+</p>
+
+<ul>
+<li>Improved readability of documents</li>
+<li>More "opinionated" (scripting is actively discouraged)</li>
+<li>Easier to use</li>
+</ul>
+
+<p>
+What I've tried to do in Concordion is place a stronger emphasis on writing
+specifications of requirements, rather than test scripts. When you
+use Concordion, the scripting needed to test the requirement is
+hidden in the fixture code. I've explained this <a href="Technique.html">elsewhere</a>
+but basically the reason you want to make a distinction is that it
+means you can change the implementation and know that you are still
+meeting the requirement. Test scripts mix up the requirement with
+implementation details.
+</p>
+
+<p>
+(See "<a href="ScriptingMakeover.html">Scripting&nbsp;Makeover</a>"
+for a typical example of a FitNesse acceptance test and my take at
+a Concordion equivalent specification.)
+</p>
+
+
+<p>
+You can write active specifications with Fit, but it doesn't
+make it easy for you. Because of the way Fit uses inheritance, its
+fixture code is cumbersome, so developers tend to write as few fixtures
+as possible. This leads to generic fixtures that can be used in
+multiple specifications. Though this sounds like a good thing, it usually
+means that the examples in the specifications are copy-and-paste jobs
+and not well-focused.
+Irrelevant detail causes all the problems associated with duplication
+as well as making the examples harder to follow.
+In addition, having generic fixtures tends to lead to scripting.
+</p>
+
+<p>
+With Concordion the fixture code is much simpler and every specification
+has its own unique fixture. Because you're not sharing fixtures, it
+encourages you to focus the examples in the specifications much more
+carefully. To remove duplication across fixtures, you build a simple
+scripting API that the fixtures call into.
+</p>
+
+</div>
+
+<table>
+    <tr>
+        <th width="20%" class="vertical"></th>
+        <th width="40%">Fit Framework</th>
+        <th width="40%">Concordion</th>
+    </tr>
+    <tr>
+        <th class="vertical">Mapping document contents to Java code</th>
+        <td>Heading rows in tables form implicit mappings.
+
+            <p>Pros:</p>
+            <ul>
+                <li>Can work with HTML or with Excel spreadsheets.</li>
+            </ul>
+
+            <p>Cons:</p>
+            <ul>
+                <li>Fixture code is verbose.</li>
+                <li>It can be hard to see which table maps to which class / method.</li>
+                <li>Examples can only be in tables.</li>
+                <li>Document authors need to be aware of the way Fit processes the document.</li>
+            </ul>
+        </td>
+        <td>
+            Explicit (but hidden) instrumentation in the
+            document performs the mapping.
+
+            <p>Pros:</p>
+            <ul>
+                <li>Fixture code is clean and simple.</li>
+                <li>Obvious what is called and when.</li>
+                <li>Any HTML can be instrumented - paragraphs, lists, tables etc.</li>
+                <li>Authors can focus on making documents readable
+                    without having to worry about how they are going
+                    to be processed.</li>
+            </ul>
+
+            <p>Cons:</p>
+            <ul>
+                <li>Requires an HTML source document.</li>
+            </ul>
+
+        </td>
+    </tr>
+    <tr>
+        <th class="vertical">Storage of specifications</th>
+        <td>Fit: File system<br />Fitnesse: Wiki</td>
+        <td>In a Java source folder (I usually have folders "src", "test" and "spec").
+            The advantage is that the specification and its corresponding
+            fixture are always together, and can be stored under version
+            control with the rest of the code.
+        </td>
+    </tr>
+    <tr>
+        <th class="vertical">Integration</th>
+        <td>Separate runner</td>
+        <td>Run using JUnit</td>
+    </tr>
+    <tr>
+        <th class="vertical">Platforms</th>
+        <td>Java, .net, Python, Ruby, perl, Smalltalk, C++</td>
+        <td>Java,
+        <a class="externalLink" href="http://code.google.com/p/concordion-net/">.net</a>,
+        <a class="externalLink" href="http://code.google.com/p/pyconcordion/">Python</a>,
+        <a class="externalLink" href="http://rubyforge.org/projects/ruby-concordion/">Ruby</a>
+        <a class="externalLink" href="https://github.com/tom/accordion-scala">Scala</a>
+        </td>
+    </tr>
+    <tr>
+        <th class="vertical">Time to Learn</th>
+        <td>I don't know. It took me several weeks and the book to really understand it!</td>
+        <td>About 30 mins</td>
+    </tr>
+</table>
+
+
+<div class="memo">
+
+
+<a name="comparisonWithSelenium"> </a>
+<h3>How does Concordion differ from Selenium?</h3>
+<p>
+<a class="externalLink" href="http://seleniumhq.org/">Selenium</a>
+is a test scripting tool for driving web browsers.
+Concordion is a specification tool and hides scripting activity inside
+Java fixture code. For tests that exercise the browser, we recommend 
+<a class="externalLink" href="http://seleniumhq.org/projects/webdriver/">Selenium WebDriver</a> 
+with Concordion.
+</p>
+<p>
+    The <a href="Download.html#concordion-extensions-demo"/>concordion-extensions-demo</a> 
+    project demonstrates Concordion working with Selenium WebDriver.
+  </p>
+
+
+<a name="scriptVsSpecify"> </a>
+<h3>What is the difference between scripting and specifying?</h3>
+<p>
+See <a href="Technique.html">here</a> for an explanation.
+</p>
+
+
+<a name="groovyJRuby"> </a>
+<h3>Why not use Groovy, JRuby or some other scripting language in
+the instrumentation?</h3>
+<p>
+Experience from trial and error.
+</p>
+<p>The first prototype of Concordion did indeed use Groovy in the
+instrumentation. With that kind of power available I found that I
+couldn't help putting scripting into the instrumentation. At first
+this was fine, but after a while I found that I was frequently having
+to change the instrumentation during refactoring. The IDE didn't
+give much assistance and I realised what I was doing was a mistake.
+</p>
+<p>
+The place for scripting is in the Java fixture code, not in the
+instrumentation. Once this realisation dawned on me, having a
+powerful expression language in the instrumentation was pointless,
+at best, and dangerously misleading, at worst, so I worked to cut
+the language down to a bare minimum. The only thing the
+instrumentation needs to do is call methods on the fixture.
+All the scripting logic should be in the fixture.
+</p>
+<p>
+This separation of concerns means that the HTML files rarely change
+and you have the full power of Java for scripting and removing
+duplication. It also means that you can hook the specification in
+at any level you like from unit to system level without having to
+change the instrumentation. For example, you might gradually move
+your tests from testing through the UI to testing the domain layer
+directly as it emerges.
+</p>
+
+<a name="htmlClumsy"> </a>
+<h3>Isn't HTML a bit clumsy?</h3>
+<p>
+Yes, it is a bit, but not nearly as much as you might think. Once you have
+a page template (there's one in the tutorial) you just have to fill in the
+wording. You don't have to use many tags; &lt;p&gt;, &lt;span&gt;, &lt;table&gt;,
+&lt;tr&gt;, &lt;th&gt;, and &lt;td&gt; are probably all you need. Improved
+IDE tool support is on my to-do list, however.
+</p>
+<p>
+Concordion works well where authorship of the documents is a collaborative
+effort (developer + tester + analyst) rather than something that analysts
+or testers do on their own. If you produce the specifications as a group
+there'll usually be someone who's comfortable writing HTML. If not, it's not
+particularly difficult to learn.
+</p>
+
+<a name="whyNotWiki"> </a>
+<h3>Why not use a wiki or Word documents instead?</h3>
+<p>
+I shied away from a Wiki because it involves much more set-up and maintenance.
+Wikis also tend to have poor version control.
+</p>
+<p>
+The advantage of HTML over Word docs is that it's easier to link between
+pages and it's a more open format.
+</p>
+
+<a name="toolSupport"> </a>
+<h3>Are there any tools to help me edit Concordion specifications?</h3>
+<p>
+The <a href="http://code.google.com/p/concordion-eclipse/">Concordion Eclipse Plugin</a>, developed and maintained by <a href="http://devnotesblog.wordpress.com/">matf</a>,
+provides content assist and validation for Concordion Specs in Eclipse.
+</p>
+
+<a name="extension"> </a>
+<h3>Can I extend Concordion with my own commands?</h3>
+<p>
+Yes. See <a target="specs" href="Extensions.html">here</a> for details.
+</p>
+
+<a name="storyDrivenProcess"> </a>
+<h3>Can you outline a story-driven process with Concordion?</h3>
+<p>
+<img style="padding: 10px 0px 28px 0px;" src="image/faq/StoryDeliveryLifecycle.png"
+  alt="Story Delivery Lifecycle (diagram)"/>
+</p>
+
+
+<p>
+This process has worked well for me.
+Writing specifications removes ambiguity so that when the product
+owner decides, "OK, that's good enough for this iteration", there's
+agreement about exactly what "done" means.
+</p>
+
+<p>
+Locking down the scope gives stability. If you didn't think of something
+during the initial discussion it can probably wait until the next
+iteration. If not, you can agree as a team to add it, but behaviour
+can't just be "slipped in" casually.
+</p>
+
+<p>
+<a class="pdfLink" href="memo/StoryDeliveryLifecycle.pdf">PDF version of diagram</a>
+</p>
+
+
+<a name="untestable"> </a>
+<h3>What can't Concordion test?</h3>
+<p>
+Lots of things (e.g. how pretty a user interface is). However, as
+a rule of thumb, if you can test it with JUnit then you can test it
+with Concordion.
+</p>
+
+<a name="miniWaterfall"> </a>
+<h3>Is your recommended process like a series of mini waterfalls?</h3>
+<p>
+No. It's acceptance test-driven development (ATDD).
+The concrete examples in active specifications are acceptance
+tests. The idea is that you write them before you write the code.
+</p>
+
+<p>
+The <a class="externalLink" href="http://agilemanifesto.org/">Agile Manifesto</a>
+says there is "value in the items on the right" but they "value the items on the left more".
+Concordion helps you to support and boost the items on the left
+by extracting the value from the items on the right
+without succumbing to their downsides.
+</p>
+
+
+<a name="ownDogFood"> </a>
+<h3>Does Concordion itself have active specifications?</h3>
+<p>
+Yes, it has <a target="specs" href="dist/1.4.3/test-output/concordion/spec/concordion/command/assertEquals/AssertEquals.html">quite a few</a>.
+Obviously to begin with I didn't have the tool, so there are a lot of gaps!
+</p>
+
+
+</div> <!-- memo -->
+
+
+</div> <!-- content -->
+
+</div> <!-- page -->
+
+<div class="copyright">
+ &nbsp; Copyright &copy; 2007-2013
+ <a href="http://www.davidpeterson.co.uk">David Peterson</a>. All rights reserved.
+</div> <!-- copyright -->
+
+</body>
+</html>

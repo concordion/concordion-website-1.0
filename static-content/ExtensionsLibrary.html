@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Concordion - Extensions Library</title>
+<link media="all" rel="stylesheet" type="text/css" href="css/default.css"/>
+<link media="print"  rel="stylesheet" type="text/css" href="css/print.css"/>
+<link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico" />
+<style>
+.extensionLabel {
+  font-weight: bold;
+}
+</style>
+</head>
+<body>
+
+<div class="page">
+
+<div class="header">
+
+    <a href="http://www.opensource.org/">
+    <img class="open-source-logo" src="image/opensource-110x95.png"
+        alt="Open source (Apache 2.0 license)" />
+    </a>
+
+    <a href="/">
+    <img src="image/front-page-banner.png"
+        alt="Concordion is a simple, but powerful, agile acceptance testing tool for Java." />
+    </a>
+
+</div><!-- header -->
+
+<div class="menuBar">
+
+<ul class="menu">
+  <li><a href="/">Home</a></li>
+  <li><a href="Tutorial.html">Tutorial</a></li>
+  <li><a href="Technique.html">Hints and Tips</a></li>
+  <li><a href="Extensions.html">Extensions API</a></li>
+  <li class="selectedTab"><a href="ExtensionsLibrary.html">Extensions Library</a></li>
+  <li><a href="Download.html">Download</a></li>
+  <li><a href="Questions.html">FAQ</a></li>
+</ul>
+
+</div><!-- menuBar  -->
+
+<div class="content">
+
+
+<h1>Extensions Library</h1>
+
+<p class="subtext">
+The optional <a class="externalLink" href="http://code.google.com/p/concordion-extensions/">concordion-extensions</a>
+library contains pre-built extensions that take advantage of the <a href="Extensions.html">Extensions API</a>.
+It was developed and is maintained by <a class="externalLink" href="http://gplus.to/NigelCharman/about">Nigel Charman</a>.
+</p>
+
+<p>
+The <a href="http://code.google.com/p/concordion-extensions/source/checkout">full source code</a> (Apache 2 license)
+is available, which may be useful as a starting point for developing your own extensions.
+</p>
+
+<h2>Pre-built extensions</h2>
+
+<ul>
+  <li><a class="extensionLabel" href="extensions/ScreenshotExtension.html">Screenshot Extension</a>
+  &#8212; add screenshots to Concordion output to diagnose problems or improve the documentation
+  <div style="padding: 10px;">
+  <img id="screenshot" src="image/extensions/ScreenshotSmall.png"/>
+  </div>
+  </li>
+  <li><a class="extensionLabel" href="extensions/LoggingTooltipExtension.html">Logging Extension</a>
+  &#8212; add logging information as tooltips to the Concordion output
+  <div style="padding: 10px;">
+  <img id="loggingTooltip" src="image/extensions/LoggingTooltipSmall.png"/>
+  </div>
+  </li>
+  <li><a class="extensionLabel" href="extensions/TimestampFormatterExtension.html">Timestamp Formatter Extension</a>
+  &#8212; change the footer of the Concordion output to show hours, minutes and seconds
+  </li>
+  <li><a class="extensionLabel" href="extensions/TranslatorExtension.html">Translator Extension</a>
+  &#8212; modify the text of exception messages
+  </li>
+  <li><a class="extensionLabel" href="extensions/EmbedExtension.html">Embed Extension</a>
+  &#8212; embed HTML in the Concordion output
+  </li>
+</ul>
+
+<h2><a name="Installation"/>Installation</h2>
+<p>The concordion-extensions JAR file must be added to the classpath. It is available from the <a href="Download.html#extensionsLibrary">download</a> page, or from <a href="http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.concordion%22%20AND%20a%3A%22concordion-extensions%22">Maven Central</a>.
+</p>
+
+<h2><a name="Sample_Project"/>Example project</h2>
+<p>The extensions example project demonstrates the Screenshot, Logging Tooltip and Translator extensions using Concordion and Selenium WebDriver for end-to-end browser testing.</p>
+<p>This project can be downloaded from the <a class="externalLink" href="http://code.google.com/p/concordion-extensions/downloads/list">concordion-extension downloads</a> page (the <tt>concordion-extensions-demo</tt>
+zip file), or can be obtained from the <a class="externalLink" href="http://code.google.com/p/concordion-extensions/source/browse/#hg%2Fexamples%2Fselenium2">source</a> repository. It includes
+Gradle and Maven builds to download dependencies and build the project.
+See the README.html file in the download for instructions.</p>
+
+<h2><a name="Issues"/>Issues and discussion</h2>
+<p>Feel free to discuss concordion-extensions on the main Concordion <a class="externalLink" href="http://tech.groups.yahoo.com/group/concordion/join">mailing list</a>.</p>
+<p>Issues should be reported to the <a class="externalLink" href="http://code.google.com/p/concordion-extensions/issues/list">concordion-extensions issue list</a>.</p>
+
+
+
+
+</div> <!-- content -->
+
+</div> <!-- page -->
+
+<div class="copyright">
+ &nbsp; Copyright &copy; 2007-2013
+ <a href="http://www.davidpeterson.co.uk">David Peterson</a>. All rights reserved.
+</div> <!-- copyright -->
+
+</body>
+</html>

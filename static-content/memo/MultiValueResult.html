@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Concordion - MultiValueResult</title>
+<link media="all" rel="stylesheet" type="text/css" href="../css/default.css"/>
+<link media="print"  rel="stylesheet" type="text/css" href="../css/print.css"/>
+<style>
+pre.java {
+  background-color: #f7f7f7;
+  padding-left: 32px;
+  border-left: 2px solid #eee;
+}
+
+/* Java keyword */
+.java b {
+  color: #7f0055;
+  font-weight: bold;
+}
+
+/* Java comment */
+.java cite {
+  color: #3f7f5f;
+  font-style: normal;
+  font-weight: normal;
+}
+/* Java string */
+.java var {
+  color: #2a00ff;
+  font-style: normal;
+  font-weight: normal;
+}
+/* Java annotation */
+.java kbd {
+  color: #646464;
+  font-style: normal;
+  font-weight: normal;
+}
+.postedBy {
+  margin-top: 32px;
+  color: #777;
+  font-size: 8pt;
+}
+</style>
+</head>
+<body>
+
+<div class="page">
+
+<div class="content">
+
+
+<h1>MultiValueResult</h1>
+
+<p>
+I've added a <a href="http://code.google.com/p/concordion/source/browse/trunk/concordion/src/main/java/org/concordion/api/MultiValueResult.java">MultiValueResult</a> class to
+make it easier to return multiple results from a fixture method. You no longer have to create inner classes.
+</p>
+
+<p>
+For example, the following fixture code:
+</p>
+
+
+<pre class="java">
+<span class="keyword">package</span> example;
+
+<span class="keyword">import</span> org.concordion.integration.junit4.ConcordionRunner;
+<span class="keyword">import</span> org.junit.runner.RunWith;
+
+@RunWith(ConcordionRunner.<span class="keyword">class</span>)
+<span class="keyword">public class</span> SplittingNamesTest {
+
+    <span class="keyword">public</span> Result split(String fullName) {
+        Result result = <span class="keyword">new</span> Result();
+        String[] words = fullName.split(<span class="string">" "</span>);
+        result.firstName = words[0];
+        result.lastName = words[1];
+        <span class="keyword">return</span> result;
+    }
+
+    <span class="keyword">class</span> Result {
+        <span class="keyword">public</span> String firstName;
+        <span class="keyword">public</span> String lastName;
+    }
+}
+</pre>
+
+<p>
+... can be simplified to this:
+</p>
+
+
+<pre class="java">
+<span class="keyword">package</span> example;
+
+<span class="keyword">import</span> org.concordion.integration.junit4.ConcordionRunner;
+<span class="keyword">import</span> org.junit.runner.RunWith;
+<span class="keyword">import static</span> org.concordion.api.MultiValueResult.*;
+
+@RunWith(ConcordionRunner.<span class="keyword">class</span>)
+<span class="keyword">public class</span> SplittingNamesTest {
+
+    <span class="keyword">public</span> MultiValueResult split(String fullName) {
+        String[] words = fullName.split(<span class="string">" "</span>);
+        <span class="keyword">return</span> <em>multiValueResult()</em>
+                  .with(<span class="string">"firstName"</span>, words[0])
+                  .with(<span class="string">"lastName"</span>, words[1]);
+    }
+}
+</pre>
+
+<p>
+The same HTML works for both methods. You can reference the properties of the
+MultiValueResult as if they were bean properties.
+</p>
+
+<pre class="html">
+&lt;html xmlns:concordion="http://www.concordion.org/2007/concordion"&gt;
+
+    &lt;head&gt;
+        &lt;link href="../concordion.css" rel="stylesheet" type="text/css" /&gt;
+    &lt;/head&gt;
+
+    &lt;body&gt;
+
+        &lt;h1&gt;Splitting Names&lt;/h1&gt;
+
+        &lt;p&gt;
+            To help personalise our mailshots we want to have the first name
+            and last name of the customer. Unfortunately the customer data
+            that we are supplied only contains full names.
+        &lt;/p&gt;
+
+        &lt;p&gt;
+            The system therefore attempts to break a supplied full name into
+            its constituents by splitting around whitespace.
+        &lt;/p&gt;
+
+        &lt;div class="example"&gt;
+
+            &lt;h3&gt;Example&lt;/h3&gt;
+
+            &lt;p&gt;
+                The full name
+                &lt;span concordion:execute="#result = split(#TEXT)"&gt;John Smith&lt;/span&gt;
+                will be broken into first name
+                &lt;span concordion:assertEquals="#result.firstName"&gt;John&lt;/span&gt;
+                and last name
+                &lt;span concordion:assertEquals="#result.lastName"&gt;Smith&lt;/span&gt;.
+            &lt;/p&gt;
+
+        &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+
+
+<p class="postedBy">
+Posted by David Peterson on 02-Feb-2012 18:36:10
+</p>
+
+
+
+</div>
+</div>
+</body>
+</html>

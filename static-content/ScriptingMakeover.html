@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Concordion - Scripting Makeover</title>
+<link media="all" rel="stylesheet" type="text/css" href="css/default.css"/>
+<link media="print"  rel="stylesheet" type="text/css" href="css/print.css"/>
+<link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico" />
+</head>
+<body>
+
+
+<div class="page">
+
+<div class="header">
+
+    <a href="http://www.opensource.org/">
+    <img class="open-source-logo" src="image/opensource-110x95.png"
+        alt="Open source (Apache 2.0 license)" />
+    </a>
+
+    <a href="/">
+    <img src="image/front-page-banner.png"
+        alt="Concordion is a simple, but powerful, agile acceptance testing tool for Java." />
+    </a>
+
+</div><!-- header -->
+
+<div class="menuBar">
+
+<ul class="menu">
+  <li><a href="/">Home</a></li>
+  <li><a href="Tutorial.html">Tutorial</a></li>
+  <li><a href="Technique.html">Hints and Tips</a></li>
+  <li><a href="Extensions.html">Extensions API</a></li>
+  <li><a href="ExtensionsLibrary.html">Extensions Library</a></li>
+  <li><a href="Download.html">Download</a></li>
+  <li><a href="Questions.html">FAQ</a></li>
+</ul>
+
+</div><!-- menuBar  -->
+
+<div class="content">
+
+
+
+
+    <h1>Scripting Makeover</h1>
+
+<div class="memo">
+<p class="subtext">
+This makeover contrasts a typical Fit/FitNesse test with the Concordion
+equivalent specification.
+</p>
+
+<h1>Before</h1>
+
+<p>
+    Fitnesse is a wiki-based system and has acceptance tests covering
+    its wiki syntax. This example (taken from its website&#185;)
+    covers the syntax for bold text:
+</p>
+
+
+<p>
+<img src="image/concept/fitnesse/BoldText-FitNesse.png" alt="FitNesse before (scripting)"/>
+</p>
+
+<p>
+    This is a <b>test script</b>. It tells you <b>how to test</b> the
+    bold text feature.
+</p>
+
+<p>
+    The test also includes several unexplained table cells. For
+    example, what are "page attributes" and what does "valid?" mean
+    in this context? These kinds of irrelevant details often occur
+    in Fit/FitNesse tests because the standard usage pattern is to
+    create a handful of generic fixtures and copy-and-paste them.
+</p>
+
+<br />
+
+<h1>After</h1>
+
+<p>
+    The equivalent Concordion active specification is written at a more
+    abstract level. It doesn't care how you test it, it just tells you
+    what's supposed to happen:
+</p>
+
+<p>
+<img src="image/concept/fitnesse/BoldText-Concordion.png" alt="Concordion (specifying)"/>
+</p>
+
+<p>
+    This is a <b>specification</b>. It <b>describes the behaviour and gives an example</b>.
+</p>
+
+<p>
+    Behind the scenes, the first &lt;pre&gt; will be instrumented to set a temporary variable:
+</p>
+<pre class="html">
+concordion:set="#wikiText"
+</pre>
+<p>
+    The second &lt;pre&gt; element will check the result:
+</p>
+<pre class="html">
+concordion:assertEquals="renderAsHTML(#wikiText)"
+</pre>
+
+<p>
+    And all the scripting necessary to render the wiki text will be
+    hidden away in the accompanying Java fixture:
+</p>
+
+
+<pre class="java">
+import org.concordion.integration.junit3.ConcordionTestCase;
+
+public class BoldTextTest extends ConcordionTestCase {
+
+    public String renderAsHTML(String wikiText) {
+        // TODO
+    }
+}
+</pre>
+
+</div>
+
+
+<p style="border-top: 1px solid black; padding: 4px; margin-top: 30px">
+&#185; Source: <a href="http://fitnesse.org/FitNesse.SuiteAcceptanceTests.SuiteWidgetTests.TestBoldText">http://fitnesse.org/FitNesse.SuiteAcceptanceTests.SuiteWidgetTests.TestBoldText</a> [23 Oct 2007]</p>
+
+</div> <!-- content -->
+
+</div> <!-- page -->
+
+<div class="copyright">
+ &nbsp; Copyright &copy; 2007-2013
+ <a href="http://www.davidpeterson.co.uk">David Peterson</a>. All rights reserved.
+</div> <!-- copyright -->
+
+</body>
+</html>

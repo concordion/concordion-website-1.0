@@ -1,0 +1,1419 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Concordion - Tutorial</title>
+<link media="all" rel="stylesheet" type="text/css" href="css/default.css"/>
+<link media="print"  rel="stylesheet" type="text/css" href="css/print.css"/>
+<link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico" />
+<style>
+code a {
+  font-family: Courier New, Courier, Monospace;
+}
+h3 {
+  margin-top: 32px;
+}
+.section {
+  margin-top: 60px;
+  border-bottom: 1px dotted black;
+  padding-bottom: 8px;
+}
+.helpfulNote {
+  border: 1px solid gray;
+  padding: 8px;
+  margin-top: 30px;
+  background-color: #fffff0;
+  width: 600px;
+}
+.language {
+  margin-bottom: 12px;
+}
+.languageSelector {
+  float: right;
+  margin: 12px 0px 32px 32px;
+  font-size: 8pt;
+}
+.feature {
+  padding-bottom: 20px;
+  padding-top: 10px;
+  clear: both;
+}
+</style>
+</head>
+<body>
+
+<div class="page">
+
+<div class="header">
+
+    <a href="http://www.opensource.org/">
+    <img class="open-source-logo" src="image/opensource-110x95.png"
+        alt="Open source (Apache 2.0 license)" />
+    </a>
+
+    <a href="/">
+    <img src="image/front-page-banner.png"
+        alt="Concordion is a simple, but powerful, agile acceptance testing tool for Java." />
+    </a>
+
+</div><!-- header -->
+
+<div class="menuBar">
+
+<ul class="menu">
+  <li><a href="/">Home</a></li>
+  <li class="selectedTab"><a href="Tutorial.html">Tutorial</a></li>
+  <li><a href="Technique.html">Hints and Tips</a></li>
+  <li><a href="Extensions.html">Extensions API</a></li>
+  <li><a href="ExtensionsLibrary.html">Extensions Library</a></li>
+  <li><a href="Download.html">Download</a></li>
+  <li><a href="Questions.html">FAQ</a></li>
+</ul>
+
+</div><!-- menuBar  -->
+
+<div class="content">
+
+    <div class="languageSelector">
+        <center>
+        <div class="language">
+        <a href="Tutorial.html"><img border="0" src="image/shared/Flag_en.png"/></a>
+        <a href="Tutorial.html"><br/>in English</a>
+        </div>
+        <div class="language">
+        <a href="Tutorial_es.html"><img border="0" src="image/shared/Flag_es.png"/></a>
+        <a href="Tutorial_es.html"><br/>en espa&#241;ol</a>
+        </div>
+        <div class="language">
+        <a href="http://science.webhostinggeeks.com/concordion"><img border="0" src="image/shared/Flag_hr.png"/></a>
+        <br /><a class="extenalLink" href="http://science.webhostinggeeks.com/concordion">Serbo-Croatian</a>
+        <br /><span style="font-size: 10px">(translated by<br />Jovana Milutinovich)</span>
+        </div>
+        </center>
+    </div>
+
+    <h1>Tutorial</h1>
+
+<p>
+    This guide explains the basic mechanics of turning specifications
+    into <em>active specifications</em> using Concordion. It shouldn't
+    take you more than 15-30 mins to complete, assuming you are already
+    familiar with Java, JUnit and XHTML.
+</p>
+
+<ul class="toc">
+    <li><a href="#installation">Installation</a></li>
+    <li><a href="#basics">The Basics</a></li>
+    <li><code><a href="#assertEquals">concordion:assertEquals</a></code></li>
+    <li><code><a href="#set">concordion:set</a></code></li>
+    <li><code><a href="#execute">concordion:execute</a></code></li>
+    <li><code><a href="#executeTable">concordion:execute on a &lt;table&gt;</a></code></li>
+    <li><code><a href="#verifyRows">concordion:verifyRows</a></code></li>
+</ul>
+
+<p>
+    Once you are comfortable with the basic mechanics, you might like to look at some <a href="#advanced">Advanced Features</a>.
+</p>
+
+<a name="installation" />
+<h2 class="section">Installation</h2>
+
+<p>
+To kickstart the tutorial, we've created a "Hello World!" project with the following
+structure:
+</p>
+
+<img src="image/tutorial/ProjectStructure.png" />
+
+<p>
+Download: <a href="http://concordion.googlecode.com/files/concordion-kickstart-1.4.3.zip">concordion-kickstart-1.4.3.zip</a>
+</p>
+
+<p>
+It contains the latest stable version of Concordion and all its dependencies, a
+simple "Hello World!" example and a basic Ant build file.
+</p>
+
+<style>
+.spread {
+  margin-left: 30px;
+}
+.spread tr td {
+  padding-bottom: 8px;
+}
+</style>
+
+<table class="spread">
+<tr>
+    <td valign="top" style="padding-right: 10px"><img src="image/shared/1.png"/></td>
+    <td valign="top" ><code>"Greeter.java"</code> is the class we want to test</td>
+</tr>
+<tr>
+    <td valign="top" style="padding-right: 10px"><img src="image/shared/2.png"/></td>
+    <td valign="top" ><code>"specs"</code> is a source folder for the acceptance tests. JUnit tests are typically held in a folder <code>"test"</code>
+    but we prefer the name <code>"specs"</code>, for the Concordion acceptance tests, to emphasise the fact that
+    these tests are concerned with <i>external</i> behaviour.
+    </td>
+</tr>
+<tr>
+    <td valign="top" style="padding-right: 10px"><img src="image/shared/3.png"/></td>
+    <td valign="top" ><code>"HelloWorldFixture.java"</code> is a JUnit test. We'll explain how this works, below.
+    </td>
+</tr>
+<tr>
+    <td valign="top" style="padding-right: 10px"><img src="image/shared/4.png"/></td>
+    <td valign="top" ><code>"HelloWorld.html"</code> is the Concordion specification and is processed by the <code>"HelloWorldFixture.java"</code> test. The name of the test fixture and the HTML share the same base name. The test fixture has an optional suffix of <code>"Fixture"</code> or <code>"Test"</code> - for example, it may be named <code>"HelloWorld.java"</code>, <code>"HelloWorldFixture.java"</code> or <code>"HelloWorldTest.java"</code>.
+    </td>
+</tr>
+<tr>
+    <td valign="top" style="padding-right: 10px"><img src="image/shared/5.png"/></td>
+    <td valign="top" ><code>"concordion.css"</code> is a stylesheet to make the specs look nice while you're writing them.
+    </td>
+</tr>
+</table>
+
+
+<p>
+    Concordion requires JDK 5.0 or above and the following JARs on the classpath:
+</p>
+
+<ul>
+    <li><b>concordion-1.4.3.jar</b></li>
+    <li><b>junit-4.11.jar</b> (or <b>junit-3.8.2.jar</b>)</li>
+    <li><b>hamcrest-core-1.3.jar</b> (required for JUnit 4.11 or later)</li>
+    <li><b>ognl-2.6.9.jar</b></li>
+    <li><b>xom-1.2.5.jar</b></li>
+</ul>
+
+<p>These dependencies are included in the distribution.</p>
+
+
+<a name="basics"/>
+<h2 class="section">The Basics</h2>
+
+<p>
+    A Concordion active specification consists of two parts: (i) a well-formed XHTML
+    document describing the functionality, and (ii) fixture code written in Java
+    (a special Concordion extension of a standard JUnit test case) that finds concrete examples in the document
+    and uses them to verify the system under test. Both files must be in the same package.
+</p>
+
+<p>
+    In order for the magic to happen, the document must first be <em>instrumented</em>
+    with commands.
+</p>
+
+<p>
+    Concordion commands are specified as attributes on elements in the XHTML
+    document. Web browsers ignore attributes that they don't understand, so these
+    commands are effectively invisible.
+</p>
+
+<p>
+    The commands use a <code>"concordion"</code> namespace defined at the top of
+    each document as follows:
+</p>
+
+<pre class="html">
+&lt;html xmlns:concordion="http://www.concordion.org/2007/concordion"&gt;
+</pre>
+
+
+<p>
+    Let's start with a really simple example...
+</p>
+
+<a name="assertEquals"/>
+<h2 class="section">concordion:assertEquals</h2>
+
+<ol>
+    <li>
+        Create a Java package called <code>"example"</code>.
+    </li>
+
+    <li>
+        Create a file <code>"HelloWorld.html"</code> inside the package
+        containing:
+
+<pre class="html">
+&lt;html&gt;
+    &lt;body&gt;
+        &lt;p&gt;Hello World!&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+    </li>
+
+    <li>
+        Now instrument the file as follows:
+
+<pre class="html">
+&lt;html <b>xmlns:concordion="http://www.concordion.org/2007/concordion"</b>&gt;
+    &lt;body&gt;
+        &lt;p <b>concordion:assertEquals="getGreeting()"</b>&gt;Hello World!&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+    </li>
+
+    <li>
+        In the same <code>example</code> package, create a Java file
+        <code>"HelloWorldFixture.java"</code> containing:
+
+<pre class="java">
+<span class="keyword">package</span> example;
+
+<span class="keyword">import</span> org.concordion.integration.junit4.ConcordionRunner;
+<span class="keyword">import</span> org.junit.runner.RunWith;
+
+@RunWith(ConcordionRunner.class)
+<span class="keyword">public class</span> HelloWorldFixture {
+
+    <span class="keyword">public</span> String getGreeting() {
+        <span class="keyword">return</span> <span class="string">"Hello World!"</span>;
+    }
+}
+</pre>
+
+    <li>
+        Now run the <code>HelloWorldFixture</code> class using JUnit.
+    </li>
+</ol>
+
+<p>
+    If you've done it right, JUnit should give you a green bar and a message like
+    this should be printed to the console:
+</p>
+
+<pre class="console">
+C:\temp\concordion\example\HelloWorld.html
+Successes: 1  Failures: 0
+</pre>
+
+<p>
+    The message shows the path of the output (results) file for the
+    test and a summary of success and failure counts. By default, Concordion
+    outputs to the directory specified by the system property
+    <code>java.io.tmpdir</code>.
+</p>
+
+<p>
+    Open the output file in a browser and you should see the
+    same content as the input document but with the words <code>Hello World!</code>
+    highlighted in green.
+</p>
+
+    <img style="padding-right: 0px" src="image/tutorial/HelloWorldSuccess.png" alt="Hello World! successful outcome"/>
+
+
+
+<h3>Java Bean Properties</h3>
+
+<p>
+    In the example above, the call to <code>"getGreeting()"</code> can
+    be simplified to <code>"greeting"</code> since Concordion's
+    expression language understands simple bean properties.
+</p>
+
+<pre class="html">
+&lt;html xmlns:concordion="http://www.concordion.org/2007/concordion"&gt;
+    &lt;body&gt;
+        &lt;p <b>concordion:assertEquals="greeting"</b>&gt;Hello World!&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+
+<a name="set"/>
+<h2 class="section">concordion:set</h2>
+
+<p>
+    Given a specification like this:
+</p>
+
+<pre class="html">
+&lt;html&gt;
+    &lt;body&gt;
+        &lt;p&gt;
+            The greeting for user Bob will be: Hello Bob!
+        &lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<p>
+    We want the first name ("Bob") to be a parameter
+    and the greeting ("Hello Bob!") to be verified against
+    the result returned by the system.
+</p>
+
+<p>
+    To do this we place <code>&lt;span&gt;</code> tags around the two
+    significant pieces of text in the document. In HTML,
+    <code>&lt;span&gt;</code> tags don't have any effect on the
+    display of the output document.
+</p>
+
+<pre class="html">
+&lt;html&gt;
+    &lt;body&gt;
+        &lt;p&gt;
+            The greeting for user <b>&lt;span&gt;</b>Bob<b>&lt;/span&gt;</b>
+            will be: <b>&lt;span&gt;</b>Hello Bob!<b>&lt;/span&gt;</b>
+        &lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<p>
+    Now we can instrument the document:
+</p>
+
+<pre class="html">
+&lt;html <b>xmlns:concordion="http://www.concordion.org/2007/concordion"</b>&gt;
+    &lt;body&gt;
+        &lt;p&gt;
+            The greeting for user &lt;span <b>concordion:set="#firstName"</b>&gt;Bob&lt;/span&gt;
+            will be:
+            &lt;span <b>concordion:assertEquals="greetingFor(#firstName)"</b>&gt;Hello Bob!&lt;/span&gt;
+        &lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<p>
+    When Concordion processes the document, it will set a temporary
+    variable <code>#firstName</code> to be the value <code>"Bob"</code> and then
+    call the <code>greetingFor()</code> method with that value
+    and check that the result is equal to <code>"Hello Bob!"</code>.
+</p>
+
+<p>
+    Our Java fixture code will need to be updated:
+</p>
+
+<pre class="java">
+<span class="keyword">package</span> example;
+
+<span class="keyword">import</span> org.concordion.integration.junit4.ConcordionRunner;
+<span class="keyword">import</span> org.junit.runner.RunWith;
+
+@RunWith(ConcordionRunner.class)
+<span class="keyword">public class</span> HelloWorldFixture {
+
+    <span class="keyword">public</span> String greetingFor(String firstName) {
+        <span class="keyword">return</span> <span class="string">"TODO"</span>;
+    }
+}
+</pre>
+
+<p>
+    Just as you do when writing unit tests, always make
+    the test fail before you make it pass - to give yourself
+    confidence that it's actually testing something.
+
+    With the code as it stands you should get a failure (we are
+    expecting "Hello Bob!" but get "TODO").
+</p>
+
+<p>
+    Now fix the code:
+</p>
+
+<pre class="java">
+<span class="keyword">package</span> example;
+
+<span class="keyword">import</span> org.concordion.integration.junit4.ConcordionRunner;
+<span class="keyword">import</span> org.junit.runner.RunWith;
+
+@RunWith(ConcordionRunner.class)
+<span class="keyword">public class</span> HelloWorldFixture {
+
+    <span class="keyword">public</span> String greetingFor(String firstName) {
+        <span class="keyword">return</span> <span class="string">"Hello "</span> + firstName + <span class="string">"!"</span>;
+    }
+}
+</pre>
+
+<p>
+    Obviously in a real application, the implementation of <code>greetingFor()</code>
+    would be quite different. The behaviour would not be implemented here, but
+    in the system code and the fixture would simply call into the system. It might
+    do this at the system level or at a lower level. It may even call in at the unit
+    level, if writing a system test would be too slow or unwieldy.
+</p>
+
+
+<a name="execute"/>
+<h2 class="section">concordion:execute</h2>
+
+<p>
+    The execute command has three main uses:
+</p>
+
+<ol>
+    <li><a href="#executeVoid">Executing an instruction with a "void" result</a>.</li>
+    <li><a href="#executeObjectResult">Executing an instruction with an object result</a>
+    (to allow multiple properties of the object to be checked).
+    </li>
+    <li><a href="#executeUnusualSentences">Handling unusual sentence structures</a>.</li>
+</ol>
+
+
+
+<a name="executeVoid" />
+<h3>Executing an instruction with a <code>void</code> result</h3>
+
+<p>
+    It can occasionally be useful to execute an
+    instruction that sets up some system state. Every time you do
+    this, however, alarm bells should ring in your head and you should question
+    yourself to make sure that you are not inadvertently writing
+    a script instead of a specification. E.g. a call to <code>"clearDatabase()"</code>
+    would be a blatant misuse (see <a href="Technique.html">Technique</a> for more on this topic).
+</p>
+
+<p>
+    As a rule of thumb, methods with a <code>void</code> result
+    called from an <code>execute</code> should start with the word
+    <code>set</code> or <code>setUp</code>. E.g. <code>setUpUser(#username)</code>.
+</p>
+
+
+<p>
+    Take the following specification for example:
+</p>
+
+<pre class="html">
+&lt;html <b>xmlns:concordion="http://www.concordion.org/2007/concordion"</b>&gt;
+    &lt;body&gt;
+        &lt;p&gt;
+            If the time is
+            &lt;span <b>concordion:set="#time"</b>&gt;09:00AM&lt;/span&gt;
+            &lt;span <b>concordion:execute="setCurrentTime(#time)"</b> /&gt;
+            then the greeting will say:
+            &lt;span <b>concordion:assertEquals="getGreeting()"</b>&gt;Good Morning World!&lt;/span&gt;
+        &lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<p>
+    Our Java fixture code will look like this:
+</p>
+
+<pre class="java">
+<span class="keyword">package</span> example;
+
+<span class="keyword">import</span> org.concordion.integration.junit4.ConcordionRunner;
+<span class="keyword">import</span> org.junit.runner.RunWith;
+
+@RunWith(ConcordionRunner.class)
+<span class="keyword">public class</span> HelloWorldFixture {
+
+    <span class="keyword">public void</span> setCurrentTime(String time) {
+        <span class="comment">// TODO</span>
+    }
+
+    <span class="keyword">public</span> String getGreeting() {
+        <span class="keyword">return</span> <span class="string">"TODO"</span>;
+    }
+}
+</pre>
+
+<p>
+    We can actually remove the need for the <code>concordion:set</code>
+    command by using the special variable <code>#TEXT</code> (which
+    contains the text of the current element). The abbreviated
+    instrumentation looks like this:
+</p>
+
+<pre class="html">
+&lt;html xmlns:concordion="http://www.concordion.org/2007/concordion"&gt;
+    &lt;body&gt;
+        &lt;p&gt;
+            If the time is
+            &lt;span <b>concordion:execute="setCurrentTime(#TEXT)"</b>&gt;09:00AM&lt;/span&gt;
+            then the greeting will say:
+            &lt;span concordion:assertEquals="getGreeting()"&gt;Good Morning World!&lt;/span&gt;
+        &lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+
+<p>
+    An alternative would be to change the
+    <code>getGreeting()</code> method signature to allow the
+    time to be passed in as a parameter. This is the approach you
+    should normally take. An <code>execute</code> with no
+    return value often indicates a "bad smell" - e.g. you're
+    writing a script or your specification contains too many
+    variables and covers too many behaviours. However, the
+    functionality is there if you need it.
+</p>
+
+
+
+
+<a name="executeObjectResult" />
+<h3>Executing an instruction with an object result</h3>
+
+<p>
+    Sometimes you need to check more than one result of a behaviour.
+    For example, here we want to check that both the first name
+    and the last name are correctly extracted from the full name:
+</p>
+
+<a name="splittingNamesSpec"/>
+<pre class="html">
+&lt;html <b>xmlns:concordion="http://www.concordion.org/2007/concordion"</b>&gt;
+
+    &lt;head&gt;
+        &lt;link href="../concordion.css" rel="stylesheet" type="text/css" /&gt;
+    &lt;/head&gt;
+
+    &lt;body&gt;
+
+        &lt;h1&gt;Splitting Names&lt;/h1&gt;
+
+        &lt;p&gt;
+            To help personalise our mailshots we want to have the first name
+            and last name of the customer. Unfortunately the customer data
+            that we are supplied only contains full names.
+        &lt;/p&gt;
+
+        &lt;p&gt;
+            The system therefore attempts to break a supplied full name into
+            its constituents by splitting around whitespace.
+        &lt;/p&gt;
+
+        &lt;div class="example"&gt;
+
+            &lt;h3&gt;Example&lt;/h3&gt;
+
+            &lt;p&gt;
+                The full name
+                &lt;span <b>concordion:execute="#result = split(#TEXT)"</b>&gt;John Smith&lt;/span&gt;
+                will be broken into first name
+                &lt;span <b>concordion:assertEquals="#result.firstName"</b>&gt;John&lt;/span&gt;
+                and last name
+                &lt;span <b>concordion:assertEquals="#result.lastName"</b>&gt;Smith&lt;/span&gt;.
+            &lt;/p&gt;
+
+        &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<p>
+    The variable <code>#result</code> is going to be an object returned
+    by the <code>split()</code> method. This object will have a
+    <code>firstName</code> and <code>lastName</code> properties.
+</p>
+
+<p>
+    Assuming our HTML file is in the <code>example</code> package and is
+    called "SplittingNames.html" then we need a Java fixture called
+    <code>SplittingNamesTest</code> (or <code>SplittingNamesFixture</code>, or just <code>SplittingNames</code>):
+</p>
+
+
+<pre class="java">
+<span class="keyword">package</span> example;
+
+<span class="keyword">import</span> org.concordion.integration.junit4.ConcordionRunner;
+<span class="keyword">import</span> org.junit.runner.RunWith;
+
+@RunWith(ConcordionRunner.class)
+<span class="keyword">public class</span> SplittingNamesTest {
+
+}
+</pre>
+
+<p>
+    If you run the fixture as it stands (i.e. empty), the output should
+    look something like this:
+</p>
+
+<div>
+<img src="image/tutorial/execute/BrokenDueToMissingFixtureCode.png" alt="Output shows a broken test (due to missing fixture code)"/>
+</div>
+
+<p>
+    It tells you what you need to do. We'll flesh out our fixture
+    code:
+</p>
+
+<pre class="java">
+<span class="keyword">package</span> example;
+
+<span class="keyword">import</span> org.concordion.integration.junit4.ConcordionRunner;
+<span class="keyword">import</span> org.junit.runner.RunWith;
+
+@RunWith(ConcordionRunner.class)
+<span class="keyword">public class</span> SplittingNamesTest {
+
+    <span class="keyword">public</span> Result split(String fullName) {
+        <span class="keyword">return</span> new Result();
+    }
+
+    <span class="keyword">class</span> Result {
+        <span class="keyword">public</span> String firstName = <span class="string">"TODO"</span>;
+        <span class="keyword">public</span> String lastName = <span class="string">"TODO"</span>;
+    }
+}
+</pre>
+
+<p>
+    Run it now and you get:
+</p>
+
+<div>
+<img src="image/tutorial/execute/BrokenBecauseNotFullyImplemented.png"
+  alt="Output shows a broken test because the fixture is not fully implemented"/>
+</div>
+
+
+<p>
+    Let's implement the function. Obviously the implementation should
+    be in the real system not in the test case, but just for
+    fun...
+</p>
+
+<a name="splittingNamesTest" />
+<pre class="java">
+<span class="keyword">package</span> example;
+
+<span class="keyword">import</span> org.concordion.integration.junit4.ConcordionRunner;
+<span class="keyword">import</span> org.junit.runner.RunWith;
+
+@RunWith(ConcordionRunner.class)
+<span class="keyword">public class</span> SplittingNamesTest {
+
+    <span class="keyword">public</span> Result split(String fullName) {
+        Result result = <span class="keyword">new</span> Result();
+        String[] words = fullName.split(<span class="string">" "</span>);
+        result.firstName = words[0];
+        result.lastName = words[1];
+        <span class="keyword">return</span> result;
+    }
+
+    <span class="keyword">class</span> Result {
+        <span class="keyword">public</span> String firstName;
+        <span class="keyword">public</span> String lastName;
+    }
+}
+</pre>
+
+<p>
+    The test now passes:
+</p>
+
+<div>
+<img src="image/tutorial/execute/Successful.png"  alt="Test is now successful"/>
+</div>
+
+
+<p>
+    Note: Our inner class <code>Result</code> could equally be implemented
+    with getters instead of public fields. The HTML instrumentation remains
+    the same.
+</p>
+
+
+<pre class="java">
+<span class="keyword">class</span> Result {
+
+    <span class="keyword">private final</span> String firstName;
+    <span class="keyword">private final</span> String lastName;
+
+    <span class="keyword">public</span> Result(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    <span class="keyword">public</span> String getFirstName() {
+        <span class="keyword">return</span> firstName;
+    }
+
+    <span class="keyword">public</span> String getLastName() {
+        <span class="keyword">return</span> lastName;
+    }
+}
+</pre>
+
+<p>
+    Alternatively, the <a href="#multiValueResult">MultiValueResult</a> class makes it easy to return multiple values without creating a new object, or you can <a href="#executeMapResult">return a Map result</a>.
+</p>
+
+
+<a name="executeUnusualSentences" />
+<h3>Handling unusual sentence structures</h3>
+
+<p>
+    One of the great things about Concordion is that when you're writing
+    the specifications you do not have to worry about how you're going
+    to instrument it. You can just concentrate on making the document as readable
+    as possible.
+</p>
+
+<p>
+    Most English sentences can be instrumented. If you can't work out
+    how to instrument it then you can always tweak the wording, but in
+    general this should not be necessary. The <code>execute</code>
+    command provides flexibility.
+</p>
+
+<p>
+    For example, say we have the specification:
+</p>
+
+<pre class="html">
+&lt;p&gt;
+    Upon login, the greeting for user &lt;span&gt;Bob&lt;/span&gt;
+    will be: &lt;span&gt;Hello Bob!&lt;/span&gt;
+&lt;/p&gt;
+</pre>
+
+<p>
+    This is easy to instrument:
+</p>
+
+<pre class="html">
+&lt;p&gt;
+    Upon login, the greeting for user &lt;span <b>concordion:set="#firstName"</b>&gt;Bob&lt;/span&gt;
+    will be:
+    &lt;span <b>concordion:assertEquals="greetingFor(#firstName)"</b>&gt;Hello Bob!&lt;/span&gt;
+&lt;/p&gt;
+</pre>
+
+<p>
+    But what if our specification was written like this:
+</p>
+
+<pre class="html">
+&lt;p&gt;
+    The greeting "&lt;span&gt;Hello Bob!&lt;/span&gt;" should be given
+    to user &lt;span&gt;Bob&lt;/span&gt; when he logs in.
+&lt;/p&gt;
+</pre>
+
+<p>
+    In this case, the input parameter <code>Bob</code> occurs <em>after</em>
+    the output greeting we want to check. We can solve this problem by using
+    an <code>execute</code> command on the outer element (the <code>&lt;p&gt;</code>).
+</p>
+
+<pre class="html">
+&lt;p <b>concordion:execute="#greeting = greetingFor(#firstName)"</b>&gt;
+    The greeting "&lt;span <b>concordion:assertEquals="#greeting"</b>&gt;Hello Bob!&lt;/span&gt;"
+    should be given to user &lt;span <b>concordion:set="#firstName"</b>&gt;Bob&lt;/span&gt;
+    when he logs in.
+&lt;/p&gt;
+</pre>
+
+<p>
+    How does this work? It works because the <code>execute</code> command is designed to process
+    commands on its child elements in a special order. First of all it processes any child
+    <code>set</code> commands then it runs its own command, then any child <code>execute</code> commands
+    and finally any child <code>assertEquals</code> commands.
+</p>
+
+
+
+
+<a name="executeTable"/>
+<h2 class="section">concordion:execute on a &lt;table&gt;</h2>
+
+<p>
+    When you want to show several examples of a behaviour, repeating the same
+    sentence structure over and over again probably isn't going to be very
+    nice to read. It would be better to use a table.
+</p>
+
+<p>
+    For example:
+</p>
+
+<div>
+<img src="image/tutorial/executeTable/HowTableIsDisplayed.png"
+     alt="How the table is displayed (nice and neat)"/>
+</div>
+
+<p>
+    You can instrument this table, in a long-winded way, as follows:
+</p>
+
+<pre class="html">
+&lt;html xmlns:concordion="http://www.concordion.org/2007/concordion"&gt;
+
+    &lt;head&gt;
+        &lt;link href="../concordion.css" rel="stylesheet" type="text/css" /&gt;
+    &lt;/head&gt;
+
+    &lt;body&gt;
+
+        &lt;h1&gt;Splitting Names&lt;/h1&gt;
+
+        &lt;p&gt;
+            To help personalise our mailshots we want to have the first name
+            and last name of the customer. Unfortunately the customer data
+            that we are supplied only contains full names.
+        &lt;/p&gt;
+
+        &lt;p&gt;
+            The system therefore attempts to break a supplied full name into
+            its constituents by splitting around whitespace.
+        &lt;/p&gt;
+
+        &lt;div class="example"&gt;
+
+            &lt;h3&gt;Examples&lt;/h3&gt;
+
+            &lt;table&gt;
+                &lt;tr&gt;
+                    &lt;th&gt;Full Name&lt;/th&gt;
+                    &lt;th&gt;First Name&lt;/th&gt;
+                    &lt;th&gt;Last Name&lt;/th&gt;
+                &lt;/tr&gt;
+                &lt;tr <b>concordion:execute="#result = split(#fullName)"</b>&gt;
+                    &lt;td <b>concordion:set="#fullName"</b>&gt;John Smith&lt;/td&gt;
+                    &lt;td <b>concordion:assertEquals="#result.firstName"</b>&gt;John&lt;/td&gt;
+                    &lt;td <b>concordion:assertEquals="#result.lastName"</b>&gt;Smith&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr <b>concordion:execute="#result = split(#fullName)"</b>&gt;
+                    &lt;td <b>concordion:set="#fullName"</b>&gt;David Peterson&lt;/td&gt;
+                    &lt;td <b>concordion:assertEquals="#result.firstName"</b>&gt;David&lt;/td&gt;
+                    &lt;td <b>concordion:assertEquals="#result.lastName"</b>&gt;Peterson&lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/table&gt;
+
+        &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+
+<p>
+    However, this is repetitive so Concordion provides a shortcut.
+    When you place an <code>execute</code> command on a <code>&lt;table&gt;</code> element
+    the commands on the header row (the row containing &lt;th&gt; elements) are copied to
+    each detail row (rows containing &lt;td&gt; elements) and the <code>execute</code>
+    command is run on each detail row.
+</p>
+
+
+<pre class="html">
+&lt;html xmlns:concordion="http://www.concordion.org/2007/concordion"&gt;
+
+    &lt;head&gt;
+        &lt;link href="../concordion.css" rel="stylesheet" type="text/css" /&gt;
+    &lt;/head&gt;
+
+    &lt;body&gt;
+
+        &lt;h1&gt;Splitting Names&lt;/h1&gt;
+
+        &lt;p&gt;
+            To help personalise our mailshots we want to have the first name
+            and last name of the customer. Unfortunately the customer data
+            that we are supplied only contains full names.
+        &lt;/p&gt;
+
+        &lt;p&gt;
+            The system therefore attempts to break a supplied full name into
+            its constituents by splitting around whitespace.
+        &lt;/p&gt;
+
+        &lt;div class="example"&gt;
+
+            &lt;h3&gt;Examples&lt;/h3&gt;
+
+            &lt;table <b>concordion:execute="#result = split(#fullName)"</b>&gt;
+                &lt;tr&gt;
+                    &lt;th <b>concordion:set="#fullName"</b>&gt;Full Name&lt;/th&gt;
+                    &lt;th <b>concordion:assertEquals="#result.firstName"</b>&gt;First Name&lt;/th&gt;
+                    &lt;th <b>concordion:assertEquals="#result.lastName"</b>&gt;Last Name&lt;/th&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;John Smith&lt;/td&gt;
+                    &lt;td&gt;John&lt;/td&gt;
+                    &lt;td&gt;Smith&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;David Peterson&lt;/td&gt;
+                    &lt;td&gt;David&lt;/td&gt;
+                    &lt;td&gt;Peterson&lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/table&gt;
+
+        &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<p>
+    This instrumentation has identical behaviour to the previous example.
+</p>
+
+
+
+<a name="verifyRows"/>
+<h2 class="section">concordion:verifyRows</h2>
+
+<p>
+    Sometimes you want to check the contents of a collection of results returned
+    from the system. In the Fit Framework you might use a <code>RowFixture</code>.
+    In Concordion, you use the <code>verifyRows</code> command.
+</p>
+
+<p>
+     For example, while writing a user administration tool we might
+     write a specification like this describing the behaviour of the
+     search functionality:
+</p>
+
+<blockquote>
+<img src="image/tutorial/verifyRows/partialMatches/OriginalTable.png" alt="Original Specification"/>
+</blockquote>
+
+<p>
+    The idea is that in the fixture code we'll set up the users in the
+    system, perform a search and then confirm that the right users (and only
+    these users) were returned in the search results. If too many, too few,
+    or the wrong users were returned we want the test to fail.
+</p>
+
+<p>
+    The instrumented HTML source for the specification looks like this:
+</p>
+
+<pre class="html">
+&lt;html <b>xmlns:concordion="http://www.concordion.org/2007/concordion"</b>&gt;
+&lt;body&gt;
+
+&lt;h1&gt;Partial Matches&lt;/h1&gt;
+
+&lt;p&gt;
+    Username searches return partial matches, i.e. all usernames containing
+    the search string are returned.
+&lt;/p&gt;
+
+&lt;div class="example"&gt;
+
+    &lt;h3&gt;Example&lt;/h3&gt;
+
+    &lt;p&gt;Given these users:&lt;/p&gt;
+
+    &lt;table <b>concordion:execute="setUpUser(#username)"</b>&gt;
+        &lt;tr&gt;&lt;th <b>concordion:set="#username"</b>&gt;Username&lt;/th&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;john.lennon&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;ringo.starr&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;george.harrison&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;paul.mccartney&lt;/td&gt;&lt;/tr&gt;
+    &lt;/table&gt;
+
+    &lt;p&gt;Searching for "&lt;b <b>concordion:set="#searchString"</b>&gt;arr&lt;/b&gt;" will return:&lt;/p&gt;
+
+    &lt;table <b>concordion:verifyRows="#username : getSearchResultsFor(#searchString)"</b>&gt;
+        &lt;tr&gt;&lt;th <b>concordion:assertEquals="#username"</b>&gt;Matching Usernames&lt;/th&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;george.harrison&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;ringo.starr&lt;/td&gt;&lt;/tr&gt;
+    &lt;/table&gt;
+
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<p>
+    The syntax for a <code>verifyRows</code> command is:
+</p>
+
+<pre>
+#loopVar : expression
+</pre>
+
+<p>
+    Where <code>expression</code> returns an
+    <code>Iterable</code> object with a predictable iteration order,
+    (e.g. a <code>List</code>, <code>LinkedHashSet</code> or a
+    <code>TreeSet</code>).
+     And <code>#loopVar</code> provides access
+    to the current object during iteration and allows the
+    <code>assertEquals</code> method to check its value.
+</p>
+
+<p>
+    The order of the items in the table being verified
+    must match the iteration order of the items returned by the
+    expression. You may need to sort the items to ensure they are
+    in a known and consistent order. In our example, we are using
+    alphabetical order ("george" before "ringo").
+</p>
+
+<p>
+    The skeleton fixture code will look like this:
+</p>
+
+<pre class="java">
+@RunWith(ConcordionRunner.class)
+<span class="keyword">public class</span> PartialMatchesTest {
+
+    <span class="keyword">public void</span> setUpUser(String username) {
+        <span class="comment">// TODO: Set up user in the system</span>
+    }
+
+    <span class="keyword">public</span> Iterable&lt;String&gt; getSearchResultsFor(String searchString) {
+        <span class="comment">// TODO: Perform the search and return the real search results</span>
+        <span class="keyword">return new</span> ArrayList&lt;String&gt;();
+    }
+}
+</pre>
+
+<p>
+    If we run the test with this skeleton we get:
+</p>
+
+<blockquote>
+<img src="image/tutorial/verifyRows/partialMatches/WhenNoRowsReturned.png" alt="Two missing rows"/>
+</blockquote>
+
+<p>
+    Two rows are missing because our search function is not
+    implemented and returns an empty set.
+</p>
+
+<p>
+    For the purposes of demonstration, let's just implement the functionality
+    inside the fixture instead of calling into the system:
+</p>
+
+<pre class="java">
+@RunWith(ConcordionRunner.class)
+<span class="keyword">public class</span> PartialMatchesTest {
+
+    <span class="keyword">private</span> Set&lt;String&gt; usernamesInSystem = <span class="keyword">new</span> HashSet&lt;String&gt;();
+
+    <span class="keyword">public void</span> setUpUser(String username) {
+        usernamesInSystem.add(username);
+    }
+
+    <span class="keyword">public</span> Iterable&lt;String&gt; getSearchResultsFor(String searchString) {
+        SortedSet&lt;String&gt; matches = <span class="keyword">new</span> TreeSet&lt;String&gt;();
+        <span class="keyword">for</span> (String username : usernamesInSystem) {
+            <span class="keyword">if</span> (username.contains(searchString)) {
+                matches.add(username);
+            }
+        }
+        <span class="keyword">return</span> matches;
+    }
+}
+</pre>
+
+<p>
+    Now when we run it we get a success:
+</p>
+
+<blockquote>
+<img src="image/tutorial/verifyRows/partialMatches/Successful.png" alt="Success"/>
+</blockquote>
+
+
+<p>
+    These are the essential features of Concordion and should be all you need to get
+    started. Read the page on <a href="Technique.html">Technique</a> for
+    advice on the approach to writing the specifications, or see below if you wish to
+    look at advanced features.
+</p>
+
+<br />
+
+
+<a name="advanced"/>
+<h1>Advanced Features</h1>
+
+<div class="feature">
+<h2>Annotations</h2>
+
+<p>
+You can include partially-implemented specifications in your normal build
+without breaking the build, by annotating your fixture classes with one of the
+following annotations:
+</p>
+
+<ul>
+<li><b>@ExpectedToPass</b></li>
+<li><b>@ExpectedToFail</b></li>
+<li><b>@Unimplemented</b></li>
+</ul>
+
+<p>
+For example:
+</p>
+
+<pre class="java">
+<span class="keyword">import</span> org.concordion.api.ExpectedToFail;
+<span class="keyword">import</span> org.concordion.integration.junit4.ConcordionRunner;
+<span class="keyword">import</span> org.junit.runner.RunWith;
+
+<b>@ExpectedToFail</b>
+@RunWith(ConcordionRunner.class)
+<span class="keyword">public class</span> GreetingTest {
+
+   public String greetingFor(String firstName) {
+        return "TODO";
+   }
+</pre>
+
+
+<p>See
+<a target="specs" href="dist/1.4.3/test-output/concordion/spec/concordion/annotation/Annotation.html">here</a>
+for an explanation of the semantics of each annotation.
+</p>
+</div>
+
+
+
+<div class="feature">
+
+<div style="float: right; margin-left: 8px; margin-top: 8px">
+<img src="image/tutorial/breadcrumbs.png" alt="Example of breadcrumbs"/>
+</div>
+
+<h2>Breadcrumbs</h2>
+
+<p>
+    To make it easier to navigate around the results, and to remove the headache of having to maintain upward links manually, breadcrumbs are automatically added to output.
+</p>
+<p>
+    In order for breadcrumbs to be generated, certain conventions must be followed.
+</p>
+<p>
+    [<a target="specs" href="dist/1.4.3/test-output/concordion/spec/concordion/results/breadcrumbs/Breadcrumbs.html">More details</a>]
+</p>
+
+</div>
+
+
+
+
+<div class="feature">
+
+<div style="float: right; margin-left: 8px">
+<img src="image/example/online-shop/ConcordionRunExample.png" alt="Example of concordion:run"/>
+</div>
+
+<h2>concordion:run</h2>
+
+<p>
+    This command, contributed by <a href="http://skytteren.blogspot.com/" class="externalLink">Stein K&#x00E5;re Skytteren</a>, lets you link to another specification and run it,
+    displaying the link's background in green / red / gray as appropriate.
+</p>
+
+<p>
+    You might use this to create a page containing a list of all the acceptance tests
+    for a feature, in a similar way you would use a JUnit test suite.
+</p>
+
+<p> You can even nest the pages to form a hierarchical index, with results aggregated to display a single green / red / gray
+    result for all specifications accessible from the link.
+</p>
+
+<p>
+    [<a target="specs" href="dist/1.4.3/test-output/concordion/spec/concordion/command/run/Run.html">More details</a>]
+</p>
+
+</div>
+
+
+
+
+
+<div class="feature">
+<h2>concordion:assertTrue</h2>
+
+<p>For example:</p>
+
+<pre class="html">
+&lt;p&gt;
+    When user &lt;b concordion:set="#firstName"&gt;Bob&lt;/b&gt;
+    logs in, the greeting will be:
+    &lt;b concordion:assertEquals="greetingFor(#firstName)"&gt;Hello Bob!&lt;/b&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+    The first name &lt;span <b>concordion:assertTrue="#firstName.startsWith(#letter)"</b>&gt;starts
+    with &lt;b concordion:set="#letter"&gt;B&lt;/b&gt;&lt;/span&gt;.
+&lt;/p&gt;
+
+&lt;p&gt;
+    The first name &lt;span <b>concordion:assertTrue="#firstName.startsWith(#letter)"</b>&gt;starts
+    with &lt;b concordion:set="#letter"&gt;C&lt;/b&gt;&lt;/span&gt;.
+&lt;/p&gt;
+</pre>
+
+    <p>Will result in this output:</p>
+
+    <p><img style="padding-left: 25px"
+        src="image/tutorial/assertTrue/AssertTrueOutput.png" /></p>
+
+<p>
+    For symmetry, there is also an <b>assertFalse</b> command.
+</p>
+
+<h3>When to use it?</h3>
+
+<p>
+    In most cases, <b>assertEquals</b> is a better choice than <b>assertTrue</b> as
+    its error message is more intuitive.
+</p>
+
+<p>
+    <b>assertTrue</b> is useful when the fixture needs to know the expected value
+    in order to perform the test. For example, when testing an asynchronous system
+    the fixture may need to poll for an expected value. The alternative would be
+    to put in a sleep before getting the value, but that leads to slow and fragile
+    tests.
+</p>
+
+</div>
+
+
+
+
+<div class="feature">
+<h2>JUnit support</h2>
+
+<h3>JUnit 3.x</h3>
+
+<p>
+    To run Concordion with JUnit 3.x, the Concordion fixture must extend <code>ConcordionTestCase</code>. For example:
+</p>
+
+<pre class="java">
+<span class="keyword">package</span> example;
+
+<b><span class="keyword">import</span> org.concordion.integration.junit3.ConcordionTestCase;</b>
+
+<span class="keyword">public class</span> HelloWorldFixture <b>extends ConcordionTestCase</b> {
+
+    <span class="keyword">public</span> String getGreeting() {
+        <span class="keyword">return</span> <span class="string">"Hello World!"</span>;
+    }
+}
+</pre>
+
+
+<h3>JUnit 4.x</h3>
+
+<p>
+    To run Concordion with JUnit 4.5 or later, the Concordion fixture should use the <code>ConcordionRunner</code>. For example:
+</p>
+
+<pre class="java">
+<span class="keyword">package</span> example;
+
+<b><span class="keyword">import</span> org.concordion.integration.junit4.ConcordionRunner;
+<span class="keyword">import</span> org.junit.runner.RunWith;</b>
+
+<b><span class="annotation">@RunWith</span>(ConcordionRunner.<span class="keyword">class</span>)</b>
+<span class="keyword">public class</span> HelloWorldFixture {
+
+    <span class="keyword">public</span> String getGreeting() {
+        <span class="keyword">return</span> <span class="string">"Hello World!"</span>;
+    }
+}
+</pre>
+
+<p>
+Note that <b>JUnit 4.4 and earlier are no longer supported</b> due to changes
+  in JUnit's API between 4.4 and 4.5.
+</p>
+
+</div>
+
+
+<div class="feature">
+<a name="executeMapResult" />
+<h2>Returning a Map result</h2>
+<p>As described in the tutorial, to check more than one result of a behaviour, you can <a href="#executeObjectResult">return an object</a> from the <code>execute</code> command. An alternative is to return a <code>Map</code> object, for example:
+
+<pre class="java">
+    <span class="keyword">public</span> Map split(String fullName) {
+        String[] words = fullName.split(" ");
+        Map&lt;String, String&gt; results = new HashMap&lt;String, String&gt;();
+        results.put("firstName", words[0]);
+        results.put("lastName", words[1]);
+        <span class="keyword">return</span> results;
+    }
+</pre>
+
+<p>
+    This is particularly useful when calling existing methods that return <code>Map</code>s, or when using a JVM language with native language support for <code>Map</code>s, such as Groovy.
+</p>
+</div>
+
+<div class="feature">
+<a name="multiValueResult" />
+<h2>Returning a MultiValueResult</h2>
+<p>
+  The <a href="http://code.google.com/p/concordion/source/browse/trunk/concordion/src/main/java/org/concordion/api/MultiValueResult.java">MultiValueResult</a> class makes it even simpler to return more than one result from the <code>execute</code> command. For example, <a href="#splittingNamesTest">SplittingNamesTest</a> can be simplified to:
+</p>
+
+<pre class="java">
+<span class="keyword">package</span> example;
+
+<span class="keyword">import</span> org.concordion.api.MultiValueResult;
+<span class="keyword">import</span> org.concordion.integration.junit4.ConcordionRunner;
+<span class="keyword">import</span> org.junit.runner.RunWith;
+
+@RunWith(ConcordionRunner.class)
+<span class="keyword">public class</span> SplittingNamesTest {
+
+    <span class="keyword">public</span> MultiValueResult split(String fullName) {
+        String[] words = fullName.split(" ");
+        <span class="keyword">return</span> <i>multiValueResult()</i>
+                .with("firstName", words[0])
+                .with("lastName", words[1]);
+    }
+}
+</pre>
+<p>
+    The specification can reference the properties of the MultiValueResult as if they were bean properties, as shown in the <a href="#splittingNamesSpec">Splitting Names</a> specification.
+
+</div>
+
+
+<div class="feature">
+<h2>Linked Test Data</h2>
+
+<p>
+A special variable <code>"#HREF"</code> lets you access the href attribute for a link. This
+        can be used when you want to reference test data from a specification.
+
+        [<a target="specs" href="dist/1.4.3/test-output/concordion/spec/concordion/command/execute/AccessToLinkHref.html">More details</a>]
+</p>
+
+</div>
+
+
+
+
+
+</div> <!-- content -->
+
+</div> <!-- page -->
+
+<div class="copyright">
+ &nbsp; Copyright &copy; 2007-2013
+ <a href="http://www.davidpeterson.co.uk">David Peterson</a>. All rights reserved.
+</div> <!-- copyright -->
+
+</body>
+</html>

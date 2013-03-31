@@ -1,0 +1,25 @@
+body {
+	background-image: none;
+	background-color: white;
+	margin: 0px;
+	padding: 0px;
+}
+.breadcrumbs {
+	display: none;
+}
+.copyright {
+    color: black;
+    border-top: 1px dotted black;
+}
+.page {
+	padding: 0px;
+	margin: 0px;
+	width: 100%;
+}
+.logo {
+    float: right;
+}
+.memo p, .memo li, .memo .goodExample, .memo .badExample {
+  width: 600px;
+  margin-left: 40px
+}

@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Concordion - Download</title>
+<link media="all" rel="stylesheet" type="text/css" href="css/default.css" />
+<link media="print" rel="stylesheet" type="text/css" href="css/print.css" />
+<link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico" />
+<style>
+.feedbackRequest {
+    border: 1px solid gray;
+    padding: 8px;
+    margin-top: 30px;
+    background-color: #fffff0;
+    width: 600px;
+}
+</style>
+</head>
+<body>
+
+<div class="page">
+
+<div class="header">
+
+    <a href="http://www.opensource.org/">
+    <img class="open-source-logo" src="image/opensource-110x95.png"
+        alt="Open source (Apache 2.0 license)" />
+    </a>
+
+    <a href="/">
+    <img src="image/front-page-banner.png"
+        alt="Concordion is a simple, but powerful, agile acceptance testing tool for Java." />
+    </a>
+
+</div><!-- header -->
+
+<div class="menuBar">
+
+<ul class="menu">
+  <li><a href="/">Home</a></li>
+  <li><a href="Tutorial.html">Tutorial</a></li>
+  <li><a href="Technique.html">Hints and Tips</a></li>
+  <li><a href="Extensions.html">Extensions API</a></li>
+  <li><a href="ExtensionsLibrary.html">Extensions Library</a></li>
+  <li class="selectedTab"><a href="Download.html">Download</a></li>
+  <li><a href="Questions.html">FAQ</a></li>
+</ul>
+
+</div><!-- menuBar  -->
+
+<div class="content">
+
+
+<h1>Download</h1>
+
+<h2>Latest Release for Java</h2>
+
+<div style="float:left">
+<p>
+Full distribution including source code and all dependencies:
+</p>
+
+<table style="margin-left: 40px; background-color:white; padding: 10px; border: 1px solid #d7d7d7; width: 290px;">
+<tr>
+<td><img src="image/shared/download.gif" alt="Download Concordion" /></td>
+<td><b><a href="http://concordion.googlecode.com/files/concordion-1.4.3.zip">concordion-1.4.3.zip</a></b> (1.2MB)</td>
+</tr>
+</table>
+</div>
+
+
+<div style="float: right">
+<p>Maven configuration:</p>
+
+<pre style="border: 1px solid #d7d7d7; width: 400px; margin-left: 0px; padding-left: 16px;">
+&lt;dependency&gt;
+    &lt;groupId&gt;<b>org.concordion</b>&lt;/groupId&gt;
+    &lt;artifactId&gt;<b>concordion</b>&lt;/artifactId&gt;
+    &lt;version&gt;<b>1.4.3</b>&lt;/version&gt;
+&lt;/dependency&gt;
+</pre>
+</div>
+
+
+<p style="clear: both">
+Or, for the bleeding edge, build from the subversion repository: <a href="http://concordion.googlecode.com/svn/trunk/concordion">http://concordion.googlecode.com/svn/trunk/concordion</a>
+</p>
+
+<p>
+<b>Non-Java versions</b>: Concordion has been <a href="Ports.html">ported</a> (in various forms) to .NET, Ruby, and Python.
+</p>
+
+<br />
+
+
+<h3>Changes in Concordion 1.4.3 &#8212; 26th January 2013</h3>
+
+<h4>Upgraded dependencies</h4>
+
+<p>Concordion has been <a href="http://code.google.com/p/concordion/issues/detail?id=55">upgraded
+to the latest version of JUnit</a> (<a href="https://github.com/KentBeck/junit/blob/master/doc/ReleaseNotes4.11.md">JUnit 4.11</a>).
+This change has caused a new dependency on <a href="http://code.google.com/p/hamcrest/">Hamcrest</a>.</p>
+
+<p>If you're using Maven, Hamcrest is included in the transitive dependencies of
+JUnit, so should be added to your classpath automatically.</p>
+
+<p>If you're installing or upgrading Concordion manually, <b>make sure you
+add the file "hamcrest-core-1.3.jar" to your classpath</b>, in addition to the
+other jar dependencies (all of which can be found in the Concordion zip file in
+the "lib" directory). Failure to do so may result in the error
+"java.lang.NoClassDefFoundError: org/hamcrest/SelfDescribing".
+</p>
+
+
+<h4>Other improvements</h4>
+
+<ul>
+<li>Added a <a href="Tutorial.html#multiValueResult">MultiValueResult</a> class to make it easier to return multiple results from a fixture method</li>
+<li>Allow the assertEquals command to <a href="https://code.google.com/p/concordion/source/detail?r=591">match "Yes/No" "True/False" "Y/N" with a
+Boolean</a> returned from the system under test</li>
+<li><a href="http://code.google.com/p/concordion/issues/detail?id=47">Added support to concordion:run for test classes ending in Fixture</a> (thanks to Ricardo da Silva Lima for the patch)</li>
+<li><a href="http://code.google.com/p/concordion/issues/detail?id=49">Modified CSS on verifyRows to show missing rows as struck-through</a></li>
+<li>In Extensions API: <a href="http://code.google.com/p/concordion/issues/detail?id=46">Added support for Element to look for other elements by id</a> (thanks to Alessandro Novarini for the patch)</li>
+</ul>
+
+<h4>Bug-fixes</h4>
+
+<ul>
+<li><a href="https://code.google.com/p/concordion/issues/detail?id=23#c3">Fixed: Error message shown for all @Unimplemented tests, not just those with an implementation</li>
+<li><a href="http://code.google.com/p/concordion/issues/detail?id=54">Fixed: Duplicate extension instances created due to inheritance of @Extension annotation</a> (thanks to Bryan Young for the issue report and unit test)</li>
+</ul>
+
+
+<br />
+
+<a name="extensionsLibrary"/>
+<h2>Extensions Library (optional)</h2>
+
+<p>
+The optional <a href="ExtensionsLibrary.html#library">Extensions Library</a> enhances Concordion with abilities such as adding screenshots and logging information to the generated output.
+</p>
+
+<div style="float:left">
+<p>Manual download:</p>
+
+<table style="margin-left: 40px; background-color:white; padding: 10px; border: 1px solid #d7d7d7; width: 290px;">
+<tr>
+<td><img src="image/shared/download.gif" alt="Download concordion-extensions" /></td>
+<td><b><a href="http://concordion-extensions.googlecode.com/files/concordion-extensions-1.1.0.jar">concordion-extensions-1.1.0.jar</a></b> (33KB)</td>
+</tr>
+</table>
+
+<a name="concordion-extensions-demo"/>
+<p>Example project, demonstrating usage with Selenium WebDriver:</p>
+
+<table style="margin-left: 40px; background-color:white; padding: 10px; border: 1px solid #d7d7d7; width: 290px;">
+<tr>
+<td><img src="image/shared/download.gif" alt="Download concordion-extensions-demo" /></td>
+<td><b><a href="http://concordion-extensions.googlecode.com/files/concordion-extensions-demo-1.1.0.3.zip">concordion-extensions-demo-1.1.0.3.zip</a></b> (20KB)</td>
+</tr>
+</table>
+</div>
+
+
+<div style="float: right">
+<p>Maven configuration:</p>
+
+<pre style="border: 1px solid #d7d7d7; width: 400px; margin-left: 0px; padding-left: 16px;">
+&lt;dependency&gt;
+    &lt;groupId&gt;<b>org.concordion</b>&lt;/groupId&gt;
+    &lt;artifactId&gt;<b>concordion-extensions</b>&lt;/artifactId&gt;
+    &lt;version&gt;<b>1.1.0</b>&lt;/version&gt;
+&lt;/dependency&gt;
+</pre>
+</div>
+<p style="clear: both"/>
+
+<br />
+
+<h3>Changes in concordion-extensions 1.1.0 &#8212;  29th June 2012</h3>
+
+<ul>
+<li>Support method chaining in extensions to provide fluent way of configuring them (<a href="http://code.google.com/p/concordion-extensions/issues/detail?id=15">Issue 15</a>)</li>
+<li>Fixed - Tooltip renderer fails on verify rows (<a href="http://code.google.com/p/concordion-extensions/issues/detail?id=13">Issue 13</a>)</li>
+<li>Updated examples to use new @Extension and @Extensions annotations</li>
+<li>Updated examples to Selenium 2.0 (<a href="http://code.google.com/p/concordion-extensions/issues/detail?id=14">Issue 14</a>)</li>
+</ul>
+
+<h3>Changes in concordion-extensions-demo 1.1.0.3 &#8212;  2nd February 2013</h3>
+
+<ul>
+<li>Fixed - <a href="http://code.google.com/p/concordion-extensions/issues/detail?id=20">Results incorrect due to changed Google calculator UI</a></li>
+</ul>
+
+
+<br/>
+<hr/>
+
+<div class="section">
+<h2>Change History</h2>
+
+<h4>Concordion 1.4.2 &#8212; 31st October 2011</h4>
+
+<ul>
+<li><a href="Extensions.html#add">Simplified configuration of extensions</a> through new @Extension and @Extensions annotations.</li>
+<li>Fixture classes can now be suffixed with "Fixture" as an alternative to "Test" (<a href="http://code.google.com/p/concordion/issues/detail?id=37">Issue 37</a>)</li>
+<li>Fixed stack-trace rendering problem in Google Chrome (<a href="http://code.google.com/p/concordion/issues/detail?id=36">Issue 36</a>)</li>
+<li>Fixed Concordion output displaying spaces as Â (<a href="http://code.google.com/p/concordion/issues/detail?id=38">Issue 38</a>)</li>
+<li>Expose withSource() and withTarget() via the Concordion Extension mechanism (<a href="http://code.google.com/p/concordion/issues/detail?id=39">Issue 39</a>)</li>
+<li>Fixed JavaScriptLinker producing invalid (x)html (<a href="http://code.google.com/p/concordion/issues/detail?id=26">Issue 26</a>)</li>
+<li>The offending filename is now shown  on HTML parse errors (<a href="http://code.google.com/p/concordion/issues/detail?id=27">Issue 27</a>)</li>
+</ul>
+</div>
+
+
+
+</div> <!-- content -->
+
+</div> <!-- page -->
+
+<div class="copyright">
+ &nbsp; Copyright &copy; 2007-2013
+ <a href="http://www.davidpeterson.co.uk">David Peterson</a>. All rights reserved.
+</div> <!-- copyright -->
+
+</body>
+</html>

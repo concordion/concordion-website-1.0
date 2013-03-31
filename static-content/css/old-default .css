@@ -1,0 +1,168 @@
+p, li, h1, h2, h3, h4, td, th, .breadcrumbs, a, .copyright, blockquote, .callout {
+  font-family: Arial, Verdana, Helvetica, SansSerif;
+  line-height: 135%;
+}
+p {
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
+pre, code, pre *, code * {
+    font-family: Courier New, Courier, Fixed;
+    font-size: 10pt;
+}
+pre {
+    padding: 8px;
+    margin-left: 40px;
+    margin-right: 0px;
+}
+h1 {
+  margin-top: 16px;  
+}
+h2 {
+  margin-top: 32px;
+}
+h3, h3 * {
+  font-size: 12pt;
+}
+h4 {
+  font-size: 10pt;
+}
+p, li, td, th, blockquote {
+  font-size: 10pt;
+}
+li {
+  margin-top: 6px;
+  margin-bottom: 8px;
+}
+pre.java {
+    background-color: #eaf0ff;
+}
+pre.html {
+    background-color: #ffffd9;
+}
+pre.console {
+    background-color: #f0f0f0;
+}
+body {
+  background-image: url("../image/shared/Background.png");
+  background-repeat: repeat-x;
+  background-color: #8692b0;
+  margin: 30px;
+}
+.outerPage {
+    background-color: white;
+    width: 896px;
+    margin: 0 auto;
+}
+.page {
+    padding: 48px;
+}
+.page-rounding-top {
+    background: url("../image/shared/corners/page/TopRight.png") no-repeat top right;
+}
+.page-rounding-bottom {
+    background: url("../image/shared/corners/page/BottomRight.png") no-repeat bottom right;
+}
+img.corner {
+   border: none;
+   display: block !important;
+}
+.logo {
+  text-align: right;
+}
+.copyright {
+    width: 850px;
+    margin: 0 auto;
+    text-align: right;
+    padding: 4px;
+}
+.copyright * {
+    font-size: 10pt;
+    color: #dde;
+}
+.breadcrumbs, .breadcrumbs * {
+  font-size: 10pt;   
+}
+.callout {
+  float: right;
+  width: 184px;
+  padding: 10px;
+  font-size: 11pt;
+  xfont-weight: bold;
+  background-color: #fff7e7;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  color: #622;
+}
+
+
+.memo {
+  padding: 1px 0px 24px 0px;
+}
+.memo p, .memo li, .memo .goodExample, .memo .badExample {
+  width: 520px;
+  margin-left: 40px
+}
+.memo li {
+  margin-bottom: 8px;
+  width: 480px;
+  vertical-align: top;
+}
+.memo h1 {
+  font-size: 17pt;
+  border-bottom : 1px dotted black;
+  padding-bottom: 6px;
+}
+.memo h2 {
+  font-size: 13pt;
+  margin-top: 20px;
+  margin-bottom: 4px;
+  padding-left: 40px;
+}
+.memo .subtext {
+  font-style: italic;
+  font-size: 13pt;
+  margin-bottom: 24px;
+}
+.memo h2 + p, .tight-top {
+  margin-top: 2px;
+}
+
+.goodExample {
+  background-color: #d9ffd9;
+  padding: 12px;
+  background-image: url("../image/technique/Good.png");
+  background-repeat: no-repeat;
+  background-position: top right;
+}
+.badExample {
+  background-color: #ffd9d9;
+  padding: 12px;
+  background-image: url("../image/technique/Bad.png");
+  background-repeat: no-repeat;
+  background-position: top right;
+}
+.externalLink {
+  background: url("../image/shared/ExternalLink.png") center right no-repeat;
+  padding-right: 12px;
+}
+.pdfLink {
+  background: url("../image/shared/AcrobatLink.gif") center right no-repeat;
+  padding-right: 18px;
+}
+
+.banner {
+  padding-top: 48px;
+  padding-right: 40px;	 
+}
+
+.java .keyword {
+  color: #7f0055;
+  font-weight: bold;
+}
+.java .annotation {
+  color: #646464;
+}
+.java .string {
+  color: #2a00ff;
+}
