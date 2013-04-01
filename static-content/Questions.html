@@ -85,6 +85,7 @@ h3 {
 <li><a href="#mailingList">Is there a mailing list?</a></li>
 <li><a href="#issueList">How do I report defects or submit enhancement requests?</a></li>
 <li><a href="#sourceCode">Where is the source code repository?</a></li>
+<li><a href="#collaborate">How do I collaborate on the Concordion project?</a></li>
 <li><a href="#articles">Are there any good articles on Concordion?</a></li>
 <li><a href="#presentingOutput">How do I fashion the test output into a presentable form?</a></li>
 <li><a href="#comparisonWithFit">How does Concordion differ from the Fit Framework and FitNesse?</a></li>
@@ -144,14 +145,24 @@ You can contact David by e-mail at: <b>david@crowdsoft.com</b>, but please use t
 <a name="sourceCode"> </a>
 <h3>Where is the source code repository?</h3>
 <p>
-    It is hosted on Google Code: <a class="externalLink" href="http://code.google.com/p/concordion/">Project Page</a>,
-    <a class="externalLink" href="http://code.google.com/p/concordion/source/browse">Browse Source</a>. The current
-    development version (potentially unstable) can be exported as follows:
+    It is hosted on GitHub: <a class="externalLink" href="https://github.com/concordion/concordion">Main Project Page</a>,
+    <a class="externalLink" href="https://github.com/concordion">all sub-projects</a>. The current
+    development version (potentially unstable) can be cloned as follows:
 </p>
-<pre>svn export http://concordion.googlecode.com/svn/trunk/concordion
+<pre>git clone https://github.com/concordion/concordion.git
 </pre>
 
-
+<a name="collaborate"> </a>
+<h3>How do I collaborate with development of Concordion?</h3>
+<p>
+    Firstly, you should <a href="#issueList">create an issue</a> for your enhancement request.
+</p>
+<p>
+    Concordion uses a "Fork &amp; Pull" model for collaborative development. If you have changes that you would like us to consider for introduction to Concordion, 
+    you will need to <a href="https://help.github.com/articles/fork-a-repo">fork</a> the repository, commit and push your changes to your forked project, and send us a <a href="https://help.github.com/articles/using-pull-requests">pull request</a> referencing the URL of the issue that you created.
+</p>
+<p>
+    Please note that, in order to keep Concordion clean and minimal, we consider all enhancement requests carefully. Should your enhancement not be appropriate for Concordion core, you may wish to package it as a Concordion <a href="Extensions.html">extension</a>. 
 
 <h3 id="articles">Are there any good articles on Concordion?</h3>
 <ul>

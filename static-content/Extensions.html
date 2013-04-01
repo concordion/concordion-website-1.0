@@ -63,8 +63,8 @@
 The Extensions API allows you to add functionality to Concordion, for example implementing new commands, listening to events, or modifying the Concordion output.</p>
 
 <p>For full details, see the <a href="dist/1.4.3/test-output/concordion/spec/concordion/extension/Extension.html">Extension API specifications</a>, the
-classes in <a class="externalLink" href="http://code.google.com/p/concordion/source/browse/#svn/trunk/concordion/src/main/java/org/concordion/api/extension">org.concordion.api.extension</a>
-and the <a class="externalLink" href="http://code.google.com/p/concordion/source/browse/#svn/trunk/concordion/src/test/resources/spec/concordion/extension">fixtures that demonstrate it</a>.
+classes in <a class="externalLink" href="https://github.com/concordion/concordion/tree/master/src/main/java/org/concordion/api/extension">org.concordion.api.extension</a>
+and the <a class="externalLink" href="https://github.com/concordion/concordion/tree/master/src/test/resources/spec/concordion/extension">fixtures that demonstrate it</a>.
 </p>
 
 <h2><a name="add"/>Adding extensions to Concordion</h2>
@@ -92,8 +92,8 @@ public ConcordionExtension extension = new ScreenshotExtension().setScreenshotTa
 
 <h2><a name="build"/>Building your own extension</h2>
 
-<p>Extensions must implement the <a href="http://code.google.com/p/concordion/source/browse/trunk/concordion/src/main/java/org/concordion/api/extension/ConcordionExtension.java">ConcordionExtension</a> interface,
-which allows extensions to hook into the Concordion build phase through the <a href="http://code.google.com/p/concordion/source/browse/trunk/concordion/src/main/java/org/concordion/api/extension/ConcordionExtender.java">ConcordionExtender</a> interface.</p>
+<p>Extensions must implement the <a href="https://github.com/concordion/concordion/blob/master/src/main/java/org/concordion/api/extension/ConcordionExtension.java">ConcordionExtension</a> interface,
+which allows extensions to hook into the Concordion build phase through the <a href="https://github.com/concordion/concordion/blob/master/src/main/java/org/concordion/api/extension/ConcordionExtender.java">ConcordionExtender</a> interface.</p>
 
 <h3><a name="cssExample"/>Example: Adding custom CSS</h3>
 <p>Amongst other features, the <code>ConcordionExtender</code> interface provide a means for adding CSS, JavaScript or arbitrary resources to the Concordion output folder.</p>
@@ -114,7 +114,7 @@ public class MyCssExtension implements ConcordionExtension {
 
 <h2>Other examples</h2>
 <p>
-For examples that listen to events and add new commands, see the concordion-extensions <a class="externalLink" href="http://code.google.com/p/concordion-extensions/source/browse/#hg%2Fcore%2Fsrc%2Fmain%2Fjava%2Forg%2Fconcordion%2Fext/">source code</a>.
+For examples that listen to events and add new commands, see the concordion-extensions <a class="externalLink" href="https://github.com/concordion/concordion-extensions">source code</a>.
 </p>
 
 
