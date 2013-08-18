@@ -1141,6 +1141,7 @@ Successes: 1  Failures: 0
 <div class="feature">
 <h2>Annotations</h2>
 
+<h3>Implementation Status</h3>
 <p>
 You can include partially-implemented specifications in your normal build
 without breaking the build, by annotating your fixture classes with one of the
@@ -1169,6 +1170,7 @@ For example:
    public String greetingFor(String firstName) {
         return "TODO";
    }
+}
 </pre>
 
 
@@ -1176,6 +1178,31 @@ For example:
 <a target="specs" href="dist/1.4.3/test-output/concordion/spec/concordion/annotation/Annotation.html">here</a>
 for an explanation of the semantics of each annotation.
 </p>
+
+</div>
+
+
+<div class="feature">
+<h3>Fail-Fast</h3><i>since 1.4.4</i>
+<p>After an exception occurs, by default, Concordion continues processing the current specification so it can show all the problems not just the first one.</p>
+<p>In cases where you want Concordion to stop processing the current specification after any exception occurs, add the <b>@FailFast</b> annotation to the fixture class.</p>
+<p>The <b>@FailFast</b> annotation has an optional <b>onExceptionType</b> parameter that allows a list of specific exception types to be specified. In this case, Concordion will only stop processing if any of the specified exception types occur. For example:</p>
+
+<pre class="java">
+<span class="keyword">import</span> org.concordion.api.FailFast;
+<span class="keyword">import</span> org.concordion.integration.junit4.ConcordionRunner;
+<span class="keyword">import</span> org.junit.runner.RunWith;
+
+<b>@FailFast(onExceptionType={DatabaseUnavailableException.class, IOException.class})</b>
+<span class="keyword">public class</span> MyDataTest {
+
+   public void connectToDatabase() {
+        ....
+   }
+}
+</pre>
+
+<p>If using the <a href="#concordion:run"><code>concordion:run</code></a> command, adding the <code>@FailFast</code> annotation to the corresponding fixture will cause the specification to fail-fast if any of the specifications it runs fail-fast. For this to work, the <code>@FailFast</code> annotation is required on the fixture classes for both the calling and called specifications.</p>
 </div>
 
 
@@ -1209,7 +1236,7 @@ for an explanation of the semantics of each annotation.
 <img src="image/example/online-shop/ConcordionRunExample.png" alt="Example of concordion:run"/>
 </div>
 
-<h2>concordion:run</h2>
+<h2 id="concordion:run">concordion:run</h2>
 
 <p>
     This command, contributed by <a href="http://skytteren.blogspot.com/" class="externalLink">Stein K&#x00E5;re Skytteren</a>, lets you link to another specification and run it,
