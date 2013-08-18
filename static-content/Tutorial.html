@@ -127,7 +127,7 @@ structure:
 <img src="image/tutorial/ProjectStructure.png" />
 
 <p>
-Download: <a href="http://concordion.googlecode.com/files/concordion-kickstart-1.4.3.zip">concordion-kickstart-1.4.3.zip</a>
+Download: <a href="http://concordion.googlecode.com/files/concordion-kickstart-1.4.4.zip">concordion-kickstart-1.4.4.zip</a>
 </p>
 
 <p>
@@ -179,7 +179,7 @@ simple "Hello World!" example and a basic Ant build file.
 </p>
 
 <ul>
-    <li><b>concordion-1.4.3.jar</b></li>
+    <li><b>concordion-1.4.4.jar</b></li>
     <li><b>junit-4.11.jar</b> (or <b>junit-3.8.2.jar</b>)</li>
     <li><b>hamcrest-core-1.3.jar</b> (required for JUnit 4.11 or later)</li>
     <li><b>ognl-2.6.9.jar</b></li>
@@ -1175,7 +1175,7 @@ For example:
 
 
 <p>See
-<a target="specs" href="dist/1.4.3/test-output/concordion/spec/concordion/annotation/Annotation.html">here</a>
+<a target="specs" href="dist/1.4.4/spec/concordion/annotation/Annotation.html">here</a>
 for an explanation of the semantics of each annotation.
 </p>
 
@@ -1183,7 +1183,7 @@ for an explanation of the semantics of each annotation.
 
 
 <div class="feature">
-<h3>Fail-Fast</h3><i>since 1.4.4</i>
+<h3 id="failFast">Fail-Fast</h3><i>since 1.4.4</i>
 <p>After an exception occurs, by default, Concordion continues processing the current specification so it can show all the problems not just the first one.</p>
 <p>In cases where you want Concordion to stop processing the current specification after any exception occurs, add the <b>@FailFast</b> annotation to the fixture class.</p>
 <p>The <b>@FailFast</b> annotation has an optional <b>onExceptionType</b> parameter that allows a list of specific exception types to be specified. In this case, Concordion will only stop processing if any of the specified exception types occur. For example:</p>
@@ -1222,7 +1222,7 @@ for an explanation of the semantics of each annotation.
     In order for breadcrumbs to be generated, certain conventions must be followed.
 </p>
 <p>
-    [<a target="specs" href="dist/1.4.3/test-output/concordion/spec/concordion/results/breadcrumbs/Breadcrumbs.html">More details</a>]
+    [<a target="specs" href="dist/1.4.4/spec/concordion/results/breadcrumbs/Breadcrumbs.html">More details</a>]
 </p>
 
 </div>
@@ -1253,7 +1253,7 @@ for an explanation of the semantics of each annotation.
 </p>
 
 <p>
-    [<a target="specs" href="dist/1.4.3/test-output/concordion/spec/concordion/command/run/Run.html">More details</a>]
+    [<a target="specs" href="dist/1.4.4/spec/concordion/command/run/Run.html">More details</a>]
 </p>
 
 </div>
@@ -1424,7 +1424,7 @@ Note that <b>JUnit 4.4 and earlier are no longer supported</b> due to changes
 A special variable <code>"#HREF"</code> lets you access the href attribute for a link. This
         can be used when you want to reference test data from a specification.
 
-        [<a target="specs" href="dist/1.4.3/test-output/concordion/spec/concordion/command/execute/AccessToLinkHref.html">More details</a>]
+        [<a target="specs" href="dist/1.4.4/spec/concordion/command/execute/AccessToLinkHref.html">More details</a>]
 </p>
 
 </div>
