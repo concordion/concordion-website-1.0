@@ -1,31 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><html xmlns:concordion="http://www.concordion.org/2007/concordion" xmlns:cx="urn:concordion-extensions:2010">
 <link href="../../../../concordion.css" rel="stylesheet" type="text/css" />
-<head><script type="text/javascript">
-function show(id) {
-  document.getElementById(id).style.visibility = 'visible';
-}
-
-function hide(id) {
-  document.getElementById(id).style.visibility = 'hidden';
-}
-function showScreenshotOn(e) {
-  var targ;
-  if (!e) var e = window.event;
-  if (e.target) targ = e.target
-  else if (e.srcElement) targ = e.srcElement
-  if (targ.nodeType == 3) // defeat Safari bug
-    targ = targ.parentNode;
-  if (targ.nodeName == 'P')
-    targ = targ.parentNode;
-  return (targ.className.indexOf('stackTrace') != 0);
-}</script><style>
-.screenshot {
-  position:absolute;
-  visibility:hidden;
-  border:solid 1px black;
-  z-index:30;
-}
-</style><style>* {
+<head><style>* {
   font-family: Arial;
 }
 body {
@@ -70,9 +45,8 @@ li {
   margin-bottom: 6px; 
 }
 
-
 .example {
-  padding: 2px 12px 6px 12px;
+  padding: 6px 16px 6px 16px;
   border: 1px solid #C3D9FF;
   margin: 6px 0px 28px 0px;
   background-color: #F5F9FD;
@@ -152,6 +126,8 @@ ins {
 }
 .missing, .missing * {
   background-color: #ff9999;
+  color:#bb5050;
+  text-decoration: line-through;
 }
 .surplus, .surplus * {
   background-color: #ff9999;
@@ -206,7 +182,7 @@ pre.html {
     border: 1px solid #ededdf;
 }
 </style>
-</head>    
+<link type="text/css" rel="stylesheet" href="../../../../tooltip.css" /></head>
 
 <body><span class="breadcrumbs"><a href="../Ext.html">Concordion Extensions Library</a> &gt; <a href="LoggingTooltip.html">Logging Tooltip Extension</a> &gt;</span>
 
@@ -220,13 +196,13 @@ named loggers, and by logging level. The output of logging to the console can al
         <p concordion:execute="configureLoggers(#loggers)">Given the LoggingTooltipExtensionFactory has been restricted to use only the <code concordion:set="#loggers">foo</code> logger,</p>
         <p concordion:execute="setSystemProperty(#key, #value)">and the system property <code concordion:set="#key">concordion.extensions</code>
         is set to the class <code concordion:set="#value">spec.concordion.ext.loggingTooltip.LoggingTooltipExtensionFactory</code>.</p>
-          
+
         <p>When running </p>
         <pre concordion:set="#snippet">&lt;p concordion:assertEquals="getName()"&gt;Frank&lt;/p&gt;</pre>
 
         <p concordion:execute="#fragment=render(#snippet)"> with a fixture that logs "Hello Foo" to the <code>foo</code> logger, and "Hello Bar" to the <code>bar</code> logger,
-        the logging tooltip displays:</p>
-        
+        the logging tooltip displays: </p><a href="#" class="tt"><img src="../../../../image/info16.png" alt="i"> </img><span class="tooltip"><span class="top"></span><span class="middle">[9:06:24.735]: Hello Foo <br />[9:06:24.735]: Hello Bar <br />[9:06:24.736]: Hello Baz <br />[9:06:24.736]: Failed to generate breadcrumb <br /></span><span class="bottom"></span></span></a>
+
         <pre concordion:assertEquals="getMessagesFrom(#fragment)" class="html success">[<i>timestamp</i>]: Hello Foo</pre>
   </div>
 
@@ -235,12 +211,12 @@ named loggers, and by logging level. The output of logging to the console can al
         <p concordion:execute="configureLoggers(#loggers)">Given the LoggingTooltipExtensionFactory has been restricted to use the <code concordion:set="#loggers">baz, foo</code> loggers,</p>
         <p concordion:execute="setSystemProperty(#key, #value)">and the system property <code concordion:set="#key">concordion.extensions</code>
         is set to the class <code concordion:set="#value">spec.concordion.ext.loggingTooltip.LoggingTooltipExtensionFactory</code>.</p>
-          
+
         <p>When running </p>
         <pre concordion:set="#snippet">&lt;p concordion:assertEquals="getName()"&gt;Frank&lt;/p&gt;</pre>
 
         <p concordion:execute="#fragment=render(#snippet)"> with a fixture that logs "Hello Foo" to the <code>foo</code> logger, "Hello Bar" to the <code>bar</code> logger, and "Hello Baz" to the <code>baz</code> logger,
-        the logging tooltip displays:</p>
+        the logging tooltip displays: </p><a href="#" class="tt"><img src="../../../../image/info16.png" alt="i"> </img><span class="tooltip"><span class="top"></span><span class="middle">[9:06:24.748]: Hello Foo <br />[9:06:24.748]: Hello Bar <br />[9:06:24.748]: Hello Baz <br />[9:06:24.749]: Failed to generate breadcrumb <br /></span><span class="bottom"></span></span></a>
         
         <pre concordion:assertEquals="getMessagesFrom(#fragment)" class="html success">[<i>timestamp</i>]: Hello Foo
 [<i>timestamp</i>]: Hello Baz</pre>
@@ -251,15 +227,37 @@ named loggers, and by logging level. The output of logging to the console can al
         <p concordion:execute="configureLogLevel(#logLevel)">Given the LoggingTooltipExtensionFactory has been restricted to use the <code concordion:set="#logLevel">INFO</code> log level,</p>
         <p concordion:execute="setSystemProperty(#key, #value)">and the system property <code concordion:set="#key">concordion.extensions</code>
         is set to the class <code concordion:set="#value">spec.concordion.ext.loggingTooltip.LoggingTooltipExtensionFactory</code>.</p>
-          
+
         <p>When running </p>
         <pre concordion:set="#snippet">&lt;p concordion:execute="logStuff()"/&gt;</pre>
 
         <p concordion:execute="#fragment=render(#snippet)"> with a fixture that logs "Hello Info" at the <code>INFO</code> log level, "Hello Fine" to the <code>FINE</code> log level, and "Hello Warn" to the <code>WARN</code> log level,
-        the logging tooltip displays:</p>
+        the logging tooltip displays: </p><a href="#" class="tt"><img src="../../../../image/info16.png" alt="i"> </img><span class="tooltip"><span class="top"></span><span class="middle">[9:06:24.764]: Hello Info <br />[9:06:24.764]: Hello Warn <br />[9:06:24.765]: Failed to generate breadcrumb <br /></span><span class="bottom"></span></span></a>
         
         <pre concordion:assertEquals="getMessagesFrom(#fragment)" class="html success">[<i>timestamp</i>]: Hello Info
 [<i>timestamp</i>]: Hello Warn</pre>
   </div>
-<div class="footer">Results generated by <a href="http://www.concordion.org"><img src="../../../../image/concordion-logo.png" alt="Concordion" border="0" /></a><div class="testTime">in 44 ms on 30-Oct-2011 at 14:04:58 NZDT</div></div></body>
+
+  <p>
+      For those not using java.util.logging, a custom LogMessenger can be provided.  For the sake of the below
+      example, the implementation is one that returns a fixed string, but alternatives that use Logback, log4j or slf4j
+      can be easily implemented as an exercise for the reader.
+  </p>
+
+  <div class="example">
+      <h3>Example - custom log messenger</h3>
+
+      <p concordion:execute="configureLogMessage(#logMessage)">Given the AlternateLoggingTooltipExtensionFactory has been told to return <code concordion:set="#logMessage">Hello AlternateLoggingTooltipExtensionFactory</code> as a log message,</p>
+      <p concordion:execute="setSystemProperty(#key, #value)">and the system property <code concordion:set="#key">concordion.extensions</code>
+          is set to the class <code concordion:set="#value">spec.concordion.ext.loggingTooltip.AlternateLoggingTooltipExtensionFactory</code>.</p>
+
+      <p>When running </p>
+      <pre concordion:set="#snippet">&lt;p concordion:execute="logStuff()"/&gt;</pre>
+
+      <p concordion:execute="#fragment=render(#snippet)">the logging tooltip displays: </p><a href="#" class="tt"><img src="../../../../image/info16.png" alt="i"> </img><span class="tooltip"><span class="top"></span><span class="middle">[9:06:24.780]: Hello Info <br />[9:06:24.781]: Hello Warn <br />[9:06:24.781]: Failed to generate breadcrumb <br /></span><span class="bottom"></span></span></a>
+
+      <pre concordion:assertEquals="getMessagesFrom(#fragment)" class="html success">[<i>timestamp</i>]: Hello AlternateLoggingTooltipExtensionFactory</pre>
+
+  </div>
+<div class="footer">Results generated by <a href="http://www.concordion.org" style="font-weight: bold; text-decoration: none; color: #89C;">Concordion</a><div class="testTime">in 75 ms on 17-Nov-2013 at 21:06:24 NZDT</div></div></body>
 </html>

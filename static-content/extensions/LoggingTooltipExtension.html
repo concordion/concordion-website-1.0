@@ -29,7 +29,7 @@
 
 <div class="header">
 
-    <a href="http://www.opensource.org/">
+    <a href="http://opensource.org/">
     <img class="open-source-logo" src="../image/opensource-110x95.png"
         alt="Open source (Apache 2.0 license)" />
     </a>
@@ -98,6 +98,9 @@ console can also be enabled.</p>
     public ConcordionExtension extension =
         new LoggingTooltipExtension(loggers, Level.FINE, false);
 </pre>
+
+<h2><a name="Other_Loggers"/>Using other loggers</h2>
+<p>For those not using java.util.logging, a custom LogMessenger can be provided. See the test class <code>AlternateLoggingTooltipExtensionFactory</code> for an example.</p>
 
 <h1><a name="Specification"/>Specification</h1>
 <p>See also the <a href="spec/spec/concordion/ext/loggingTooltip/LoggingTooltip.html">logging tooltip specification</a>.</p>
