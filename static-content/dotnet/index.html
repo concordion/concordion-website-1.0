@@ -3,10 +3,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<title>Concordion</title>
-<link media="all" rel="stylesheet" type="text/css" href="css/default.css"/>
-<link media="print"  rel="stylesheet" type="text/css" href="css/print.css"/>
-<link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico" />
+<title>Concordion-NET</title>
+<link media="all" rel="stylesheet" type="text/css" href="../css/default.css"/>
+<link media="print"  rel="stylesheet" type="text/css" href="../css/print.css"/>
+<link rel="icon" type="image/vnd.microsoft.icon" href="../favicon.ico" />
 <style>
 .subtext {
   font-size: 13pt;
@@ -19,7 +19,7 @@ h2 {
   font-size: 18pt;
 }
 .content {
-  xbackground: url("image/girl-quote.png") no-repeat;
+  xbackground: url("../image/girl-quote.png") no-repeat;
   xbackground-position: 410px 50px;
   background-color: #fcfcfa !important;
 }
@@ -51,13 +51,13 @@ h2 {
 <div class="header">
 
     <a href="http://www.opensource.org/">
-    <img class="open-source-logo" src="image/opensource-110x95.png"
+    <img class="open-source-logo" src="../image/opensource-110x95.png"
         alt="Open source (Apache 2.0 license)" />
     </a>
 
     <a href="/">
-    <img src="image/front-page-banner.png"
-        alt="Concordion is a simple, but powerful, agile acceptance testing tool for Java." />
+    <img src="../image/dotnet-page-banner.png"
+        alt="Concordion-NET is a simple, but powerful, agile acceptance testing tool for .NET." />
     </a>
 
 </div><!-- header -->
@@ -66,12 +66,11 @@ h2 {
 
 <ul class="menu">
   <li class="selectedTab"><a href="/">Home</a></li>
-  <li><a href="Tutorial.html">Tutorial</a></li>
-  <li><a href="Technique.html">Hints and Tips</a></li>
-  <li><a href="Extensions.html">Extensions API</a></li>
-  <li><a href="ExtensionsLibrary.html">Extensions Library</a></li>
+  <li><a href="GettingStarted.html">Getting Started</a></li>
+  <li><a href="RunningTests.html">Running Tests</a></li>
+  <li><a href="AdvancedFeatures.html">Advanced Features</a></li>
+  <li><a href="Configuration.html">Configuration</a></li>
   <li><a href="Download.html">Download</a></li>
-  <li><a href="Questions.html">FAQ</a></li>
 </ul>
 
 </div><!-- menuBar  -->
@@ -80,13 +79,13 @@ h2 {
 
 
 <p class="subtext" style="margin: 20px 0px 20px 0px; font-size: 20pt">
-    Concordion is an open source tool for writing
-    <br />automated acceptance tests in Java<span style="font-size: 15pt; vertical-align: top">*</span>
+    Concordion-NET is an open source tool for writing
+    <br />automated acceptance tests in .NET<span style="font-size: 15pt; vertical-align: top">*</span>
 </p>
 
 <p style="font-size: 10pt; font-style: italic">
 *
-There are also versions for <a href="dotnet/index.html">.NET</a>, Python, Scala, and Ruby. [<a href="Ports.html">More details</a>]
+There are also versions for <a href="../index.html">Java</a>, Python, Scala, and Ruby. [<a href="../Ports.html">More details</a>]
 <br />&#160;
 </p>
 
@@ -175,7 +174,8 @@ easy to include in an existing project build.
     to make the pages even more useful.
 </p>
 <p>
-    For an example, see <a href="dist/1.4.4/spec/concordion/Concordion.html">Concordion's own acceptance tests</a>.
+    <!-- TODO update with link to Concordion-NET output -->
+    For an example, see <a href="dist/1.4.4/spec/concordion/Concordion.html">Concordion-NET's own acceptance tests</a>.
 </p>
 
 
@@ -189,7 +189,7 @@ easy to include in an existing project build.
 
 
 <p>
-    <img src="image/concept/AnatomyOfAnActiveSpec.png"/>
+    <img src="../image/concept/AnatomyOfAnActiveSpec.png"/>
 </p>
 
 <h2>Complex behaviours can be decomposed</h2>
@@ -206,7 +206,7 @@ easy to include in an existing project build.
 <h1>How it Works</h1>
 
 <p>
-    <img style="padding-top: 24px; padding-bottom: 20px;" src="image/concept/HowItWorks.png"/>
+    <img style="padding-top: 24px; padding-bottom: 20px;" src="../image/concept/HowItWorks.png"/>
 </p>
 
 <p>
@@ -218,9 +218,9 @@ the examples to be checked against a real-life system.
 
 <p>
 The instrumentation is invisible to a browser, but is processed by a
-Java fixture class that accompanies the specification and
+NUnit fixture class that accompanies the specification and
 acts as a buffer between the specification and the system under
-test. The fixture is also a JUnit test case, so it's easy to run and
+test. The fixture is also a NUnit test case, so it's easy to run and
 integrate into an automated build. The results of running the examples are
 exported with green and red indicating successes and failures.
 </p>
@@ -249,7 +249,7 @@ Some example instrumentation:
 
 <h2>Separating requirements from implementation helps refactoring</h2>
 <p>
-Hiding all the implementation-specific detail inside the Java fixture
+Hiding all the implementation-specific detail inside the NUnit fixture
 code gives you freedom to
 change the internal design of
 your application confident that you'll catch inadvertent changes
@@ -344,7 +344,7 @@ impossible to cut corners.
 <p>
 Concordion is not suitable for testers who don't have access to developers
 or development skills. The test specs can be written by non-developers, but
-the instrumentation and fixture code require Java programming ability.
+the instrumentation and fixture code require .NET programming ability.
 </p>
 
 <p>
