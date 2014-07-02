@@ -7,26 +7,26 @@
     <MASTER_PAD_INFO/>
   </MASTER_PAD_VERSION_INFO>
   <Company_Info>
-    <Company_Name>Concordion</Company_Name>
-    <Address_1>E1</Address_1>
+    <Company_Name></Company_Name>
+    <Address_1></Address_1>
     <Address_2></Address_2>
-    <City_Town>London</City_Town>
+    <City_Town></City_Town>
     <State_Province></State_Province>
-    <Zip_Postal_Code>E1</Zip_Postal_Code>
-    <Country>United Kingdom</Country>
+    <Zip_Postal_Code></Zip_Postal_Code>
+    <Country></Country>
     <Company_WebSite_URL>http://concordion.org/</Company_WebSite_URL>
     <Contact_Info>
-      <Contact_First_Name>David</Contact_First_Name>
-      <Contact_Last_Name>Peterson</Contact_Last_Name>
-      <Contact_Email>david@crowdsoft.com</Contact_Email>
-      <Author_First_Name>David</Author_First_Name>
-      <Author_Last_Name>Peterson</Author_Last_Name>
-      <Author_Email>david@crowdsoft.com</Author_Email>
+      <Contact_First_Name></Contact_First_Name>
+      <Contact_Last_Name></Contact_Last_Name>
+      <Contact_Email></Contact_Email>
+      <Author_First_Name></Author_First_Name>
+      <Author_Last_Name></Author_Last_Name>
+      <Author_Email></Author_Email>
     </Contact_Info>
     <Support_Info>
-      <Sales_Email>david@crowdsoft.com</Sales_Email>
-      <Support_Email>david@crowdsoft.com</Support_Email>
-      <General_Email>david@crowdsoft.com</General_Email>
+      <Sales_Email></Sales_Email>
+      <Support_Email></Support_Email>
+      <General_Email></General_Email>
       <Sales_Phone></Sales_Phone>
       <Support_Phone></Support_Phone>
       <General_Phone></General_Phone>
