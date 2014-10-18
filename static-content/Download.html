@@ -41,8 +41,8 @@
   <li><a href="/">Home</a></li>
   <li><a href="Tutorial.html">Tutorial</a></li>
   <li><a href="Technique.html">Hints and Tips</a></li>
-  <li><a href="Extensions.html">Extensions API</a></li>
-  <li><a href="ExtensionsLibrary.html">Extensions Library</a></li>
+  <li><a href="ExtensionsAPI.html">Extensions API</a></li>
+  <li><a href="Extensions.html">Extensions</a></li>
   <li class="selectedTab"><a href="Download.html">Download</a></li>
   <li><a href="Questions.html">FAQ</a></li>
 </ul>
@@ -102,61 +102,11 @@ Or, for the bleeding edge, build from the Git repository: <a href="https://githu
 <br/>
 
 <a name="extensionsLibrary"/>
-<h2>Extensions Library (optional)</h2>
+<h2>Extensions</h2>
 
 <p>
-The optional <a href="ExtensionsLibrary.html#library">Extensions Library</a> enhances Concordion with abilities such as adding screenshots and logging information to the generated output.
+See each individual extension on the <a href="Extensions.html">Extensions<a> page for installation details and demo code.
 </p>
-
-<div style="float:left">
-<p>Manual download:</p>
-
-<table style="margin-left: 40px; background-color:white; padding: 10px; border: 1px solid #d7d7d7; width: 290px;">
-<tr>
-<td><img src="image/shared/download.gif" alt="Download concordion-extensions" /></td>
-<td><b><a href="http://concordion-extensions.googlecode.com/files/concordion-extensions-1.1.1.jar">concordion-extensions-1.1.1.jar</a></b> (33KB)</td>
-</tr>
-</table>
-
-<a name="concordion-extensions-demo"/>
-<p>Example project, demonstrating usage with Selenium WebDriver:</p>
-
-<table style="margin-left: 40px; background-color:white; padding: 10px; border: 1px solid #d7d7d7; width: 290px;">
-<tr>
-<td><img src="image/shared/download.gif" alt="Download concordion-extensions-demo" /></td>
-<td><b><a href="http://concordion-extensions.googlecode.com/files/concordion-extensions-demo-1.1.1.0.zip">concordion-extensions-demo-1.1.1.0.zip</a></b> (20KB)</td>
-</tr>
-</table>
-</div>
-
-
-<div style="float: right">
-<p>Maven configuration:</p>
-
-<pre style="border: 1px solid #d7d7d7; width: 400px; margin-left: 0px; padding-left: 16px;">
-&lt;dependency&gt;
-    &lt;groupId&gt;<b>org.concordion</b>&lt;/groupId&gt;
-    &lt;artifactId&gt;<b>concordion-extensions</b>&lt;/artifactId&gt;
-    &lt;version&gt;<b>1.1.1</b>&lt;/version&gt;
-&lt;/dependency&gt;
-</pre>
-</div>
-<p style="clear: both"/>
-
-<br />
-
-<h3>Changes in concordion-extensions 1.1.1 &#8212;  19th November 2013</h3>
-
-<ul>
-<li>For those not using java.util.logging, allow customisation of LogMessenger (<a href="http://code.google.com/p/concordion-extensions/issues/detail?id=19">Issue 19</a>). See the test class <a href="https://github.com/concordion/concordion-extensions/blob/master/src/test/java/spec/concordion/ext/loggingTooltip/AlternateLoggingTooltipExtensionFactory.java">AlternateLoggingTooltipExtensionFactory</a> for a basic example.Thanks to Michael Robinson for the <a href="https://github.com/concordion/concordion-extensions/pull/1">patch</a>.</li>
-</ul>
-
-<h3>Changes in concordion-extensions-demo 1.1.1.0 &#8212;  19th November 2013</h3>
-
-<ul>
-<li>Updated to Concordion 1.4.4 and concordion-extensions 1.1.1</li>
-</ul>
-
 
 <br/>
 <hr/>
@@ -167,7 +117,7 @@ The optional <a href="ExtensionsLibrary.html#library">Extensions Library</a> enh
 <h4>Concordion 1.4.2 &#8212; 31st October 2011</h4>
 
 <ul>
-<li><a href="Extensions.html#add">Simplified configuration of extensions</a> through new @Extension and @Extensions annotations.</li>
+<li><a href="ExtensionsAPI.html#add">Simplified configuration of extensions</a> through new @Extension and @Extensions annotations.</li>
 <li>Fixture classes can now be suffixed with "Fixture" as an alternative to "Test" (<a href="http://code.google.com/p/concordion/issues/detail?id=37">Issue 37</a>)</li>
 <li>Fixed stack-trace rendering problem in Google Chrome (<a href="http://code.google.com/p/concordion/issues/detail?id=36">Issue 36</a>)</li>
 <li>Fixed Concordion output displaying spaces as Â (<a href="http://code.google.com/p/concordion/issues/detail?id=38">Issue 38</a>)</li>
@@ -213,18 +163,6 @@ Boolean</a> returned from the system under test</li>
 <ul>
 <li><a href="https://code.google.com/p/concordion/issues/detail?id=23#c3">Fixed: Error message shown for all @Unimplemented tests, not just those with an implementation</li>
 <li><a href="http://code.google.com/p/concordion/issues/detail?id=54">Fixed: Duplicate extension instances created due to inheritance of @Extension annotation</a> (thanks to Bryan Young for the issue report and unit test)</li>
-</ul>
-
-
-<br />
-
-<h4>Changes in concordion-extensions 1.1.0 &#8212;  29th June 2012</h4>
-
-<ul>
-<li>Support method chaining in extensions to provide fluent way of configuring them (<a href="http://code.google.com/p/concordion-extensions/issues/detail?id=15">Issue 15</a>)</li>
-<li>Fixed - Tooltip renderer fails on verify rows (<a href="http://code.google.com/p/concordion-extensions/issues/detail?id=13">Issue 13</a>)</li>
-<li>Updated examples to use new @Extension and @Extensions annotations</li>
-<li>Updated examples to Selenium 2.0 (<a href="http://code.google.com/p/concordion-extensions/issues/detail?id=14">Issue 14</a>)</li>
 </ul>
 
 </div>

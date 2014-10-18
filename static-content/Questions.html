@@ -65,8 +65,8 @@ h3 {
   <li><a href="/">Home</a></li>
   <li><a href="Tutorial.html">Tutorial</a></li>
   <li><a href="Technique.html">Hints and Tips</a></li>
-  <li><a href="Extensions.html">Extensions API</a></li>
-  <li><a href="ExtensionsLibrary.html">Extensions Library</a></li>
+  <li><a href="ExtensionsAPI.html">Extensions API</a></li>
+  <li><a href="Extensions.html">Extensions</a></li>
   <li><a href="Download.html">Download</a></li>
   <li class="selectedTab"><a href="Questions.html">FAQ</a></li>
 </ul>
@@ -165,7 +165,7 @@ Please use the
     you will need to <a href="https://help.github.com/articles/fork-a-repo">fork</a> the repository, commit and push your changes to your forked project, and send us a <a href="https://help.github.com/articles/using-pull-requests">pull request</a> referencing the URL of the issue that you created.
 </p>
 <p>
-    Please note that, in order to keep Concordion clean and minimal, we consider all enhancement requests carefully. Should your enhancement not be appropriate for Concordion core, you may wish to package it as a Concordion <a href="Extensions.html">extension</a>. 
+    Please note that, in order to keep Concordion clean and minimal, we consider all enhancement requests carefully. Should your enhancement not be appropriate for Concordion core, you may wish to package it as a Concordion <a href="ExtensionsAPI.html">extension</a>. 
 </p>
 <p>
     See README-DEVELOPERS.txt in the concordion repository for the development standards.
@@ -210,7 +210,7 @@ See the <a target="specs" href="dist/1.4.4/spec/concordion/command/assertEquals/
 </p>
 
 <p>
-If you want to use custom CSS or JavaScript, or include images or other resources, in your Concordion output, you will need to write a <a href="Extensions.html#cssExample">simple extension</a>.
+If you want to use custom CSS or JavaScript, or include images or other resources, in your Concordion output, you will need to write a <a href="ExtensionsAPI.html#cssExample">simple extension</a>.
 </p>
 
 
@@ -329,13 +329,8 @@ scripting API that the fixtures call into.
     </tr>
     <tr>
         <th class="vertical">Platforms</th>
-        <td>Java, .net, Python, Ruby, perl, Smalltalk, C++</td>
-        <td>Java,
-        <a class="externalLink" href="http://code.google.com/p/concordion-net/">.net</a>,
-        <a class="externalLink" href="http://code.google.com/p/pyconcordion/">Python</a>,
-        <a class="externalLink" href="http://rubyforge.org/projects/ruby-concordion/">Ruby</a>
-        <a class="externalLink" href="https://github.com/tom/accordion-scala">Scala</a>
-        </td>
+        <td>Java, .NET, Python, Ruby, perl, Smalltalk, C++</td>
+        <td>Java, .NET, Python, Ruby, Scala, Fantom (see <a href="Ports.html">Ports</a>)</td>
     </tr>
     <tr>
         <th class="vertical">Time to Learn</th>
@@ -359,7 +354,7 @@ Java fixture code. For tests that exercise the browser, we recommend
 with Concordion.
 </p>
 <p>
-    The <a href="Download.html#concordion-extensions-demo"/>concordion-extensions-demo</a> 
+    The <a class="externalLink" href="https://github.com/concordion/concordion-screenshot-extension-demo"/>screenshot extension demo</a> 
     project demonstrates Concordion working with Selenium WebDriver.
   </p>
 
@@ -419,6 +414,11 @@ or testers do on their own. If you produce the specifications as a group
 there'll usually be someone who's comfortable writing HTML. If not, it's not
 particularly difficult to learn.
 </p>
+<p>
+The <a href="ExtensionsAPI.html">Extensions API</a> allows you to define alternative input sources.
+For example, the <a class="externalLink" href="https://github.com/concordion/concordion-excel-extension">Excel extension</a>.
+If you implement an additional input source, feel free to contribute it as an extension.
+</p>
 
 <a name="whyNotWiki"> </a>
 <h3>Why not use a wiki or Word documents instead?</h3>
@@ -441,7 +441,7 @@ provides content assist and validation for Concordion Specs in Eclipse.
 <a name="extension"> </a>
 <h3>Can I extend Concordion with my own commands?</h3>
 <p>
-Yes. See <a target="specs" href="Extensions.html">here</a> for details.
+Yes. See <a target="specs" href="ExtensionsAPI.html">here</a> for details.
 </p>
 
 <a name="storyDrivenProcess"> </a>
