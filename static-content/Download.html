@@ -64,7 +64,7 @@ Full distribution including source code and all dependencies:
 <table style="margin-left: 40px; background-color:white; padding: 10px; border: 1px solid #d7d7d7; width: 290px;">
 <tr>
 <td><img src="image/shared/download.gif" alt="Download Concordion" /></td>
-<td><b><a href="http://dl.bintray.com/concordion/downloads/concordion-1.4.4.zip">concordion-1.4.4.zip</a></b> (1.0MB)</td>
+<td><b><a href="http://dl.bintray.com/concordion/downloads/concordion-1.4.5.zip">concordion-1.4.5.zip</a></b> (1.0MB)</td>
 </tr>
 </table>
 </div>
@@ -77,7 +77,7 @@ Full distribution including source code and all dependencies:
 &lt;dependency&gt;
     &lt;groupId&gt;<b>org.concordion</b>&lt;/groupId&gt;
     &lt;artifactId&gt;<b>concordion</b>&lt;/artifactId&gt;
-    &lt;version&gt;<b>1.4.4</b>&lt;/version&gt;
+    &lt;version&gt;<b>1.4.5</b>&lt;/version&gt;
 &lt;/dependency&gt;
 </pre>
 </div>
@@ -93,17 +93,32 @@ Or, for the bleeding edge, build from the Git repository: <a href="https://githu
 
 <br />
 
-<h3>Changes in Concordion 1.4.4 &#8212; 18th August 2013</h3>
+<a name="release1.4.5"/>
+<h3>Changes in Concordion 1.4.5 &#8212; 23rd November 2014</h3>
 
 <ul>
-<li>Added a <a href="Tutorial.html#failFast">FailFast</a> annotation to stop processing the current specification after an exception occurs.</li>
-<li>Added <code>withSpecificationLocator()</code> to the extension API. This provides the ability to read and write to files using <a href="dist/1.4.4/spec/concordion/extension/FileSuffixExtensions.html">different file suffixes</a> by configuring an extension. (Note, this includes an update to the Target API to include an additional method).</li>
+<li>The results of the run command are now <a href="dist/1.4.5/spec/concordion/results/runTotals/CachedResults.html">cached</a>, and the cached result returned if the test is run subsequently within the test run (<a href="https://github.com/concordion/concordion/pull/94">#94</a>). If you're using the run command, this:
+    <ol>
+        <li>allows a specification to be referenced from multiple index pages using concordion:run, with the pass/fail/ignore result showed on each reference link.</li>
+        <li>removes the need to only include the fixture for your main index specification in the test configuration of your build script. You can now include all fixtures in the build script, and each will only run once. This also ensures that any "orphaned" fixtures (that aren't referenced in your specifications) are run.</li>
+        <li>allows you to invoke a test run of all fixtures in your IDE, with each only being run once.</li>
+    </ol>
+    Note that the cache only works within a single JVM instance and caching will not work if you fork additional JVMs to run the fixtures.
+</li>
+<li>The execute command now has <a href="dist/1.4.5/spec/concordion/command/execute/ExecutingList.html">special behavior when placed on a list element</a>. (<a href="https://github.com/concordion/concordion/pull/92">#92</a>)</li>
+<li>Added support for <a href="dist/1.4.5/spec/concordion/command/LowerCaseCommands.html">lower case commands</a> to comply with the XHTML standard. (<a href="https://github.com/concordion/concordion/pull/88">#88</a>)</li>
+<li>Added a <a href="dist/1.4.5/spec/concordion/extension/listener/Listener.html">listener</a> for the set command. (<a href="https://github.com/concordion/concordion/pull/96">#96</a>)</li>
+<li>The <a href="dist/1.4.5/spec/concordion/Concordion.html">reference specs</a> now use the run command. (<a href="https://github.com/concordion/concordion/issues/75">#75</a>)</li>
+<li>The reference fixtures now use the JUnit 4 ConcordionRunner. (<a href="https://github.com/concordion/concordion/issues/74">#74</a>)</li>
+<li>Gradle Wrapper added, so that users don't need to download Gradle manually, and ensure correct Gradle version is used (<a href="https://github.com/concordion/concordion/pull/93">#93</a>)</li>
+<li>Fixed Gradle deprecation warning. (<a href="https://github.com/concordion/concordion/issues/80">#80</a>)</li>
+<li>Added Travis CI build config</li>
 </ul>
+Thanks to Tim Wright, Jacek Ratzinger, John Hurst, Dan Ketzel and Nigel Charman for their commits.
 <br/>
 
-<a name="extensionsLibrary"/>
+<a name="extensions"/>
 <h2>Extensions</h2>
-
 <p>
 See each individual extension on the <a href="Extensions.html">Extensions<a> page for installation details and demo code.
 </p>
@@ -114,6 +129,7 @@ See each individual extension on the <a href="Extensions.html">Extensions<a> pag
 <div class="section">
 <h2>Change History</h2>
 
+<a name="release1.4.2"/>
 <h4>Concordion 1.4.2 &#8212; 31st October 2011</h4>
 
 <ul>
@@ -128,6 +144,7 @@ See each individual extension on the <a href="Extensions.html">Extensions<a> pag
 <br/>
 
 
+<a name="release1.4.3"/>
 <h4>Concordion 1.4.3 &#8212; 26th January 2013</h4>
 
 <h5>Upgraded dependencies</h5>
@@ -145,7 +162,6 @@ other jar dependencies (all of which can be found in the Concordion zip file in
 the "lib" directory). Failure to do so may result in the error
 "java.lang.NoClassDefFoundError: org/hamcrest/SelfDescribing".
 </p>
-
 
 <h5>Other improvements</h5>
 
@@ -167,6 +183,14 @@ Boolean</a> returned from the system under test</li>
 
 </div>
 
+<a name="release1.4.4"/>
+<h3>Concordion 1.4.4 &#8212; 18th August 2013</h3>
+
+<ul>
+<li>Added a <a href="Tutorial.html#failFast">FailFast</a> annotation to stop processing the current specification after an exception occurs.</li>
+<li>Added <code>withSpecificationLocator()</code> to the extension API. This provides the ability to read and write to files using <a href="dist/1.4.5/spec/concordion/extension/FileSuffixExtensions.html">different file suffixes</a> by configuring an extension. (Note, this includes an update to the Target API to include an additional method).</li>
+</ul>
+<br/>
 
 
 </div> <!-- content -->
