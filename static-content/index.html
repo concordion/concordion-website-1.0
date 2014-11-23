@@ -42,6 +42,23 @@ h2 {
 .crashCourse th {
   background-color: #eee;
 }
+.miniQuote {
+  float: right;
+  width: 240px;
+  background-color: white;
+  font-size: 17pt;
+  padding: 20px 12px 20px 16px;
+  border: 2px solid #e6e6dd;
+  border-bottom: 4px solid #4a4;
+  font-family: Georgia, Times, Serif;
+}
+.miniQuote * {
+  line-height: 17pt;
+}
+.twitter-box {
+  float: right;
+  width: 200px;
+}
 </style>
 </head>
 <body>
@@ -57,7 +74,7 @@ h2 {
 
     <a href="/">
     <img src="image/front-page-banner.png"
-        alt="Concordion is a simple, but powerful, agile acceptance testing tool for Java." />
+        alt="Concordion is a simple, but powerful, Specification by Example tool for Java." />
     </a>
 
 </div><!-- header -->
@@ -80,8 +97,8 @@ h2 {
 
 
 <p class="subtext" style="margin: 20px 0px 20px 0px; font-size: 20pt">
-    Concordion is an open source tool for writing
-    <br />automated acceptance tests in Java<span style="font-size: 15pt; vertical-align: top">*</span>
+    Concordion is an open source tool for automating
+    <br />Specification by Example in Java<span style="font-size: 15pt; vertical-align: top">*</span>
 </p>
 
 <p style="font-size: 10pt; font-style: italic">
@@ -90,33 +107,14 @@ There are also versions for <a href="dotnet/index.html">.NET</a>, Python, Fantom
 <br />&#160;
 </p>
 
-
-
-
-<style>
-.miniQuote {
-  float: right;
-  width: 270px;
-  background-color: white;
-  font-size: 19pt;
-  padding: 20px 12px 20px 16px;
-  border: 2px solid #e6e6dd;
-  border-bottom: 4px solid #4a4;
-  font-family: Georgia, Times, Serif;
-}
-.miniQuote * {
-  line-height: 19pt;
-}
-</style>
-
-<div class="miniQuote">
-<span style="font-size: 24pt">&#8220;</span>Concordion is similar to
-Cucumber but focuses on readability.<span style="font-size: 24pt">&#8221;</span>
-</div>
-
-
 <h1 style="margin-bottom: 0px; font-size: 17pt; border-bottom : 1px dotted black; padding-bottom: 6px; width: 320px">Key Features</h1>
 
+<div class="twitter-box" >
+    <p>
+           <a class="twitter-timeline" data-chrome="nofooter" href="https://twitter.com/concordion" data-widget-id="526560172584341504">Tweets by @concordion</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+   </p>
+</div>
 
 <ul class="keyBenefits">
 <li>
@@ -129,6 +127,7 @@ against the system, you can be confident the documentation is always
 up-to-date.
 </p>
 </li>
+
 
 <li>
 <p>
@@ -156,10 +155,19 @@ easy to include in an existing project build.
 
 <div class="memo">
 
-<h1 style="width: 660px">What's special about it?</h1>
+
+<h1 style="width: 320px">What's special about it?</h1>
+
+
+<div class="miniQuote">
+    <span style="font-size: 22pt">&#8220;</span>Concordion is similar to
+Cucumber but focuses on readability.<span style="font-size: 22pt">&#8221;</span>
+</div>
+
+
 
 <h2>Normal language, no need for structured "given/when/then"</h2>
-<p>
+<p style="width: 480px">
     Rather than forcing product owners to specify requirements in a
     specially structured language, Concordion lets you write them in normal
     language using paragraphs, tables and proper punctuation. This makes the
@@ -168,14 +176,14 @@ easy to include in an existing project build.
 </p>
 
 <h2>Attractive output</h2>
-<p>
+<p style="width: 480px">
     Concordion tests are written in HTML with an attractive stylesheet that
     makes them nice to read, and suitable for internal or even external
     documentation. You can use HTML features such as hyperlinks and images
     to make the pages even more useful.
 </p>
 <p>
-    For an example, see <a href="dist/1.4.5/spec/concordion/Concordion.html">Concordion's own acceptance tests</a>.
+    For an example, see <a href="dist/1.4.5/spec/concordion/Concordion.html">Concordion's own specifications</a>.
 </p>
 
 
