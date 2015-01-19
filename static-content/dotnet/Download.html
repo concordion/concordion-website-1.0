@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
   <head>
     <meta content="text/html; charset=windows-1252" http-equiv="content-type">
+	<meta http-equiv="Content-Language" content="en-US">
     <title>Download|Concordion.NET</title>
     <link href="css/default.css" rel="stylesheet" type="text/css">
     <link href="image/favicon.ico" rel="icon" type="image/vnd.microsoft.icon">
@@ -31,7 +32,7 @@
         <p> Full distribution including source code and all dependencies: </p>
         <ul>
           <li> <b>
-		  <a href="https://github.com/concordion/concordion-net/releases/latest">Concordion.NET-1.1.0.zip</a></b>
+		  <a href="https://github.com/concordion/concordion-net/releases/download/v1.1.0/Concordion.NET-1.1.0.zip" id="download-link">Concordion.NET-1.1.0.zip</a></b>
           </li>
         </ul>
         <h2>Nightly</h2>
@@ -99,8 +100,29 @@
         <ul>
         </ul>
       </div>
+	  <div class="addthis_sharing_toolbox" style="padding-left: 100px; padding-top: 5px; padding-bottom: 50px; background-color: silver">
+        <h3>Share Now</h3>
+      </div>
       <!-- content --> </div>
     <!-- page -->
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-543bae9469f79b87" async></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-58172036-1', 'auto');
+      ga('send', 'pageview');
+      var downloadLink = document.getElementById('download-link');
+      addListener(downloadLink, 'click', function() {
+        ga('send', 'event', 'download', 'Concordion.NET', document.url);
+      });
+      
+      function addListener(element, type, callback) {
+        if (element.addEventListener) element.addEventListener(type, callback);
+        else if (element.attachEvent) element.attachEvent('on' + type, callback);
+      }
+    </script>
   </body>
 </html>
