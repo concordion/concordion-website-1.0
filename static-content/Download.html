@@ -64,7 +64,7 @@ Full distribution including source code and all dependencies:
 <table style="margin-left: 40px; background-color:white; padding: 10px; border: 1px solid #d7d7d7; width: 290px;">
 <tr>
 <td><img src="image/shared/download.gif" alt="Download Concordion" /></td>
-<td><b><a href="http://dl.bintray.com/concordion/downloads/concordion-1.4.7.zip">concordion-1.4.7.zip</a></b> (1.1MB)</td>
+<td><b><a href="http://dl.bintray.com/concordion/downloads/concordion-1.4.7.zip" id="download-link">concordion-1.4.7.zip</a></b> (1.1MB)</td>
 </tr>
 </table>
 </div>
@@ -223,6 +223,15 @@ Thanks to Tim Wright, Jacek Ratzinger, John Hurst, Dan Katzel and Nigel Charman 
 
   ga('create', 'UA-58172036-1', 'auto');
   ga('send', 'pageview');
+  var downloadLink = document.getElementById('download-link');
+    addListener(downloadLink, 'click', function() {
+      ga('send', 'event', 'download', 'Concordion', document.url);
+    });
+
+    function addListener(element, type, callback) {
+      if (element.addEventListener) element.addEventListener(type, callback);
+      else if (element.attachEvent) element.attachEvent('on' + type, callback);
+    }
 </script>
 
 </body>
