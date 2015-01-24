@@ -59,6 +59,9 @@ h2 {
   float: right;
   width: 200px;
 }
+.auto-style1 {
+	font-size: 17pt;
+}
 </style>
 </head>
 <body>
@@ -102,16 +105,18 @@ h2 {
 </p>
 
 <p style="font-size: 10pt; font-style: italic">
-*
-There are also versions for <a href="dotnet/index.html">.NET</a>, Python, Fantom, Scala, and Ruby. [<a href="Ports.html">More details</a>]
-<br />&#160;
+* There are also versions for <a href="dotnet/index.html">.NET</a>, Python, 
+Fantom, Scala, and Ruby. [<a href="Ports.html">supported plattforms</a>]
+<br />&nbsp;
 </p>
 
-<h1 style="margin-bottom: 0px; font-size: 17pt; border-bottom : 1px dotted black; padding-bottom: 6px; width: 320px">Key Features</h1>
+<h1 style="margin-bottom: 0px; border-bottom : 1px dotted black; padding-bottom: 6px; width: 420px" class="auto-style1">
+Benefits of Specification by Example</h1>
 
 <div class="twitter-box" >
     <p>
-           <a class="twitter-timeline" data-chrome="nofooter" href="https://twitter.com/concordion" data-widget-id="526560172584341504">Tweets by @concordion</a>
+           <a class="twitter-timeline" data-chrome="nofooter" href="https://twitter.com/concordion" data-widget-id="526560172584341504">
+		   Tweets by @concordion</a>
             <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
    </p>
 </div>
@@ -119,32 +124,32 @@ There are also versions for <a href="dotnet/index.html">.NET</a>, Python, Fantom
 <ul class="keyBenefits">
 <li>
 <p>
-<span class="keyPoint">Tests can become <em>truly useful</em> documentation</span>
-Concordion acceptance tests are so readable they can double up
-as system documentation. They are written in HTML, so can be easily
-hyperlinked into a navigable structure. And, since the tests run
-against the system, you can be confident the documentation is always
-up-to-date.
+<span class="keyPoint">Tests can become <em>truly useful</em> documentation</span> 
+Concordion specifications are so readable they can double up as system 
+documentation. They are written in HTML, so can be easily hyperlinked into a 
+navigable structure. And, since the automated acceptance tests run against the 
+system, you can be confident the documentation is always up-to-date.
 </p>
 </li>
 
 
 <li>
 <p>
-<span class="keyPoint">Helps you to separate "what?" from "how?"</span>
-Tests that include a lot of implementation detail lock you into
-that implementation. Concordion helps you to document the logic
-and behaviour of your system in a way that gives you the flexibility
-to change the implementation later on.
+<span class="keyPoint">Helps you to separate &quot;what?&quot; from &quot;how?&quot;</span>
+Tests that include a lot of implementation detail lock you into that 
+implementation. Concordion helps you to document the logic and behaviour of your 
+system in a way that gives you the flexibility to change the implementation 
+later on.
 </p>
 </li>
 
 <li>
 <p>
 <span class="keyPoint">Purposely small command-set is simple to learn</span>
-Concordion has been designed with a short learning-curve as a top priority.
-The tests are also integrated with JUnit, which makes them easy to run and
-easy to include in an existing project build.
+Concordion has been designed with a short learning-curve as a top priority. 
+Automated 
+tests are integrated with JUnit, which makes them easy to run and easy to 
+include in an existing project build.
 </p>
 </li>
 
@@ -160,52 +165,53 @@ easy to include in an existing project build.
 
 
 <div class="miniQuote">
-    <span style="font-size: 22pt">&#8220;</span>Concordion is similar to
-Cucumber but focuses on readability.<span style="font-size: 22pt">&#8221;</span>
+    <span style="font-size: 22pt">&#8220;</span>Concordion is similar to Cucumber but 
+	focuses on readability.<span style="font-size: 22pt">&#8221;</span>
 </div>
 
 
 
-<h2>Normal language, no need for structured "given/when/then"</h2>
+<h2>Normal language, no need for structured &quot;given/when/then&quot;</h2>
 <p style="width: 480px">
-    Rather than forcing product owners to specify requirements in a
-    specially structured language, Concordion lets you write them in normal
-    language using paragraphs, tables and proper punctuation. This makes the
-    specifications much more natural to read and write, and helps everyone
-    to understand and agree about what a feature is supposed to do.
+    Rather than forcing product owners 
+	use a specially structured language for specification by example, Concordion lets you write them in normal language using 
+	paragraphs, tables and proper punctuation. This makes the specifications 
+	much more natural to read and write, and helps everyone to understand and 
+	agree about what a feature is supposed to do.
 </p>
 
 <h2>Attractive output</h2>
 <p style="width: 480px">
-    Concordion tests are written in HTML with an attractive stylesheet that
-    makes them nice to read, and suitable for internal or even external
-    documentation. You can use HTML features such as hyperlinks and images
-    to make the pages even more useful.
+    Concordion specifications are written in HTML with an attractive stylesheet that 
+	makes them nice to read, and suitable for internal or even external 
+	documentation. You can use HTML features such as hyperlinks and images to 
+	make the pages even more useful.
 </p>
 <p>
-    For an example, see <a href="dist/1.4.7/spec/concordion/Concordion.html">Concordion's own specifications</a>.
+    For an example, see <a href="dist/1.4.7/spec/concordion/Concordion.html">
+	Concordion's own specifications</a>.
 </p>
 
 
 <h2>Always bang up-to-date</h2>
 <p>
-    Concordion specifications are <b>active</b>. Behind the scenes, they are
-    linked to the system under test and therefore do not go out-of-date. If
-    a change is made to the system's behaviour then the tests associated
-    with the relevant specification will fail and let you know.
+    Concordion specifications are <b>active</b>. Behind the scenes, they are 
+	linked to the system under test and therefore do not go out-of-date. If a 
+	change is made to the system's behaviour then the tests associated with the 
+	relevant specification will fail and let you know.
 </p>
 
 
 <p>
-    <img src="image/concept/AnatomyOfAnActiveSpec.png"/>
+    <img src="image/concept/AnatomyOfAnActiveSpec.png" alt="specification by example" title="Specification by Example"/>
 </p>
 
 <h2>Complex behaviours can be decomposed</h2>
 <p>
-        Each question at the bottom of the specification links to another
-        active specification and so on until you have either run out of questions
-        or the answer is "Out of Scope". In this way, a complex behaviour can
-        be broken down into small, focused and easily understood requirements.
+        Each question at the bottom of the specification links to another active 
+		specification and so on until you have either run out of questions or 
+		the answer is &quot;Out of Scope&quot;. In this way, a complex behaviour can be 
+		broken down into small, focused and easily understood requirements.
 </p>
 
 
@@ -214,23 +220,24 @@ Cucumber but focuses on readability.<span style="font-size: 22pt">&#8221;</span>
 <h1>How it Works</h1>
 
 <p>
-    <img style="padding-top: 24px; padding-bottom: 20px;" src="image/concept/HowItWorks.png"/>
+    <img style="padding-top: 24px; padding-bottom: 20px;" src="image/concept/HowItWorks.png"
+    alt="acceptance testing" title="Acceptance Testing"/>
 </p>
 
 <p>
-Specifications are written in simple HTML.
-Developers instrument the concrete examples in each specification with
-commands (e.g. "set", "execute", "assertEquals") that allow
-the examples to be checked against a real-life system.
+Specifications by Example is based on simple HTML. Developers instrument the concrete 
+examples in each specification with commands (e.g. &quot;set&quot;, &quot;execute&quot;, 
+&quot;assertEquals&quot;) that allow the examples to be checked against a real-life 
+system.
 </p>
 
 <p>
-The instrumentation is invisible to a browser, but is processed by a
-Java fixture class that accompanies the specification and
-acts as a buffer between the specification and the system under
-test. The fixture is also a JUnit test case, so it's easy to run and
-integrate into an automated build. The results of running the examples are
-exported with green and red indicating successes and failures.
+The instrumentation is invisible to a browser, but is processed by a Java 
+fixture class that accompanies the specification and acts as a buffer between 
+the specification and the system under test. The fixture is also a JUnit test 
+case, so it's easy to run and integrate into an automated build. The results of 
+running the examples are exported with green and red indicating successes and 
+failures.
 </p>
 
 <p>
@@ -239,8 +246,8 @@ Some example instrumentation:
 
 <pre class="html">
 &lt;p&gt;
-    When &lt;span <b>concordion:set="#firstName"</b>&gt;Bob&lt;/span&gt; logs in a greeting
-    &lt;span <b>concordion:assertEquals="greetingFor(#firstName)"</b>&gt;Hello Bob!&lt;/span&gt;
+    When &lt;span <b>concordion:set=&quot;#firstName&quot;</b>&gt;Bob&lt;/span&gt; logs in a greeting
+    &lt;span <b>concordion:assertEquals=&quot;greetingFor(#firstName)&quot;</b>&gt;Hello Bob!&lt;/span&gt;
     should be displayed.
 &lt;/p&gt;
 </pre>
@@ -251,58 +258,54 @@ Some example instrumentation:
 <h1>Technique</h1>
 
 <p class="subtext">
-    With the right technique, active specifications can boost agility and make it
-    easier to sustain a test-driven approach.
+    With the right technique, active specifications can boost agility and make 
+	it easier to sustain a test-driven approach.
 </p>
 
 <h2>Separating requirements from implementation helps refactoring</h2>
 <p>
-Hiding all the implementation-specific detail inside the Java fixture
-code gives you freedom to
-change the internal design of
-your application confident that you'll catch inadvertent changes
-to required behaviour. The specifications don't
+Hiding all the implementation-specific detail inside the Java fixture code gives 
+you freedom to change the internal design of your application confident that 
+you'll catch inadvertent changes to required behaviour. The specifications don't 
 change when you refactor.
 </p>
 
 <p>
-One problem with unit tests is that they mix together
-customer requirements with tests of internal classes. With active
-specifications you make a clear distinction and it's much easier to know
-what's truly important and what can be changed. The specifications
-describe the customer requirements whereas the test fixtures verify internal
-implementation.
+One problem with unit tests is that they mix together customer requirements with 
+tests of internal classes. With active specifications you make a clear 
+distinction and it's much easier to know what's truly important and what can be 
+changed. The specifications describe the customer requirements whereas the test 
+fixtures verify internal implementation.
 </p>
 
 <h2>Specifications can be as thorough as unit tests</h2>
 <p>
-Specifications can cover every nuance of behaviour that is important
-to the customer. There is no reason why the specifications cannot do
-this to the same depth as JUnit tests. But instead of the onus being
-on the developer to think up all the fine-detail tests, with active
-specifications, testers and analysts can also get involved.
+Specifications can cover every nuance of behaviour that is important to the 
+customer. There is no reason why the specifications cannot do this to the same 
+depth as JUnit tests. But instead of the onus being on the developer to think up 
+all the fine-detail tests, with active specifications, testers and analysts can 
+also get involved.
 </p>
 
 <h2>Specifications can be hooked in at different levels</h2>
 <p>
-The fixture code can be hooked in at unit, component, sub-system or
-system level depending on the level of confidence required traded
-against speed of test execution. The decision does not affect the
-specifications themselves. They just describe the behaviour without
-explaining how it's implemented or how to test it.
+The fixture code can be hooked in at unit, component, sub-system or system level 
+depending on the level of confidence required traded against speed of test 
+execution. The decision does not affect the specifications themselves. They just 
+describe the behaviour without explaining how it's implemented or how to test 
+it.
 </p>
 
 
 <h2>Agreeing details up-front allows finer control over scope</h2>
 <p>
-Active specifications can be used to define detailed acceptance criteria
-for a story. This allows the product owner to make decisions about
-scope and behaviour that would otherwise be left to the programmers.
-This reduces gold-plating and allows the product owner to make conscious
-trade-offs of scope against development cost. E.g. "Let's not handle
-this [edge case] in this iteration as it's very unlikely to happen,
-and there are other stories that I want implemented that offer more
-value".
+Active specifications can be used to define detailed acceptance criteria for a 
+story. This allows the product owner to make decisions about scope and behaviour 
+that would otherwise be left to the programmers. This reduces gold-plating and 
+allows the product owner to make conscious trade-offs of scope against 
+development cost. E.g. &quot;Let's not handle this [edge case] in this iteration as 
+it's very unlikely to happen, and there are other stories that I want 
+implemented that offer more value&quot;.
 </p>
 
 
@@ -310,31 +313,28 @@ value".
 <h2>Test coverage no longer relies on developer self-discipline</h2>
 
 <p>
-Automated unit tests, written by developers, are at the heart of most
-traditional agile approaches. Unfortunately, because unit tests are
-neither visible to management nor the product owner, there's always
-a feeling of pressure to cut corners for short-term gains in
-development speed. In the long-term this can be fatal for agility,
-but it takes constant willpower to resist the temptation and many
-agile projects eventually succumb.
+Automated unit tests, written by developers, are at the heart of most 
+traditional agile approaches. Unfortunately, because unit tests are neither 
+visible to management nor the product owner, there's always a feeling of 
+pressure to cut corners for short-term gains in development speed. In the 
+long-term this can be fatal for agility, but it takes constant willpower to 
+resist the temptation and many agile projects eventually succumb.
 </p>
 
 <p>
-Driving a project with active specifications reduces
-this problem. Since the specifications are written in plain language,
-not only are they readable and visible outside of the development
-team, but they are also co-authored with the product owner and
-testers. Keeping the quality high becomes a group effort.
+Driving a project with active specifications reduces this problem. Since the 
+specifications are written in plain language, not only are they readable and 
+visible outside of the development team, but they are also co-authored with the 
+product owner and testers. Keeping the quality high becomes a group effort.
 </p>
 
 <p>
-Developers may continue to write some unit tests to drive aspects
-of the internal design but the project no longer relies on them for
-test coverage of external behaviour. The active specifications
-take over that role. Since writing the specifications is at the core
-of the visible process &#8211; nothing is developed without active
-specifications describing the requirements &#8211; it becomes practically
-impossible to cut corners.
+Developers may continue to write some unit tests to drive aspects of the 
+internal design but the project no longer relies on them for test coverage of 
+external behaviour. The active specifications take over that role. Since writing 
+the specifications is at the core of the visible process &#8211; nothing is developed 
+without active specifications describing the requirements &#8211; it becomes 
+practically impossible to cut corners.
 </p>
 
 <p><a href="Example.html">Worked example</a></p>
@@ -350,42 +350,42 @@ impossible to cut corners.
 <h2>Concordion is not a tester-only tool</h2>
 
 <p>
-Concordion is not suitable for testers who don't have access to developers
-or development skills. The test specs can be written by non-developers, but
-the instrumentation and fixture code require Java programming ability.
+Concordion is not suitable for testers who don't have access to developers or 
+development skills. The test specs can be written by non-developers, but the 
+instrumentation and fixture code require Java programming ability.
 </p>
 
 <p>
-The idea behind the product is to allow (non-developer) testers and developers
-to collaborate in a way that draws on the strengths of both without needing to
+The idea behind the product is to allow (non-developer) testers and developers 
+to collaborate in a way that draws on the strengths of both without needing to 
 step on each others toes.
 </p>
 
 <p>
-It can, however, be used by developers on their own, as an alternative to
-writing JUnit tests. The advantage of doing this, is that helps to separate the
+It can, however, be used by developers on their own, as an alternative to 
+writing JUnit tests. The advantage of doing this, is that helps to separate the 
 two concerns: separating the requirements from the implementation.
 </p>
 
 <h2>Concordion test specs are written in HTML</h2>
 
 <p>
-Only a very small subset of HTML is needed (&lt;p&gt;, &lt;table&gt;, &lt;b&gt;),
-however, some people may be intimidated by it or not want to write in HTML.
+Only a very small subset of HTML is needed (&lt;p&gt;, &lt;table&gt;, &lt;b&gt;), however, some 
+people may be intimidated by it or not want to write in HTML.
 </p>
 
 <p>
-Sometimes developers <em>imagine</em> that testers or business analysts won't
-want to learn to write HTML, but in reality it's not a problem.
-The crash course, below, describes enough HTML for writing the majority of specifications
+Sometimes developers <em>imagine</em> that testers or business analysts won't 
+want to learn to write HTML, but in reality it's not a problem. The crash 
+course, below, describes enough HTML for writing the majority of specifications 
 and takes most people only a few minutes to get their head round.
 </p>
 
 <p>
-If for some reason, it's not possible to persuade a tester or analyst to write in HTML,
-workable alternatives are for developers to sit with the analysts and testers and
-"do the typing" (i.e. write the basic HTML for them) or to take or accept notes in
-other formats and write them up in HTML.
+If for some reason, it's not possible to persuade a tester or analyst to write 
+in HTML, workable alternatives are for developers to sit with the analysts and 
+testers and &quot;do the typing&quot; (i.e. write the basic HTML for them) or to take or 
+accept notes in other formats and write them up in HTML.
 </p>
 
 </div> <!-- memo -->
@@ -393,25 +393,30 @@ other formats and write them up in HTML.
 
 <div class="crashCourse">
 <div><b>Crash Course in HTML</b></div>
-<p>HTML documents are written in text with special start and end tags around items.
-For example:</p>
-<div style="padding: 8px; background-color: white"><code>&lt;p&gt;This is a paragraph&lt;/p&gt;</code></div>
+<p>HTML documents are written in text with special start and end tags around 
+items. For example:</p>
+<div style="padding: 8px; background-color: white"><code>&lt;p&gt;This is a 
+	paragraph&lt;/p&gt;</code></div>
 
 <p>The tag &lt;p&gt; signals the start of the paragraph and &lt;/p&gt; signals the end.</p>
 
 <p>You can nest tags.</p>
 
-<div style="padding: 8px; background-color: white"><code>&lt;p&gt;This is &lt;b&gt;bold text&lt;/b&gt; in a paragraph&lt;/p&gt;</code></div>
+<div style="padding: 8px; background-color: white"><code>&lt;p&gt;This is &lt;b&gt;bold 
+	text&lt;/b&gt; in a paragraph&lt;/p&gt;</code></div>
 
-<p>When the document is displayed in a web browser, it will be rendered like this:</p>
+<p>When the document is displayed in a web browser, it will be rendered like 
+this:</p>
 
-<div style="padding: 8px; background-color: white">This is <b>bold</b> text in a paragraph</div>
+<div style="padding: 8px; background-color: white">This is <b>bold</b> text in a 
+	paragraph</div>
 
-<p>The syntax for a table is more complicated, but once you understand this,
+<p>The syntax for a table is more complicated, but once you understand this, 
 you'll have everything you need to write tests in Concordion.</p>
 
-<p>A table uses the following tags: &lt;table&gt;, &lt;tr&gt; (table row) , &lt;th&gt; (table heading), &lt;td&gt; (table data).
-The table is expressed row by row. The first row contains the headings, the following rows are data. For example:</p>
+<p>A table uses the following tags: &lt;table&gt;, &lt;tr&gt; (table row) , &lt;th&gt; (table 
+heading), &lt;td&gt; (table data). The table is expressed row by row. The first row 
+contains the headings, the following rows are data. For example:</p>
 
 
 <pre style="padding: 8px; background-color: white; margin: 0;">
@@ -457,11 +462,10 @@ The table is expressed row by row. The first row contains the headings, the foll
 <h1>Spelling of Concordion</h1>
 
 <p>
-   Several people said they couldn't find this page when they
-   searched because they were spelling "Concordion"
-   as concordium, concordian, or concord ion. Hopefully, now we have written the words
-   Concordium, Concordian, and "Concord Ion" on this page the search engines will find it
-   even with the misspelling.
+   Several people said they couldn't find this page when they searched because 
+   they were spelling &quot;Concordion&quot; as concordium, concordian, or concord ion. 
+   Hopefully, now we have written the words Concordium, Concordian, and &quot;Concord 
+   Ion&quot; on this page the search engines will find it even with the misspelling.
 </p>
 
 </div> <!-- memo -->
@@ -473,8 +477,9 @@ The table is expressed row by row. The first row contains the headings, the foll
 </div> <!-- page -->
 
 <div class="copyright">
- &nbsp; Copyright &copy; 2007-2013
- <a href="http://www.davidpeterson.co.uk">David Peterson</a>. All rights reserved.
+    &nbsp; Copyright © 2007-2013
+ <a href="http://www.davidpeterson.co.uk">David Peterson</a>. All rights 
+	reserved.
 </div> <!-- copyright -->
 
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-54713d647869854a" async="async"></script>
