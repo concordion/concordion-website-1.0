@@ -2,5 +2,3 @@ User-agent: *
 Disallow: /image/
 Disallow: /dist/
 Disallow: /css/
-Disallow: /dotnet/Spec/
-Disallow: /dotnet/Concordion/
