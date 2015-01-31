@@ -71,7 +71,7 @@ Full distribution including source code and all dependencies:
 
 
 <div style="float: right">
-<p>Maven configuration:</p>
+<p><a href="http://search.maven.org/#search|ga|1|concordion" class="externalLink" id="maven-link">Maven</a> configuration:</p>
 
 <pre style="border: 1px solid #d7d7d7; width: 400px; margin-left: 0px; padding-left: 16px;">
 &lt;dependency&gt;
@@ -121,7 +121,7 @@ See each individual extension on the <a href="Extensions.html">Extensions<a> pag
 <li><a href="ExtensionsAPI.html#add">Simplified configuration of extensions</a> through new @Extension and @Extensions annotations.</li>
 <li>Fixture classes can now be suffixed with "Fixture" as an alternative to "Test" (<a href="http://code.google.com/p/concordion/issues/detail?id=37">Issue 37</a>)</li>
 <li>Fixed stack-trace rendering problem in Google Chrome (<a href="http://code.google.com/p/concordion/issues/detail?id=36">Issue 36</a>)</li>
-<li>Fixed Concordion output displaying spaces as Ã‚ (<a href="http://code.google.com/p/concordion/issues/detail?id=38">Issue 38</a>)</li>
+<li>Fixed Concordion output displaying spaces as Ã&#8218; (<a href="http://code.google.com/p/concordion/issues/detail?id=38">Issue 38</a>)</li>
 <li>Expose withSource() and withTarget() via the Concordion Extension mechanism (<a href="http://code.google.com/p/concordion/issues/detail?id=39">Issue 39</a>)</li>
 <li>Fixed JavaScriptLinker producing invalid (x)html (<a href="http://code.google.com/p/concordion/issues/detail?id=26">Issue 26</a>)</li>
 <li>The offending filename is now shown  on HTML parse errors (<a href="http://code.google.com/p/concordion/issues/detail?id=27">Issue 27</a>)</li>
@@ -224,14 +224,18 @@ Thanks to Tim Wright, Jacek Ratzinger, John Hurst, Dan Katzel and Nigel Charman 
   ga('create', 'UA-58172036-1', 'auto');
   ga('send', 'pageview');
   var downloadLink = document.getElementById('download-link');
-    addListener(downloadLink, 'click', function() {
-      ga('send', 'event', 'download', 'Concordion', document.url);
-    });
+  addListener(downloadLink, 'click', function() {
+    ga('send', 'event', 'download', 'Concordion', 'zip');
+  });
+  var downloadLink = document.getElementById('maven-link');
+  addListener(downloadLink, 'click', function() {
+    ga('send', 'event', 'download', 'Concordion', 'maven');
+  });
 
-    function addListener(element, type, callback) {
-      if (element.addEventListener) element.addEventListener(type, callback);
-      else if (element.attachEvent) element.attachEvent('on' + type, callback);
-    }
+  function addListener(element, type, callback) {
+    if (element.addEventListener) element.addEventListener(type, callback);
+    else if (element.attachEvent) element.attachEvent('on' + type, callback);
+  }
 </script>
 
 </body>
