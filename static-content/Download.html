@@ -227,8 +227,8 @@ Thanks to Tim Wright, Jacek Ratzinger, John Hurst, Dan Katzel and Nigel Charman 
   addListener(downloadLink, 'click', function() {
     ga('send', 'event', 'download', 'Concordion', 'zip');
   });
-  var downloadLink = document.getElementById('maven-link');
-  addListener(downloadLink, 'click', function() {
+  var mavenLink = document.getElementById('maven-link');
+  addListener(mavenLink, 'click', function() {
     ga('send', 'event', 'download', 'Concordion', 'maven');
   });
 
