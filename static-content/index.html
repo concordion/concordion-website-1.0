@@ -123,11 +123,13 @@ Key Features</h1>
 <ul class="keyBenefits">
 <li>
 <p>
-<span class="keyPoint">Tests can become <em>truly useful</em> documentation</span> 
+<span class="keyPoint">Specifications become <em>living documentation</em></span> 
 Concordion specifications are so readable they can double up as system 
 documentation. They are written in HTML, so can be easily hyperlinked into a 
-navigable structure. And, since the automated acceptance tests run against the 
-system, you can be confident the documentation is always up-to-date.
+navigable structure. 
+</p>
+<p>
+The specifications contain examples of behaviour which, when automated and executed against your system, are colour-coded by Concordion to show whether the examples are working. By executing these frequently, you can be confident your documentation is always up-to-date with your system.
 </p>
 </li>
 
@@ -135,7 +137,7 @@ system, you can be confident the documentation is always up-to-date.
 <li>
 <p>
 <span class="keyPoint">Helps you to separate &quot;what?&quot; from &quot;how?&quot;</span>
-Tests that include a lot of implementation detail lock you into that 
+Specifications that include a lot of implementation detail lock you into that 
 implementation. Concordion helps you to document the logic and behaviour of your 
 system in a way that gives you the flexibility to change the implementation 
 later on.
@@ -146,8 +148,16 @@ later on.
 <p>
 <span class="keyPoint">Purposely small command-set is simple to learn</span>
 Concordion based on <em>specification by example</em> has been designed with a short learning-curve as a top priority. 
-Automated tests are integrated with JUnit, which makes them easy to run and easy 
+Automated examples are executed as JUnit tests, which makes them easy to run and easy 
 to include in an existing project build.
+</p>
+</li>
+
+<li>
+<p>
+<span class="keyPoint">Powerful extension framework for customisation</span>
+While the core features are kept deliberately small, the <a href="ExtensionsAPI.html">extensions API</a> allows you to add functionality. For example, using <a href="https://github.com/concordion/concordion-excel-extension">Excel spreadsheets as specifications</a>, adding <a href="https://github.com/concordion/concordion-screenshot-extension">screenshots</a> to the output,
+displaying <a href="https://github.com/concordion/concordion-logging-tooltip-extension">logging</a> information, and <a href="Extensions.html">much more</a>.
 </p>
 </li>
 
@@ -171,10 +181,10 @@ to include in an existing project build.
 
 <h2>Normal language, no need for structured &quot;given/when/then&quot;</h2>
 <p style="width: 480px">
-    Rather than forcing product owners use a specially structured language for 
-	specification by example, Concordion lets you write them in normal language 
-	using paragraphs, tables and proper punctuation. This makes the 
-	specifications much more natural to read and write, and helps everyone to 
+    Rather than forcing product owners to use a specially structured language for 
+	specification by example, Concordion lets you write the specifications in normal language 
+	using paragraphs, tables and proper punctuation. This makes them 
+	much more natural to read and write, and helps everyone 
 	understand and agree about what a feature is supposed to do.
 </p>
 
@@ -223,7 +233,7 @@ to include in an existing project build.
 </p>
 
 <p>
-Specifications by Example is based on simple HTML. Developers instrument the 
+Specifications with examples are written in simple HTML. Developers instrument the 
 concrete examples in each specification with commands (e.g. &quot;set&quot;, &quot;execute&quot;, 
 &quot;assertEquals&quot;) that allow the examples to be checked against a real-life 
 system.
@@ -349,7 +359,7 @@ practically impossible to cut corners.
 
 <p>
 Concordion is not suitable for testers who don't have access to developers or 
-development skills. The test specs can be written by non-developers, but the 
+development skills. The specifications can be written by non-developers, but the 
 instrumentation and fixture code require Java programming ability.
 </p>
 
@@ -365,7 +375,7 @@ writing JUnit tests. The advantage of doing this, is that helps to separate the
 two concerns: separating the requirements from the implementation.
 </p>
 
-<h2>Concordion test specs are written in HTML</h2>
+<h2>Concordion specifications are written in HTML</h2>
 
 <p>
 Only a very small subset of HTML is needed (&lt;p&gt;, &lt;table&gt;, &lt;b&gt;), however, some 
