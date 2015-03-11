@@ -13,19 +13,20 @@
 
             src="image/opensource-110x95.png" alt="Open source (Apache 2.0 license)">
         </a> <a href="index.html"> <img src="image/front-page-banner.png" alt="Concordion is a simple, but powerful, agile acceptance testing tool.">
-        </a> </div>
-      <!-- header -->
+        </a>
+      </div> <!-- header -->
+      
       <div class="menuBar">
         <ul class="menu">
           <li><a href="index.html">Home</a></li>
           <li><a href="GettingStarted.html">Getting Started</a></li>
           <li><a href="RunningTests.html">Running Tests</a></li>
-          <li><a href="AdvancedFeatures.html">Advanced Features</a></li>
+          <li><a href="Extensions.html">Extensions</a></li>
           <li><a href="Configuration.html">Configuration</a></li>
           <li class="selectedTab"><a href="Download.html">Download</a></li>
         </ul>
-      </div>
-      <!-- menuBar  -->
+      </div> <!-- menuBar  -->
+      
       <div class="content">
         <h1>Download</h1>
         <h2>Latest Release for C# / .NET</h2>
@@ -35,12 +36,12 @@
           <tr>
             <td>
 			<img src="image/download.gif" alt="Download Concordion.NET" height="50" width="50" /></td>
-            <td><b><a href="https://github.com/concordion/concordion-net/releases/download/v1.1.0/Concordion.NET-1.1.0.zip" id="download-link">Concordion.NET-1.1.0.zip</a></b></td>
+            <td><b><a href="https://github.com/concordion/concordion-net/releases/download/v1.2.0/Concordion.NET-1.2.0.zip" id="download-link">Concordion.NET-1.2.0.zip</a></b></td>
           </tr>
           <tr>
             <td>
 			<img src="image/NuGet_logo.png" alt="NuGet" height="49" width="50" /></td>
-            <td><b><a href="https://www.nuget.org/packages/Concordion.NET/" id="nuget-package">NuGet Package:</a> </b>PM&gt; Install-Package Concordion.NET</td>
+            <td><b><a href="https://www.nuget.org/packages/Concordion.NET/" id="nuget-package">NuGet Package</a></b></td>
           </tr>
         </table>
         <p><span style="color: rgb(0, 0, 0); font-family: Arial, Helvetica, SansSerif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 18px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(252, 252, 250); display: inline !important; float: none;">For
@@ -58,7 +59,31 @@
         <p>
 		<a href="https://github.com/concordion/concordion-net/commits/master">Version
             History on GitHub</a></p>
-        <h2>Concordion.NET 1.1.0 - October 2014</h2>
+        <h2>Concordion.NET 1.2.0 - March 2015</h2>
+		  <p>This release of Concordion.NET needs NUnit version 2.6.3 to run the 
+		  executable specifications.</p>
+		  <h3>Features</h3>
+		  <ul>
+			  <li>Enable <a href="RunningTests.html#resharper">running 
+			  Concordion.NET tests with ReSharper</a>.</li>
+			  <li>Provide workaround to <a href="RunningTests.html#test-adapter">run Concordion.NET tests with NUnit Test Adapter</a> until NUnit 
+			  team fixes
+			  <a href="https://github.com/nunit/nunit-vs-adapter/issues/9">issue 
+			  with addins in NUnit</a>.</li>
+			  <li>Show <a href="https://github.com/concordion/concordion-net/pull/21">failure 
+			  and error details of Concordion.NET tests in NUnit output</a>.</li>
+			  <li>Allow <a href="Configuration.html#input-directory">
+			  specifications to be located in a directory</a> instead of 
+			  embedded in DLL file.</li>
+			  <li>Support for <a href="Extensions.html">extensions API in 
+			  Concordion.NET</a>.<ul>
+				  <li>Adding possibility of different
+				  <a href="Configuration.html#suffix">file extensions for 
+				  specification documents</a>.</li>
+			  </ul>
+			  </li>
+		  </ul>
+		  <h2>Concordion.NET 1.1.0 - October 2014</h2>
         <h3>Features</h3>
 		  <ul>
 			  <li>Allow
@@ -115,7 +140,6 @@
         <div class="addthis_sharing_toolbox" style="padding-top: 5px; padding-bottom: 20px">
           <h3>Share Now</h3>
         </div>
-        <div id="livefyre-comments"></div>
       </div>
       <!-- footer -->
 	  
@@ -141,29 +165,11 @@
         ga('send', 'event', 'download', 'Concordion.NET', 'nuget-package');
       });
 
-      
       function addListener(element, type, callback) {
         if (element.addEventListener) element.addEventListener(type, callback);
         else if (element.attachEvent) element.attachEvent('on' + type, callback);
       }
     </script>
 	
-	<script type="text/javascript" src="http://zor.livefyre.com/wjs/v3.0/javascripts/livefyre.js"></script>
-    <script type="text/javascript">
-    (function () {
-      var articleId = fyre.conv.load.makeArticleId(null);
-      fyre.conv.load({}, [{
-        el: 'livefyre-comments',
-        network: "livefyre.com",
-        siteId: "369922",
-        articleId: articleId,
-        signed: false,
-        collectionMeta: {
-          articleId: articleId,
-          url: fyre.conv.load.makeCollectionUrl(),
-        }
-      }], function() {});
-    }());
-    </script>
   </body>
 </html>

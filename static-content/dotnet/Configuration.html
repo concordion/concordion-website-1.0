@@ -13,31 +13,39 @@
 
             src="image/opensource-110x95.png" alt="Open source (Apache 2.0 license)">
         </a> <a href="index.html"> <img src="image/front-page-banner.png" alt="Concordion is a simple, but powerful, agile acceptance testing tool.">
-        </a> </div>
-      <!-- header -->
+        </a>
+      </div> <!-- header -->
+      
       <div class="menuBar">
         <ul class="menu">
           <li><a href="index.html">Home</a></li>
           <li><a href="GettingStarted.html">Getting Started</a></li>
           <li><a href="RunningTests.html">Running Tests</a></li>
-          <li><a href="AdvancedFeatures.html">Advanced Features</a></li>
+          <li><a href="Extensions.html">Extensions</a></li>
           <li class="selectedTab"><a href="Configuration.html">Configuration</a></li>
           <li><a href="Download.html">Download</a></li>
         </ul>
-      </div>
-      <!-- menuBar  -->
+      </div> <!-- menuBar  -->
+      
       <div class="content">
         <h1>Configuring Concordion.NET</h1>
-        <p>In contrast to the Java version of Concordion, where configuration is
-          done via system properties, Concordion.NET uses two types of
+        <p>Concordion.NET uses two types of
           configuration files to define basic parameters for the execution of
-          Concordion.NET fixtures.</p>
-        <ol>
-        </ol>
-        <h2>1. Concordion.config</h2>
-        <ol>
-        </ol>
-        This first configuration file contains setting for the test runners to
+          automated acceptance tests.</p>
+
+        <h2>1. Project specific configuration</h2>
+        <p>The first configuration file is specific for each project containing
+          Concordion.NET specifications and/or fixtures. This configuration file has the
+          same name as the DLL file, but the file extension ".dll" is
+          replaced by ".config". The &lt;spec&gt;.config file has to be located in the same
+          directory as your &lt;spec&gt;.dll to be loaded by Concordion.NET.</p>
+        
+        <iframe src="Concordion/Configuration/BaseInputDirectory.html" onload="setIframeHeight(this.id)" name="input-directory" id="input-directory" width="100%" height="450" border="0" frameborder="0"></iframe>
+        <iframe src="Concordion/Configuration/BaseOutputDirectory.html" onload="setIframeHeight(this.id)" name="output-directory" id="output-directory" width="100%" height="250" border="0" frameborder="0"></iframe>
+        <iframe src="Concordion/Configuration/SpecificationSuffix.html" onload="setIframeHeight(this.id)" name="suffix" id="suffix" width="100%" height="350" border="0" frameborder="0"></iframe>
+        
+        <h2>2. Concordion.config</h2>
+        This second configuration file contains setting for the test runners to
         be used. The default test runner of Concordion.NET is the RunTestRunner.
         An example configuration is shown below. The
         config file has to be located in the same directory as the
@@ -65,23 +73,6 @@
  	 	PublicKeyToken=null" /&gt;
   &lt;/Runners&gt;
 &lt;/Concordion&gt;</pre>
-        <h2>2. Spec-Project specific configuration</h2>
-        <p>The second configuration file is specific for each project containing
-          Concordion.NET documents and fixtures. This configuration file has the
-          same file name as the DLL file, but the file extension ".dll" is
-          replaced by ".config". The &lt;spec&gt;.config file has to be located in the same
-          directory as your &lt;spec&gt;.dll to be loaded by Concordion.NET.</p>
-        <h3>BaseOutputDirectory</h3>
-        <p>The BaseOutputDirectory element tells Concordion.NET where to place
-          the resulting Concordion test reports. If this element is
-          not specified then Concordion.NET places the output in the directory
-          defined by the users TEMP environment variable. </p>
-        <pre class="html">&lt;?xml version="1.0" encoding="utf-8" ?&gt;
-&lt;Specification&gt;
-  &lt;BaseOutputDirectory path="C:\Dev\concordion-net\Results" /&gt;
-&lt;/Specification&gt;</pre>
-        <ul>
-        </ul>
       </div>
       <!-- content --> 
 	  
@@ -89,12 +80,30 @@
         <div class="addthis_sharing_toolbox" style="padding-top: 5px; padding-bottom: 20px">
           <h3>Share Now</h3>
         </div>
-        <div id="livefyre-comments"></div>
       </div>
       <!-- footer -->
 	  
 	</div>
     <!-- page -->
+    
+    <script type="text/javascript">
+      function setIframeHeight(id) {
+        var ifrm = document.getElementById(id);
+        var doc = ifrm.contentDocument? ifrm.contentDocument: ifrm.contentWindow.document;
+        ifrm.style.visibility = 'hidden';
+        ifrm.style.height = "10px"; // reset to minimal height ...
+        // IE opt. for bing/msn needs a bit added or scrollbar appears
+        ifrm.style.height = getDocHeight( doc ) + 4 + "px";
+        ifrm.style.visibility = 'visible';
+	  }
+	  function getDocHeight(doc) {
+        doc = doc || document;
+        var body = doc.body, html = doc.documentElement;
+        var height = Math.max( body.scrollHeight, body.offsetHeight, 
+            html.clientHeight, html.scrollHeight, html.offsetHeight );
+        return height;
+	  }
+    </script>
 	
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-543bae9469f79b87" async></script>
 	
@@ -108,22 +117,5 @@
       ga('send', 'pageview');
     </script>
 	
-	<script type="text/javascript" src="http://zor.livefyre.com/wjs/v3.0/javascripts/livefyre.js"></script>
-    <script type="text/javascript">
-    (function () {
-      var articleId = fyre.conv.load.makeArticleId(null);
-      fyre.conv.load({}, [{
-        el: 'livefyre-comments',
-        network: "livefyre.com",
-        siteId: "369922",
-        articleId: articleId,
-        signed: false,
-        collectionMeta: {
-          articleId: articleId,
-          url: fyre.conv.load.makeCollectionUrl(),
-        }
-      }], function() {});
-    }());
-    </script>
   </body>
 </html>
