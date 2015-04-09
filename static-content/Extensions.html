@@ -11,6 +11,31 @@
 .extensionLabel {
   font-weight: bold;
 }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  empty-cells: show;
+  margin: 8px 0px 8px 0px;
+}
+th, td {
+  border: 1px solid black;
+  padding: 3px 5px 4px 5px;
+}
+td {
+  background-color: white;
+}
+th {
+  background-color: #d5dae8;
+}
+.col-1 {
+    width: 20%;
+}
+.col-2 {
+    width: 65%;
+}
+.col-3 {
+    width: 15%;
+}
 </style>
 </head>
 <body>
@@ -56,56 +81,96 @@ This page lists extensions that add features to Concordion. See the <a href="Ext
 
 <h2><a name="input"/>Alternative Input Sources</a></h2>
 
-<ul>
-  <li><a class="extensionLabel" href="http://github.com/concordion/concordion-excel-extension">Excel Extension</a>
-  &#8212; enables Concordion to use an Excel spreadsheet as an input specification
-  </li>
-</ul>
+<table>
+  <tr>
+    <th class="col-1">Extension</th>
+    <th class="col-2">Description</th>
+    <th class="col-3">Maintainer</th>
+  </tr>
+  <tr>
+    <td><a class="extensionLabel" href="http://github.com/concordion/concordion-screenshot-extension">Excel</a></td>
+    <td>enables Concordion to use an Excel spreadsheet as an input specification</td>
+    <td><a href="https://github.com/robmoffat">Rob Moffat</a></td>
+  </tr>
+</table>
 
 <!--h2>Alternative Output Targets</h2-->
 
 <h2><a name="enhancers"/>Specification Enhancers</a></h2>
 
-<ul>
-  <li><a class="extensionLabel" href="http://github.com/concordion/concordion-screenshot-extension">Screenshot Extension</a>
-  &#8212; adds screenshots to Concordion output to diagnose problems or improve the documentation
-  </li>
-  <li><a class="extensionLabel" href="http://github.com/concordion/concordion-storyboard-extension">Storyboard Extension</a>
-  &#8212; captures screenshots or data in a storyboard format to provide insight into the actions a test has taken
-  </li>
-  <li><a class="extensionLabel" href="http://github.com/concordion/concordion-logging-tooltip-extension">Logging Tooltip Extension</a>
-  &#8212; adds logging information as tooltips to the Concordion output
-  </li>
-  <li><a class="extensionLabel" href="http://github.com/concordion/concordion-logback-extension">Logback Extension</a>
-  &#8212; adds <a class="externalLink" href="http://logback.qos.ch/">Logback</a> logging information as tooltips and as a link to the log file. Supports parallel runner
-  </li>
-  <li><a class="extensionLabel" href="http://github.com/concordion/concordion-collapse-output-extension">Collapse Output Extension</a>
-  &#8212; makes elements with a specific style class collapsible in the Concordion report
-  </li>
-  <li><a class="extensionLabel" href="http://github.com/concordion/concordion-input-style-extension">Input Style Extension</a>
-  &#8212; adds CSS styling for input elements in the Concordion output
-  </li>
-  <li><a class="extensionLabel" href="http://github.com/concordion/concordion-timestamp-formatter-extension">Timestamp Formatter Extension</a>
-  &#8212; changes the footer of the Concordion output to show hours, minutes and seconds
-  </li>
-  <li><a class="extensionLabel" href="http://github.com/concordion/concordion-exception-translator-extension">Exception Translator Extension</a>
-  &#8212; modifies the text of exception messages
-  </li>
-</ul>
-
+<table>
+  <tr>
+    <th class="col-1">Extension</th>
+    <th class="col-2">Description</th>
+    <th class="col-3">Maintainer</th>
+  </tr>
+  <tr>
+    <td><a class="extensionLabel" href="http://github.com/concordion/concordion-screenshot-extension">Screenshot</a></td>
+    <td>adds screenshots to Concordion output to diagnose problems or improve the documentation</td>
+    <td><a href="https://github.com/nigelcharman">Nigel Charman</a></td>
+  </tr>
+  <tr>
+    <td><a class="extensionLabel" href="http://github.com/concordion/concordion-storyboard-extension">Storyboard</a></td>
+    <td>captures screenshots or data in a storyboard format to provide insight into the actions a test has taken</td>
+    <td><a href="https://github.com/andrew-sumner">Andrew Sumner</a></td>
+  </tr>
+  <tr>
+    <td><a class="extensionLabel" href="http://github.com/concordion/concordion-logging-tooltip-extension">Logging Tooltip</a></td>
+    <td>adds logging information as tooltips to the Concordion output</td>
+    <td><a href="https://github.com/nigelcharman">Nigel Charman</a></td>
+  </tr>
+  <tr>
+    <td><a class="extensionLabel" href="http://github.com/concordion/concordion-logback-extension">Logback</a></td>
+    <td>adds <a class="externalLink" href="http://logback.qos.ch/">Logback</a> logging information as tooltips and as a link to the log file. Supports parallel runner</td>
+    <td><a href="https://github.com/andrew-sumner">Andrew Sumner</a></td>
+  </tr>
+  <tr>
+    <td><a class="extensionLabel" href="http://github.com/concordion/concordion-collapse-output-extension">Collapse Output</a></td>
+    <td>makes elements with a specific style class collapsible in the Concordion report</td>
+    <td><a href="https://github.com/carlo-mr">Carlo M-R</a></td>
+  </tr>
+  <tr>
+    <td><a class="extensionLabel" href="http://github.com/concordion/concordion-input-style-extension">Input Style</a></td>
+    <td>adds CSS styling for input elements in the Concordion output</td>
+    <td><a href="https://github.com/johnbhurst">John Hurst</a><br/><a href="https://github.com/tommyli">Tommy Yim Li</a></td>
+  </tr>
+  <tr>
+    <td><a class="extensionLabel" href="http://github.com/concordion/concordion-timestamp-formatter-extension">Timestamp Formatter</a></td>
+    <td>changes the footer of the Concordion output to show hours, minutes and seconds</td>
+    <td><a href="https://github.com/nigelcharman">Nigel Charman</a></td>
+  </tr>
+  <tr>
+    <td><a class="extensionLabel" href="http://github.com/concordion/concordion-exception-translator-extension">Exception Translator</a></td>
+    <td>modifies the text of exception messages</td>
+    <td><a href="https://github.com/nigelcharman">Nigel Charman</a></td>
+  </tr>
+</table>
 
 <h2><a name="commands"/>Additional Commands</a></h2>
 
-<ul>
-  <li><a class="extensionLabel" href="http://github.com/concordion/concordion-screenshot-extension">Screenshot Extension</a>
-  &#8212; adds screenshots to Concordion output to diagnose problems or improve the documentation
-  </li>
-  <li><a class="extensionLabel" href="http://github.com/concordion/concordion-embed-extension">Embed Extension</a>
-  &#8212; embeds HTML in the Concordion output
-  </li>
-  <li><a class="extensionLabel" href="http://github.com/concordion/concordion-executeonlyif-extension">Execute Only If Extension</a>
-  &#8212; conditionally executes child tests
-  </li>
+<table>
+  <tr>
+    <th class="col-1">Extension</th>
+    <th class="col-2">Description</th>
+    <th class="col-3">Maintainer</th>
+  </tr>
+  <tr>
+    <td><a class="extensionLabel" href="http://github.com/concordion/concordion-screenshot-extension">Screenshot</a></td>
+    <td>adds screenshots to Concordion output to diagnose problems or improve the documentation</td>
+    <td><a href="https://github.com/nigelcharman">Nigel Charman</a></td>
+  </tr>
+  <tr>
+    <td><a class="extensionLabel" href="http://github.com/concordion/concordion-embed-extension">Embed</a></td>
+    <td>embeds HTML in the Concordion output</td>
+    <td><a href="https://github.com/nigelcharman">Nigel Charman</a></td>
+  </tr>
+  <tr>
+    <td><a class="extensionLabel" href="http://github.com/concordion/concordion-executeonlyif-extension">Execute Only If</a></td>
+    <td>conditionally executes child tests</td>
+    <td><a href="https://github.com/andrew-sumner">Andrew Sumner</a></td>
+  </tr>
+</table>
+
 </ul>
 <br/>
 <h1><a name="Note"/>Notes</h1>
