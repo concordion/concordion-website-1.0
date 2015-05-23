@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="ISO-8859-1" ?>
+ï»¿<?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<title>Concordion - Tutorial (en español)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Concordion - Tutorial (en espaÃ±ol)</title>
 <link media="all" rel="stylesheet" type="text/css" href="css/default.css"/>
 <link media="print"  rel="stylesheet" type="text/css" href="css/print.css"/>
 <link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico" />
@@ -79,7 +79,7 @@ h3 {
         </div>
         <div class="language">
         <a href="Tutorial_es.html"><img border="0" src="image/shared/Flag_es.png"/></a>
-        <a href="Tutorial_es.html"><br/>en español</a>
+        <a href="Tutorial_es.html"><br/>en espaÃ±ol</a>
         </div>
         </center>
     </div>
@@ -87,14 +87,14 @@ h3 {
     <h1>Tutorial</h1>
 
 <p>
-    Esta guía explica los mecanismos básicos para pasar de especificaciones
-    a <em>especificaciones activas</em> usando Concordion. No debería tomarle
-    más de 15 a 30 minutos el completarla, asumiendo que ya se está familiarizado
+    Esta guÃ­a explica los mecanismos bÃ¡sicos para pasar de especificaciones
+    a <em>especificaciones activas</em> usando Concordion. No deberÃ­a tomarle
+    mÃ¡s de 15 a 30 minutos el completarla, asumiendo que ya se estÃ¡ familiarizado
     con Java, JUnit y XHTML.
 </p>
 
 <ul class="toc">
-    <li><a href="#installation">Instalación</a></li>
+    <li><a href="#installation">InstalaciÃ³n</a></li>
     <li><a href="#basics">Los Fundamentos</a></li>
     <li><code><a href="#assertEquals">concordion:assertEquals</a></code></li>
     <li><code><a href="#set">concordion:set</a></code></li>
@@ -105,7 +105,7 @@ h3 {
 
 
 <a name="installation">
-</a><h2 class="section"><a name="installation">Instalación</a></h2>
+</a><h2 class="section"><a name="installation">InstalaciÃ³n</a></h2>
 
 <p>
 Concordion requiere JDK 5.0 o superior y los siguientes JARs en el classpath:
@@ -114,14 +114,14 @@ Concordion requiere JDK 5.0 o superior y los siguientes JARs en el classpath:
 <ul>
     <li><b>concordion-1.5.0.jar</b></li>
     <li><b>junit-4.12.jar</b> (o <b>junit-3.8.2.jar</b>) &nbsp;&nbsp; (<a class="externalLink" href="http://www.junit.org/">http://www.junit.org</a>)</li>
-    <li><b>hamcrest-core-1.3.jar</b> &nbsp;&nbsp; (<a class="externalLink" href="http://hamcrest.googlecode.com/">http://hamcrest.googlecode.com</a>) (requerido para JUnit 4.11 o más tarde)</li>
+    <li><b>hamcrest-core-1.3.jar</b> &nbsp;&nbsp; (<a class="externalLink" href="http://hamcrest.googlecode.com/">http://hamcrest.googlecode.com</a>) (requerido para JUnit 4.11 o mÃ¡s tarde)</li>
     <li><b>ognl-2.6.9.jar</b> &nbsp;&nbsp; (<a class="externalLink" href="http://en.wikipedia.org/wiki/OGNL">http://en.wikipedia.org/wiki/OGNL</a>)</li>
     <li><b>xom-1.2.5.jar</b> &nbsp;&nbsp; (<a class="externalLink" href="http://www.xom.nu/">http://www.xom.nu</a>)</li>
 </ul>
 
 <p>
-    Todos los JARs están incluidos en la
-    <a href="http://www.concordion.org/Download.html">distribución</a>.
+    Todos los JARs estÃ¡n incluidos en la
+    <a href="http://www.concordion.org/Download.html">distribuciÃ³n</a>.
 </p>
 
 
@@ -129,9 +129,9 @@ Concordion requiere JDK 5.0 o superior y los siguientes JARs en el classpath:
 </a><h2 class="section"><a name="basics"Los Fundamentos</a></h2>
 
 <p>
-<a name="basics">    Una especificación activa Concordion consiste en dos partes: (i) un documento
-    XHTML bien formado describiendo la funcionalidad, y (ii) código de fijación (<em>fixture</em>)
-    escrito en Java (una extensión especial de Concordion the un caso de prueba JUnit) que descubre
+<a name="basics">    Una especificaciÃ³n activa Concordion consiste en dos partes: (i) un documento
+    XHTML bien formado describiendo la funcionalidad, y (ii) cÃ³digo de fijaciÃ³n (<em>fixture</em>)
+    escrito en Java (una extensiÃ³n especial de Concordion the un caso de prueba JUnit) que descubre
     ejemplos concretos en el documento y los usa para verificar el sistema en pruebas (SUT). Ambos ficheros
     deben estar en el mismo paquete (<em>package</em>).
 </a></p>
@@ -144,7 +144,7 @@ Concordion requiere JDK 5.0 o superior y los siguientes JARs en el classpath:
 <p>
 <a name="basics">    Los comandos Concordion son especificados como atributos de elementos en el documento
     XHTML. Los navegadores web ignoran los atributos que no entienden, de modo que estos comandos son invisibles
-    a efectos prácticos.
+    a efectos prÃ¡cticos.
 </a></p>
 
 <p>
@@ -216,8 +216,8 @@ public class HelloWorldTest extends ConcordionTestCase {
 </ol>
 
 <p>
-<a name="assertEquals">    Si lo ha hecho correctamente, JUnit debería mostrarle una barra en verde y un
-    mensaje como el que sigue debería ser mostrado en la consola:
+<a name="assertEquals">    Si lo ha hecho correctamente, JUnit deberÃ­a mostrarle una barra en verde y un
+    mensaje como el que sigue deberÃ­a ser mostrado en la consola:
 </a></p>
 
 <pre class="console"><a name="assertEquals">C:\temp\concordion-output\example\HelloWorld.html
@@ -226,13 +226,13 @@ Successes: 1  Failures: 0
 
 <p>
 <a name="assertEquals">    El mensaje muestra la trayectoria del fichero de salida (resultado) para
-    la prueba y un resumen con los contadores de éxitos y fracasos en las pruebas. Por defecto, Concordion
+    la prueba y un resumen con los contadores de Ã©xitos y fracasos en las pruebas. Por defecto, Concordion
     produce la salida en el directorio especificado en la propiedad del sistema
     <code>java.io.tmpdir</code>.
 </a></p>
 
 <p>
-<a name="assertEquals">    Abra el fichero de salida en un navegador y podrá ver el mismo
+<a name="assertEquals">    Abra el fichero de salida en un navegador y podrÃ¡ ver el mismo
     contenido que en el fichero de entrada, pero con las palabras <code>Hello World!</code>
     resaltadas en verde.
 </a></p>
@@ -263,28 +263,28 @@ Successes: 1  Failures: 0
 </a><h2 class="section"><a name="set">concordion:set</a></h2>
 
 <p>
-<a name="set">    Dada una especificación como ésta:
+<a name="set">    Dada una especificaciÃ³n como Ã©sta:
 </a></p>
 
 <pre class="html"><a name="set">&lt;html&gt;
     &lt;body&gt;
         &lt;p&gt;
-            El saludo para el usuario Pepe será: ¡Hola Pepe!
+            El saludo para el usuario Pepe serÃ¡: Â¡Hola Pepe!
         &lt;/p&gt;
     &lt;/body&gt;
 &lt;/html&gt;
 </a></pre>
 
 <p>
-<a name="set">    Queremos que el nombre ("Pepe") sea un parámetro
-    y que el saludo ("¡Hola Pepe!") sea verificado contra el
+<a name="set">    Queremos que el nombre ("Pepe") sea un parÃ¡metro
+    y que el saludo ("Â¡Hola Pepe!") sea verificado contra el
     resultado devuelto por el sistema.
 </a></p>
 
 <p>
 <a name="set">    Para hacer esto ponemos etiquetas <code>&lt;span&gt;</code>
     alrededor de los dos textos relevantes dentro del documento. En HTML, las
-    etiquetas <code>&lt;span&gt;</code> no tienen ningún efecto al mostrar la
+    etiquetas <code>&lt;span&gt;</code> no tienen ningÃºn efecto al mostrar la
     salida del documento.
 </a></p>
 
@@ -292,7 +292,7 @@ Successes: 1  Failures: 0
     &lt;body&gt;
         &lt;p&gt;
             El usuario para el usuario <b>&lt;span&gt;</b>Pepe<b>&lt;/span&gt;</b>
-            será: <b>&lt;span&gt;</b>¡Hola Pepe!<b>&lt;/span&gt;</b>
+            serÃ¡: <b>&lt;span&gt;</b>Â¡Hola Pepe!<b>&lt;/span&gt;</b>
         &lt;/p&gt;
     &lt;/body&gt;
 &lt;/html&gt;
@@ -306,22 +306,22 @@ Successes: 1  Failures: 0
     &lt;body&gt;
         &lt;p&gt;
             El saludo para el usuario &lt;span <b>concordion:set="#firstName"</b>&gt;Pepe&lt;/span&gt;
-            será:
-            &lt;span <b>concordion:assertEquals="greetingFor(#firstName)"</b>&gt;¡Hola Pepe!&lt;/span&gt;
+            serÃ¡:
+            &lt;span <b>concordion:assertEquals="greetingFor(#firstName)"</b>&gt;Â¡Hola Pepe!&lt;/span&gt;
         &lt;/p&gt;
     &lt;/body&gt;
 &lt;/html&gt;
 </a></pre>
 
 <p>
-<a name="set">    Cuando Concordion procesa el documento, temporalmente establecerá
+<a name="set">    Cuando Concordion procesa el documento, temporalmente establecerÃ¡
     el valor de la variable <code>#firstName</code> a <code>"Pepe"</code> y entonces
-    llamará al método <code>greetingFor()</code> con ese valor y comprobará que el
-    resultado es igual que <code>"¡Hola Pepe!"</code>.
+    llamarÃ¡ al mÃ©todo <code>greetingFor()</code> con ese valor y comprobarÃ¡ que el
+    resultado es igual que <code>"Â¡Hola Pepe!"</code>.
 </a></p>
 
 <p>
-<a name="set">    Nuestro código Java de la <em>fixture</em> necesitará ser modificado:
+<a name="set">    Nuestro cÃ³digo Java de la <em>fixture</em> necesitarÃ¡ ser modificado:
 </a></p>
 
 <pre class="java"><a name="set">package example;
@@ -341,12 +341,12 @@ public class HelloWorldTest extends ConcordionTestCase {
     hacemos fallar la prueba antes de hacer que pase, para darnos confianza en
     que estamos realmente probando algo.
 
-    Con el código tal y como está ahora deberíamos obtener un fallo (pues esperamos
-    "¡Hola Pepe!" pero obtenemos "BLA").
+    Con el cÃ³digo tal y como estÃ¡ ahora deberÃ­amos obtener un fallo (pues esperamos
+    "Â¡Hola Pepe!" pero obtenemos "BLA").
 </a></p>
 
 <p>
-<a name="set">    Ahora arreglamos el código:
+<a name="set">    Ahora arreglamos el cÃ³digo:
 </a></p>
 
 <pre class="java"><a name="set">package example;
@@ -356,17 +356,17 @@ import org.concordion.integration.junit3.ConcordionTestCase;
 public class HelloWorldTest extends ConcordionTestCase {
 
     public String greetingFor(String firstName) {
-        return "¡Hola " + firstName + "!";
+        return "Â¡Hola " + firstName + "!";
     }
 }
 </a></pre>
 
 <p>
-<a name="set">    Obviamente, en una aplicación real, la implementación de <code>greetingFor()</code>
-    sería bastante diferente. El comportamiento no estaría implementado aquí sino en el código del sistema
-    que estamos probando y la <em>fixture</em> simplemente llamaría al sistema. Esto se podría hacer a nivel
-    del sistema o a un nivel más bajo: se podría incluso llamar directamente como en una prueba unitaria
-    si escribir una prueba de sistema fuera muy lento o difícil de realizar.
+<a name="set">    Obviamente, en una aplicaciÃ³n real, la implementaciÃ³n de <code>greetingFor()</code>
+    serÃ­a bastante diferente. El comportamiento no estarÃ­a implementado aquÃ­ sino en el cÃ³digo del sistema
+    que estamos probando y la <em>fixture</em> simplemente llamarÃ­a al sistema. Esto se podrÃ­a hacer a nivel
+    del sistema o a un nivel mÃ¡s bajo: se podrÃ­a incluso llamar directamente como en una prueba unitaria
+    si escribir una prueba de sistema fuera muy lento o difÃ­cil de realizar.
 </a></p>
 
 
@@ -378,8 +378,8 @@ public class HelloWorldTest extends ConcordionTestCase {
 </a></p>
 
 <ol>
-<a name="execute">    </a><li><a href="#executeVoid">Ejecutar una instrucción cuyo resultado es "void"</a>.</li>
-    <li><a href="#executeObjectResult">Ejecutar una instrucción cuyo resultado es un objeto</a>
+<a name="execute">    </a><li><a href="#executeVoid">Ejecutar una instrucciÃ³n cuyo resultado es "void"</a>.</li>
+    <li><a href="#executeObjectResult">Ejecutar una instrucciÃ³n cuyo resultado es un objeto</a>
     (para permitir comprobar varias propiedades de dicho objeto).
     </li>
     <li><a href="#executeUnusualSentences">Manejar frases con estructuras poco habituales</a>.</li>
@@ -388,27 +388,27 @@ public class HelloWorldTest extends ConcordionTestCase {
 
 
 <a name="executeVoid">
-</a><h3><a name="executeVoid">Ejecutar una instrucción cuyo resultado es <code>void</code></a></h3>
+</a><h3><a name="executeVoid">Ejecutar una instrucciÃ³n cuyo resultado es <code>void</code></a></h3>
 
 <p>
-<a name="executeVoid">    En ocasiones puede ser útil ejecutar una
-    instrucción que establezca de alguna manera el estado del sistema.
-    Cada vez que hacemos esto, sin embargo, deberían sonar alarmas en
+<a name="executeVoid">    En ocasiones puede ser Ãºtil ejecutar una
+    instrucciÃ³n que establezca de alguna manera el estado del sistema.
+    Cada vez que hacemos esto, sin embargo, deberÃ­an sonar alarmas en
     nuestras cabezas y preguntarnos si no estaremos (inadvertidamente)
-    escribiendo un script en vez de una especificación. Por ejemplo, una
-    llamada a <code>"clearDatabase()"</code> sería un evidente mal uso (ver
-    </a><a href="http://www.concordion.org/Technique.html">Técnicas (en inglés)</a> para
-    saber más sobre este tema).
+    escribiendo un script en vez de una especificaciÃ³n. Por ejemplo, una
+    llamada a <code>"clearDatabase()"</code> serÃ­a un evidente mal uso (ver
+    </a><a href="http://www.concordion.org/Technique.html">TÃ©cnicas (en inglÃ©s)</a> para
+    saber mÃ¡s sobre este tema).
 </p>
 
 <p>
-    Como regla general, los métodos que devuelven <code>void</code> llamados desde un <code>execute</code>
-    deberían comenzar con la palabra <code>set</code> o <code>setUp</code>. P.ej. <code>setUpUser(#username)</code>.
+    Como regla general, los mÃ©todos que devuelven <code>void</code> llamados desde un <code>execute</code>
+    deberÃ­an comenzar con la palabra <code>set</code> o <code>setUp</code>. P.ej. <code>setUpUser(#username)</code>.
 </p>
 
 
 <p>
-    Tomemos la siguiente especifación como ejemplo:
+    Tomemos la siguiente especifaciÃ³n como ejemplo:
 </p>
 
 <pre class="html">&lt;html <b>xmlns:concordion="http://www.concordion.org/2007/concordion"</b>&gt;
@@ -417,15 +417,15 @@ public class HelloWorldTest extends ConcordionTestCase {
             Si la hora es:
             &lt;span <b>concordion:set="#time"</b>&gt;09:00AM&lt;/span&gt;
             &lt;span <b>concordion:execute="setCurrentTime(#time)"</b> /&gt;
-            entonces el saludo será:
-            &lt;span <b>concordion:assertEquals="getGreeting()"</b>&gt;¡Buenos Días Mundo!&lt;/span&gt;
+            entonces el saludo serÃ¡:
+            &lt;span <b>concordion:assertEquals="getGreeting()"</b>&gt;Â¡Buenos DÃ­as Mundo!&lt;/span&gt;
         &lt;/p&gt;
     &lt;/body&gt;
 &lt;/html&gt;
 </pre>
 
 <p>
-    Nuestro código Java de la <em>fixture</em> será como éste:
+    Nuestro cÃ³digo Java de la <em>fixture</em> serÃ¡ como Ã©ste:
 </p>
 
 <pre class="java">package example;
@@ -447,8 +447,8 @@ public class HelloWorldTest extends ConcordionTestCase {
 <p>
     Realmente nosotros podemos eliminar la necesidad de usar ese
     comando <code>concordion:set</code> usando en su lugar la variable
-    especial <code>#TEXT</code> (la cuál contiene el texto del elemento
-    actual). La instrumentación abreviada queda así:
+    especial <code>#TEXT</code> (la cuÃ¡l contiene el texto del elemento
+    actual). La instrumentaciÃ³n abreviada queda asÃ­:
 </p>
 
 <pre class="html">&lt;html xmlns:concordion="http://www.concordion.org/2007/concordion"&gt;
@@ -456,8 +456,8 @@ public class HelloWorldTest extends ConcordionTestCase {
         &lt;p&gt;
             Si la hora es:
             &lt;span <b>concordion:execute="setCurrentTime(#TEXT)"</b>&gt;09:00AM&lt;/span&gt;
-            entonces el saludo será:
-            &lt;span <b>concordion:assertEquals="getGreeting()"</b>&gt;¡Buenos Días Mundo!&lt;/span&gt;
+            entonces el saludo serÃ¡:
+            &lt;span <b>concordion:assertEquals="getGreeting()"</b>&gt;Â¡Buenos DÃ­as Mundo!&lt;/span&gt;
         &lt;/p&gt;
     &lt;/body&gt;
 &lt;/html&gt;
@@ -465,25 +465,25 @@ public class HelloWorldTest extends ConcordionTestCase {
 
 
 <p>
-    Una alternativa sería cambiar la firma del método
+    Una alternativa serÃ­a cambiar la firma del mÃ©todo
     <code>getGreeting()</code> para permitir pasarle la hora
-    como un parámetro. Este el camino que normalmente tomaríamos.
+    como un parÃ¡metro. Este el camino que normalmente tomarÃ­amos.
     Un <code>execute</code> sin valor de retorno es una mala
-    señal; p.ej. estamos escribiendo un script o nuestra especificación
+    seÃ±al; p.ej. estamos escribiendo un script o nuestra especificaciÃ³n
     contiene demasiadas variables y cubre demasiados comportamientos.
-    Sin embargo, la funcionalidad está ahí por si la necesitamos.
+    Sin embargo, la funcionalidad estÃ¡ ahÃ­ por si la necesitamos.
 </p>
 
 
 
 
 <a name="executeObjectResult">
-</a><h3><a name="executeObjectResult">Ejecutar una instrucción cuyo resultado es un objeto</a></h3>
+</a><h3><a name="executeObjectResult">Ejecutar una instrucciÃ³n cuyo resultado es un objeto</a></h3>
 
 <p>
-<a name="executeObjectResult">    A veces necesitamos comprobar más de un resultado
-    para un comportamiento dado. Por ejemplo, aquí queremos comprobar que tanto el
-    nombre como el apellido son extraídos correctamente a partir del nombre completo:
+<a name="executeObjectResult">    A veces necesitamos comprobar mÃ¡s de un resultado
+    para un comportamiento dado. Por ejemplo, aquÃ­ queremos comprobar que tanto el
+    nombre como el apellido son extraÃ­dos correctamente a partir del nombre completo:
 
 </a></p>
 
@@ -498,14 +498,14 @@ public class HelloWorldTest extends ConcordionTestCase {
         &lt;h1&gt;Separando Nombres&lt;/h1&gt;
 
         &lt;p&gt;
-            Para ayudar a personalizar nuestros envíos postales, queremos tener
+            Para ayudar a personalizar nuestros envÃ­os postales, queremos tener
             el nombre y el apellido del cliente. Desgraciadamente los datos del
-            cliente que nos han proporcionado sólo contienen nombres completos.
+            cliente que nos han proporcionado sÃ³lo contienen nombres completos.
         &lt;/p&gt;
 
         &lt;p&gt;
             Por lo tanto el sistema intenta separar un nombre completo en sus
-            componentes separándolos por el espacio en blanco.
+            componentes separÃ¡ndolos por el espacio en blanco.
         &lt;/p&gt;
 
         &lt;div class="example"&gt;
@@ -514,11 +514,11 @@ public class HelloWorldTest extends ConcordionTestCase {
 
             &lt;p&gt;
                 El nombre completo
-                &lt;span <b>concordion:execute="#result = split(#TEXT)"</b>&gt;Juan Pérez&lt;/span&gt;
-                se separará en nombre
+                &lt;span <b>concordion:execute="#result = split(#TEXT)"</b>&gt;Juan PÃ©rez&lt;/span&gt;
+                se separarÃ¡ en nombre
                 &lt;span <b>concordion:assertEquals="#result.firstName"</b>&gt;Juan&lt;/span&gt;
                 y apellido
-                &lt;span <b>concordion:assertEquals="#result.lastName"</b>&gt;Pérez&lt;/span&gt;.
+                &lt;span <b>concordion:assertEquals="#result.lastName"</b>&gt;PÃ©rez&lt;/span&gt;.
             &lt;/p&gt;
 
         &lt;/div&gt;
@@ -527,13 +527,13 @@ public class HelloWorldTest extends ConcordionTestCase {
 </a></pre>
 
 <p>
-<a name="executeObjectResult">    La variable <code>#result</code> será un objeto devuelto
-    por el método <code>split()</code>. Este objeto tendrá unas propiedades
+<a name="executeObjectResult">    La variable <code>#result</code> serÃ¡ un objeto devuelto
+    por el mÃ©todo <code>split()</code>. Este objeto tendrÃ¡ unas propiedades
     <code>firstName</code> y <code>lastName</code>.
 </a></p>
 
 <p>
-<a name="executeObjectResult">    Asumiendo que nuestro fichero HTML está en el paquete <code>example</code> y que
+<a name="executeObjectResult">    Asumiendo que nuestro fichero HTML estÃ¡ en el paquete <code>example</code> y que
     se llama "SplittingNames.html", entonces necesitamos una <em>fixture</em> Java llamada
     <code>SplittingNamesTest</code>:
 </a></p>
@@ -549,15 +549,15 @@ public class SplittingNamesTest extends ConcordionTestCase {
 </a></pre>
 
 <p>
-<a name="executeObjectResult">    Si ejecutamos la fixture tal y como está (e.d. vacía), la salida sería así:
+<a name="executeObjectResult">    Si ejecutamos la fixture tal y como estÃ¡ (e.d. vacÃ­a), la salida serÃ­a asÃ­:
 </a></p>
 
 <div>
-<a name="executeObjectResult"><img src="image/tutorial/execute/BrokenDueToMissingFixtureCode_es.png" alt="La salida muestra un test roto (debido a la ausencia de código de fijación)">
+<a name="executeObjectResult"><img src="image/tutorial/execute/BrokenDueToMissingFixtureCode_es.png" alt="La salida muestra un test roto (debido a la ausencia de cÃ³digo de fijaciÃ³n)">
 </a></div>
 
 <p>
-<a name="executeObjectResult">    Nos dice lo que tenemos que hacer. Arreglamos nuestro código de fijación:
+<a name="executeObjectResult">    Nos dice lo que tenemos que hacer. Arreglamos nuestro cÃ³digo de fijaciÃ³n:
 </a></p>
 
 <pre class="java"><a name="executeObjectResult">package example;
@@ -582,13 +582,13 @@ public class SplittingNamesTest extends ConcordionTestCase {
 </a></p>
 
 <div>
-<a name="executeObjectResult"><img src="image/tutorial/execute/BrokenBecauseNotFullyImplemented_es.png" alt="La salida muestra un test roto porque la fixture no está completamente implementada">
+<a name="executeObjectResult"><img src="image/tutorial/execute/BrokenBecauseNotFullyImplemented_es.png" alt="La salida muestra un test roto porque la fixture no estÃ¡ completamente implementada">
 </a></div>
 
 
 <p>
-<a name="executeObjectResult">    Implementemos la función. Obviamente, la implementación debería estar
-    en el sistema real, no en el caso de prueba, pero sólo estamos jugando...
+<a name="executeObjectResult">    Implementemos la funciÃ³n. Obviamente, la implementaciÃ³n deberÃ­a estar
+    en el sistema real, no en el caso de prueba, pero sÃ³lo estamos jugando...
 </a></p>
 
 <pre class="java"><a name="executeObjectResult">package example;
@@ -622,8 +622,8 @@ public class SplittingNamesTest extends ConcordionTestCase {
 
 
 <p>
-<a name="executeObjectResult">    Nota: Nuestra inner class <code>Result</code> podría también ser implementada
-    con getters en vez de con campos públicos: la instrumentación del HTML no cambia por ello.
+<a name="executeObjectResult">    Nota: Nuestra inner class <code>Result</code> podrÃ­a tambiÃ©n ser implementada
+    con getters en vez de con campos pÃºblicos: la instrumentaciÃ³n del HTML no cambia por ello.
 </a></p>
 
 
@@ -655,68 +655,68 @@ public class SplittingNamesTest extends ConcordionTestCase {
 
 <p>
 <a name="executeUnusualSentences">    Una de las grandes cosas de Concordion es que
-    cuando estás escribiendo las especificaciones no te tienes que preocupar acerca
-    de cómo las vas a instrumentar. Simplemente te concentras en hacer el documento
-    lo más legible posible.
+    cuando estÃ¡s escribiendo las especificaciones no te tienes que preocupar acerca
+    de cÃ³mo las vas a instrumentar. Simplemente te concentras en hacer el documento
+    lo mÃ¡s legible posible.
 </a></p>
 
 <p>
-<a name="executeUnusualSentences">    La mayoría de las frases se pueden instrumentar.
-    Si no puedes encontrar cómo instrumentarla, siempre puedes jugar con las palabras,
-    pero en general esto no debería ser necesario. El comando <code>execute</code>
+<a name="executeUnusualSentences">    La mayorÃ­a de las frases se pueden instrumentar.
+    Si no puedes encontrar cÃ³mo instrumentarla, siempre puedes jugar con las palabras,
+    pero en general esto no deberÃ­a ser necesario. El comando <code>execute</code>
     proporciona esta flexibilidad.
 </a></p>
 
 <p>
-<a name="executeUnusualSentences">    Por ejemplo, digamos que tenemos la especificación:
+<a name="executeUnusualSentences">    Por ejemplo, digamos que tenemos la especificaciÃ³n:
 </a></p>
 
 <pre class="html"><a name="executeUnusualSentences">&lt;p&gt;
-    Tras acceder al sistema, el saludo que recibirá el usuario &lt;span&gt;Pepe&lt;/span&gt;
-    será: &lt;span&gt;¡Hola Pepe!&lt;/span&gt;
+    Tras acceder al sistema, el saludo que recibirÃ¡ el usuario &lt;span&gt;Pepe&lt;/span&gt;
+    serÃ¡: &lt;span&gt;Â¡Hola Pepe!&lt;/span&gt;
 &lt;/p&gt;
 </a></pre>
 
 <p>
-<a name="executeUnusualSentences">    Esto es fácil de instrumentar:
+<a name="executeUnusualSentences">    Esto es fÃ¡cil de instrumentar:
 </a></p>
 
 <pre class="html"><a name="executeUnusualSentences">&lt;p&gt;
-    Tras acceder al sistema, el saludo que recibirá el usuario
+    Tras acceder al sistema, el saludo que recibirÃ¡ el usuario
     &lt;span <b>concordion:set="#firstName"</b>&gt;Pepe&lt;/span&gt;
-    será:
-    &lt;span <b>concordion:assertEquals="greetingFor(#firstName)"</b>&gt;¡Hola Pepe!&lt;/span&gt;
+    serÃ¡:
+    &lt;span <b>concordion:assertEquals="greetingFor(#firstName)"</b>&gt;Â¡Hola Pepe!&lt;/span&gt;
 &lt;/p&gt;
 </a></pre>
 
 <p>
 <a name="executeUnusualSentences">    Pero que hubiera pasado si nuestra
-    especificación se hubiera escrito como sigue:
+    especificaciÃ³n se hubiera escrito como sigue:
 </a></p>
 
 <pre class="html"><a name="executeUnusualSentences">&lt;p&gt;
-    Se debería mostrar el saludo "&lt;span&gt;¡Hola Pepe!&lt;/span&gt;" al usuario
-    &lt;span&gt;Pepe&lt;/span&gt; cuando éste acceda al sistema.
+    Se deberÃ­a mostrar el saludo "&lt;span&gt;Â¡Hola Pepe!&lt;/span&gt;" al usuario
+    &lt;span&gt;Pepe&lt;/span&gt; cuando Ã©ste acceda al sistema.
 &lt;/p&gt;
 </a></pre>
 
 <p>
-<a name="executeUnusualSentences">    En este caso, el parámetro de entrada <code>Pepe</code>
-    aparece <em>después</em> de la salida que queremos comprobar (el saludo). Podemos
+<a name="executeUnusualSentences">    En este caso, el parÃ¡metro de entrada <code>Pepe</code>
+    aparece <em>despuÃ©s</em> de la salida que queremos comprobar (el saludo). Podemos
     resolver este problema usando un comando <code>execute</code> en el elemento
-    más exterior (el <code>&lt;p&gt;</code>).
+    mÃ¡s exterior (el <code>&lt;p&gt;</code>).
 </a></p>
 
 <pre class="html"><a name="executeUnusualSentences">&lt;p <b>concordion:execute="#greeting = greetingFor(#firstName)"</b>&gt;
-    Se debería mostrar el saludo "&lt;span <b>concordion:assertEquals="#greeting"</b>&gt;¡Hola Pepe!&lt;/span&gt;"
+    Se deberÃ­a mostrar el saludo "&lt;span <b>concordion:assertEquals="#greeting"</b>&gt;Â¡Hola Pepe!&lt;/span&gt;"
     al usuario &lt;span <b>concordion:set="#firstName"</b>&gt;Pepe&lt;/span&gt;
-    cuando éste acceda al sistema.
+    cuando Ã©ste acceda al sistema.
 &lt;/p&gt;
 </a></pre>
 
 <p>
-<a name="executeUnusualSentences">    ¿Cómo funciona esto? Esto funciona porque el comando
-    <code>execute</code> está diseñado para procesar comandos en sus elementos hijo en un
+<a name="executeUnusualSentences">    Â¿CÃ³mo funciona esto? Esto funciona porque el comando
+    <code>execute</code> estÃ¡ diseÃ±ado para procesar comandos en sus elementos hijo en un
     orden especial. Antes que nada procesa cualquier comando <code>set</code> hijo, entonces
     ejecuta su propio comando y finalmente procesa cualquier comando <code>assertEquals</code> hijo.
 </a></p>
@@ -731,7 +731,7 @@ public class SplittingNamesTest extends ConcordionTestCase {
 <p>
 <a name="executeTable">    Cuando queremos mostrar varios ejemplos de un
     comportamiento, repitiendo la misma estructura de una frase una y otra vez,
-    probablemente esto no sea muy fácil de leer. Sería mejor usar una tabla.
+    probablemente esto no sea muy fÃ¡cil de leer. SerÃ­a mejor usar una tabla.
 </a></p>
 
 <p>
@@ -739,7 +739,7 @@ public class SplittingNamesTest extends ConcordionTestCase {
 </a></p>
 
 <div>
-<a name="executeTable"><img src="image/tutorial/executeTable/HowTableIsDisplayed_es.png" alt="Cómo se muestra la tabla (simple y claro)">
+<a name="executeTable"><img src="image/tutorial/executeTable/HowTableIsDisplayed_es.png" alt="CÃ³mo se muestra la tabla (simple y claro)">
 </a></div>
 
 <p>
@@ -759,14 +759,14 @@ public class SplittingNamesTest extends ConcordionTestCase {
         &lt;h1&gt;Separando Nombres&lt;/h1&gt;
 
         &lt;p&gt;
-            Para ayudar a personalizar nuestros envíos postales, queremos tener
+            Para ayudar a personalizar nuestros envÃ­os postales, queremos tener
             el nombre y el apellido del cliente. Desgraciadamente los datos del
-            cliente que nos han proporcionado sólo contienen nombres completos.
+            cliente que nos han proporcionado sÃ³lo contienen nombres completos.
         &lt;/p&gt;
 
         &lt;p&gt;
             Por lo tanto el sistema intenta separar un nombre completo en sus
-            componentes separándolos por el espacio en blanco.
+            componentes separÃ¡ndolos por el espacio en blanco.
         &lt;/p&gt;
 
         &lt;div class="example"&gt;
@@ -780,9 +780,9 @@ public class SplittingNamesTest extends ConcordionTestCase {
                     &lt;th&gt;Apellido&lt;/th&gt;
                 &lt;/tr&gt;
                 &lt;tr <b>concordion:execute="#result = split(#fullName)"</b>&gt;
-                    &lt;td <b>concordion:set="#fullName"</b>&gt;Juan Pérez&lt;/td&gt;
+                    &lt;td <b>concordion:set="#fullName"</b>&gt;Juan PÃ©rez&lt;/td&gt;
                     &lt;td <b>concordion:assertEquals="#result.firstName"</b>&gt;Juan&lt;/td&gt;
-                    &lt;td <b>concordion:assertEquals="#result.lastName"</b>&gt;Pérez&lt;/td&gt;
+                    &lt;td <b>concordion:assertEquals="#result.lastName"</b>&gt;PÃ©rez&lt;/td&gt;
                 &lt;/tr&gt;
                 &lt;tr <b>concordion:execute="#result = split(#fullName)"</b>&gt;
                     &lt;td <b>concordion:set="#fullName"</b>&gt;Felipe Reyes&lt;/td&gt;
@@ -799,7 +799,7 @@ public class SplittingNamesTest extends ConcordionTestCase {
 
 <p>
 <a name="executeTable">    Sin embargo, esto es repetitivo, por lo que Concordion proporciona
-    una alternativa más cómoda.
+    una alternativa mÃ¡s cÃ³moda.
     Cuando  ponemos un comando <code>execute</code> en un elemento <code>&lt;table&gt;</code>,
     los elementos de la cabecera (la fila que contiene los elementos &lt;th&gt;) son copiados
     a cada linea de detalle (las filas que contienen los elementos &lt;td&gt;) y se ejecuta
@@ -819,14 +819,14 @@ public class SplittingNamesTest extends ConcordionTestCase {
         &lt;h1&gt;Separando Nombres&lt;/h1&gt;
 
         &lt;p&gt;
-            Para ayudar a personalizar nuestros envíos postales, queremos tener
+            Para ayudar a personalizar nuestros envÃ­os postales, queremos tener
             el nombre y el apellido del cliente. Desgraciadamente los datos del
-            cliente que nos han proporcionado sólo contienen nombres completos.
+            cliente que nos han proporcionado sÃ³lo contienen nombres completos.
         &lt;/p&gt;
 
         &lt;p&gt;
             Por lo tanto el sistema intenta separar un nombre completo en sus
-            componentes separándolos por el espacio en blanco.
+            componentes separÃ¡ndolos por el espacio en blanco.
         &lt;/p&gt;
 
         &lt;div class="example"&gt;
@@ -840,9 +840,9 @@ public class SplittingNamesTest extends ConcordionTestCase {
                     &lt;th <b>concordion:assertEquals="#result.lastName"</b>&gt;Apellido&lt;/th&gt;
                 &lt;/tr&gt;
                 &lt;tr&gt;
-                    &lt;td&gt;Juan Pérez&lt;/td&gt;
+                    &lt;td&gt;Juan PÃ©rez&lt;/td&gt;
                     &lt;td&gt;Juan&lt;/td&gt;
-                    &lt;td&gt;Pérez&lt;/td&gt;
+                    &lt;td&gt;PÃ©rez&lt;/td&gt;
                 &lt;/tr&gt;
                 &lt;tr&gt;
                     &lt;td&gt;Felipe Reyes&lt;/td&gt;
@@ -857,7 +857,7 @@ public class SplittingNamesTest extends ConcordionTestCase {
 </a></pre>
 
 <p>
-<a name="executeTable">    Esta instrumentación tiene el mismo comportamiento
+<a name="executeTable">    Esta instrumentaciÃ³n tiene el mismo comportamiento
     que la del ejemplo anterior.
 </a></p>
 
@@ -868,32 +868,32 @@ public class SplittingNamesTest extends ConcordionTestCase {
 
 <p>
 <a name="verifyRows">    Algunas veces queremos comprobar los contenidos de una
-    colección de resultados que devuelve el sistema. En el framework Fit usaríamos
+    colecciÃ³n de resultados que devuelve el sistema. En el framework Fit usarÃ­amos
     para esto una <code>RowFixture</code>. En Concordion usamos el comando
     <code>verifyRows</code>.
 </a></p>
 
 <p>
 <a name="verifyRows">     Por ejemplo, mientras escribimos una herramienta de
-     administración de usuarios, podríamos escribir una especificación como la
+     administraciÃ³n de usuarios, podrÃ­amos escribir una especificaciÃ³n como la
      que sigue en la que describimos el comportamiento de la funcionalidad de
-     búsqueda:
+     bÃºsqueda:
 </a></p>
 
 <blockquote>
-<a name="verifyRows"><img src="image/tutorial/verifyRows/partialMatches/OriginalTable_es.png" alt="Especificación Original">
+<a name="verifyRows"><img src="image/tutorial/verifyRows/partialMatches/OriginalTable_es.png" alt="EspecificaciÃ³n Original">
 </a></blockquote>
 
 <p>
-<a name="verifyRows">    La idea es que en el código de fijación añadamos
-    los usuarios al sistema, realicemos una búsqueda y entonces confirmemos
-    que en los resultados de búsqueda obtenemos los usuarios correctos (y sólo
-    estos usuarios). Si hay usuarios de más o de menos, o no son los usuarios
+<a name="verifyRows">    La idea es que en el cÃ³digo de fijaciÃ³n aÃ±adamos
+    los usuarios al sistema, realicemos una bÃºsqueda y entonces confirmemos
+    que en los resultados de bÃºsqueda obtenemos los usuarios correctos (y sÃ³lo
+    estos usuarios). Si hay usuarios de mÃ¡s o de menos, o no son los usuarios
     esperados, queremos que el test falle.
 </a></p>
 
 <p>
-<a name="verifyRows">    El código HTML instrumentado para esta especificación es como sigue:
+<a name="verifyRows">    El cÃ³digo HTML instrumentado para esta especificaciÃ³n es como sigue:
 </a></p>
 
 <pre class="html"><a name="verifyRows">&lt;html <b>xmlns:concordion="http://www.concordion.org/2007/concordion"</b>&gt;
@@ -905,8 +905,8 @@ public class SplittingNamesTest extends ConcordionTestCase {
 &lt;h1&gt;Correspondencias Parciales&lt;/h1&gt;
 
 &lt;p&gt;
-    Las búsquedas por nombre de usuario devuelven correspondencias parciales, e.d.,
-    se devuelven todos los nombres de usuario que contienen la cadena de búsqueda.
+    Las bÃºsquedas por nombre de usuario devuelven correspondencias parciales, e.d.,
+    se devuelven todos los nombres de usuario que contienen la cadena de bÃºsqueda.
 &lt;/p&gt;
 
 &lt;div class="example"&gt;
@@ -923,7 +923,7 @@ public class SplittingNamesTest extends ConcordionTestCase {
         &lt;tr&gt;&lt;td&gt;paul.mccartney&lt;/td&gt;&lt;/tr&gt;
     &lt;/table&gt;
 
-    &lt;p&gt;La búsqueda por "&lt;b <b>concordion:set="#searchString"</b>&gt;arr&lt;/b&gt;" devolverá:&lt;/p&gt;
+    &lt;p&gt;La bÃºsqueda por "&lt;b <b>concordion:set="#searchString"</b>&gt;arr&lt;/b&gt;" devolverÃ¡:&lt;/p&gt;
 
     &lt;table <b>concordion:verifyRows="#username : getSearchResultsFor(#searchString)"</b>&gt;
         &lt;tr&gt;&lt;th <b>concordion:assertEquals="#username"</b>&gt;Nombres de usuario con correspondencia&lt;/th&gt;&lt;/tr&gt;
@@ -950,20 +950,20 @@ public class SplittingNamesTest extends ConcordionTestCase {
     (p.ej. una <code>List</code>, <code>LinkedHashSet</code> o un
     <code>TreeSet</code>).
      Y <code>#loopVar</code> proporciona acceso al objeto actual durante
-     el recorrido y permite al método <code>assertEquals</code> comprobar
+     el recorrido y permite al mÃ©todo <code>assertEquals</code> comprobar
      su valor.
 </a></p>
 
 <p>
 <a name="verifyRows">    El orden de los elementos de la tabla que se verifica
     deben corresponder con el orden del recorrido que nos devuelve <code>expression</code>.
-    Necesitamos ordenar los elementos para asegurar que están en un orden conocido
-    y consistente. En nuestro ejemplo, estamos usando el orden alfabético
+    Necesitamos ordenar los elementos para asegurar que estÃ¡n en un orden conocido
+    y consistente. En nuestro ejemplo, estamos usando el orden alfabÃ©tico
     ("george" antes que "ringo").
 </a></p>
 
 <p>
-<a name="verifyRows">    El esqueleto del código de fijación sería como sigue:
+<a name="verifyRows">    El esqueleto del cÃ³digo de fijaciÃ³n serÃ­a como sigue:
 </a></p>
 
 <pre class="java"><a name="verifyRows">public class PartialMatchesTest extends ConcordionTestCase {
@@ -973,7 +973,7 @@ public class SplittingNamesTest extends ConcordionTestCase {
     }
 
     public Iterable&lt;String&gt; getSearchResultsFor(String searchString) {
-        // TODO: Realizar la búsqueda y devolver los resultados reales
+        // TODO: Realizar la bÃºsqueda y devolver los resultados reales
         return new ArrayList&lt;String&gt;();
     }
 }
@@ -988,13 +988,13 @@ public class SplittingNamesTest extends ConcordionTestCase {
 </a></blockquote>
 
 <p>
-<a name="verifyRows">    Faltan dos filas porque nuestra función de búsqueda no está implementada
-    y devuelve un conjunto vacío.
+<a name="verifyRows">    Faltan dos filas porque nuestra funciÃ³n de bÃºsqueda no estÃ¡ implementada
+    y devuelve un conjunto vacÃ­o.
 </a></p>
 
 <p>
-<a name="verifyRows">    Sólo para demostrar cómo funciona, implementemos la funcionalidad dentro
-    del código de fijación (en vez de llamar al sistema, que sería lo correcto):
+<a name="verifyRows">    SÃ³lo para demostrar cÃ³mo funciona, implementemos la funcionalidad dentro
+    del cÃ³digo de fijaciÃ³n (en vez de llamar al sistema, que serÃ­a lo correcto):
 </a></p>
 
 <pre class="java"><a name="verifyRows">public class PartialMatchesTest extends ConcordionTestCase {
@@ -1018,18 +1018,18 @@ public class SplittingNamesTest extends ConcordionTestCase {
 </a></pre>
 
 <p>
-<a name="verifyRows">    Ahora cuando ejecutamos el test obtenemos un éxito:
+<a name="verifyRows">    Ahora cuando ejecutamos el test obtenemos un Ã©xito:
 </a></p>
 
 <blockquote>
-<a name="verifyRows"><img src="image/tutorial/verifyRows/partialMatches/Successful_es.png" alt="Éxito">
+<a name="verifyRows"><img src="image/tutorial/verifyRows/partialMatches/Successful_es.png" alt="Ã‰xito">
 </a></blockquote>
 
 
 <p>
-<a name="verifyRows">    Éstas son las características esenciales de Concordion y deberían
-    ser todo lo que necesitaramos para comenzar. En la página </a><a href="http://www.concordion.org/Technique.html">Technique</a>
-    podemos encontrar consejos sobre cómo enfocar adecuadamente nuestras especificaciones.
+<a name="verifyRows">    Ã‰stas son las caracterÃ­sticas esenciales de Concordion y deberÃ­an
+    ser todo lo que necesitaramos para comenzar. En la pÃ¡gina </a><a href="http://www.concordion.org/Technique.html">Technique</a>
+    podemos encontrar consejos sobre cÃ³mo enfocar adecuadamente nuestras especificaciones.
 </p>
 
 
