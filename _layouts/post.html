@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta content="text/html; charset=windows-1252" http-equiv="content-type">
+	<meta http-equiv="Content-Language" content="en-US">
+    <title>{{ page.title }} by {{ page.author }}</title>
+	<link rel="stylesheet" type="text/css" href="../css/blog.css">
+    <link href="../image/favicon.ico" rel="icon">
+  </head>
+  
+  <body>
+    <div class="page">
+	  {% include header.html %}
+	
+	  <article>
+	    {{ content }}
+  	  </article>
+	
+	  {% include footer.html %} 
+    </div>
+  </body>
+  
+</html>

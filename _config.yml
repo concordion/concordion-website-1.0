@@ -1,0 +1,51 @@
+#
+# This file contains configuration flags to customize your site
+#
+
+# Name of your site (displayed in the header)
+name: Concordion Community
+
+# Short bio or description (displayed in the header)
+description: Software Development Blog
+
+#
+# Flags below are optional
+#
+
+# Your disqus shortname, entering this will enable commenting on posts
+disqus: 
+
+# Your disqus shortname, entering this will enable commenting on posts
+livefyre_id: 369922
+
+# Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
+google_analytics: UA-58172036-1
+
+# Enter your addthis code to activate the sharing buttons
+addhis_id: ra-543bae9469f79b87
+
+# Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
+# Used for Sitemap.xml and your RSS feed
+url: http://concordion.org
+
+# If you're hosting your site at a Project repository on GitHub pages 
+# (http://yourusername.github.io/repository-name)
+# and NOT your User repository (http://yourusername.github.io)
+# then add in the baseurl here, like this: "/repository-name"
+baseurl: ""
+
+#
+# !! You don't need to change any of the configuration flags below !!
+#
+permalink: /blog/:title.html
+
+# Use the following plug-ins
+gems:
+  - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
+
+# Exclude these files from your production _site
+exclude:
+    - Gemfile
+    - Gemfile.lock
+    - LICENSE.md
+    - README.md

@@ -1,0 +1,21 @@
+{% if site.livefyre_id %}
+	<div id="livefyre-comments"></div>
+	<script type="text/javascript" src="http://zor.livefyre.com/wjs/v3.0/javascripts/livefyre.js"></script>
+    <script type="text/javascript">
+    (function () {
+      var articleId = fyre.conv.load.makeArticleId(null);
+      fyre.conv.load({}, [{
+        el: 'livefyre-comments',
+        network: "livefyre.com",
+        siteId: "{{ site.livefyre_id }}",
+        articleId: articleId,
+        signed: false,
+        collectionMeta: {
+          articleId: articleId,
+          url: fyre.conv.load.makeCollectionUrl(),
+        }
+      }], function() {});
+    }());
+    </script>
+	<noscript>Please enable JavaScript to view the comments powered by livefyre.</noscript>
+{% endif %}
