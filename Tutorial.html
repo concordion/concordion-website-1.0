@@ -212,6 +212,15 @@ simple "Hello World!" example and a basic Ant build file.
 &lt;html xmlns:concordion="http://www.concordion.org/2007/concordion"&gt;
 </pre>
 
+<p>
+    If you plan using Unicode (in case of accents for example), specify the content type after the html tag as follows:
+</p>
+
+<pre class="html">
+&lt;head&gt;
+    &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;
+&lt;/head&gt;
+</pre>
 
 <p>
     Let's start with a really simple example...
@@ -244,6 +253,9 @@ simple "Hello World!" example and a basic Ant build file.
 
 <pre class="html">
 &lt;html <b>xmlns:concordion="http://www.concordion.org/2007/concordion"</b>&gt;
+    &lt;head&gt;
+        &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;
+    &lt;/head&gt;
     &lt;body&gt;
         &lt;p <b>concordion:assertEquals="getGreeting()"</b>&gt;Hello World!&lt;/p&gt;
     &lt;/body&gt;
@@ -313,6 +325,9 @@ Successes: 1  Failures: 0
 
 <pre class="html">
 &lt;html xmlns:concordion="http://www.concordion.org/2007/concordion"&gt;
+    &lt;head&gt;
+        &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;
+    &lt;/head&gt;
     &lt;body&gt;
         &lt;p <b>concordion:assertEquals="greeting"</b>&gt;Hello World!&lt;/p&gt;
     &lt;/body&gt;
@@ -367,6 +382,9 @@ Successes: 1  Failures: 0
 
 <pre class="html">
 &lt;html <b>xmlns:concordion="http://www.concordion.org/2007/concordion"</b>&gt;
+    &lt;head&gt;
+        &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;
+    &lt;/head&gt;
     &lt;body&gt;
         &lt;p&gt;
             The greeting for user &lt;span <b>concordion:set="#firstName"</b>&gt;Bob&lt;/span&gt;
@@ -482,6 +500,9 @@ Successes: 1  Failures: 0
 
 <pre class="html">
 &lt;html <b>xmlns:concordion="http://www.concordion.org/2007/concordion"</b>&gt;
+    &lt;head&gt;
+        &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;
+    &lt;/head&gt;
     &lt;body&gt;
         &lt;p&gt;
             If the time is
@@ -526,6 +547,9 @@ Successes: 1  Failures: 0
 
 <pre class="html">
 &lt;html xmlns:concordion="http://www.concordion.org/2007/concordion"&gt;
+    &lt;head&gt;
+        &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;
+    &lt;/head&gt;
     &lt;body&gt;
         &lt;p&gt;
             If the time is
@@ -567,6 +591,7 @@ Successes: 1  Failures: 0
 
     &lt;head&gt;
         &lt;link href="../concordion.css" rel="stylesheet" type="text/css" /&gt;
+        &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;
     &lt;/head&gt;
 
     &lt;body&gt;
@@ -846,6 +871,7 @@ Successes: 1  Failures: 0
 
     &lt;head&gt;
         &lt;link href="../concordion.css" rel="stylesheet" type="text/css" /&gt;
+        &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;
     &lt;/head&gt;
 
     &lt;body&gt;
@@ -905,6 +931,7 @@ Successes: 1  Failures: 0
 
     &lt;head&gt;
         &lt;link href="../concordion.css" rel="stylesheet" type="text/css" /&gt;
+        &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;
     &lt;/head&gt;
 
     &lt;body&gt;
@@ -996,6 +1023,10 @@ Successes: 1  Failures: 0
 
 <pre class="html">
 &lt;html <b>xmlns:concordion="http://www.concordion.org/2007/concordion"</b>&gt;
+&lt;head&gt;
+    &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;
+&lt;/head&gt;
+
 &lt;body&gt;
 
 &lt;h1&gt;Partial Matches&lt;/h1&gt;
